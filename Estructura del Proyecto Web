@@ -1,0 +1,76 @@
+ESTRUCTURA:
+/Proyecto
+│
+├── index.html
+├── /css
+├── /js
+├── /three
+├── /img
+├── /fonts
+├── /assets
+├── /lib
+└── /components
+
+--------------------------------------------------------------------------------------------------------
+index.html, about.html... etc
+Van a contenener el markup principal del sitio. Cada archivo representara una pagina distinta
+(ej: pagina de home, contacto, etc)
+Estaran escritos en HTML5 e incluyen referencias a hojas de estilos y futuros scripts
+
+--------------------------------------------------------------------------------------------------------
+/CSS
+Contiene todos los archivos relacionados con estilos
+    style.css: Estilos personalizados de la pagina web
+    bootstrap.min.css: Version local de Bootstrap (opcional si usaremos CDN en algun futuro)
+
+Si usamos preprocesadores como LESS o SASS, aca deberiamos incluir /SASS o /SCSS
+
+--------------------------------------------------------------------------------------------------------
+/JS
+Contendra los scripts JavaScript de la pagina web
+    Main.js: Script generales (interacciones, eventos, etc)
+    Three-init.js: Configura la escena, camara, renderizado de Three.js
+    scene.js: Define la escena 3D (objetos, luces, animaciones)
+    utils.js: Funcioones utilitarias reutilizables
+
+Esta carpeta seguramente sea mas grande en un futuro si incluimos mas librerias JS o Logica modular
+
+--------------------------------------------------------------------------------------------------------
+/THREE
+Contendra archivos especificos de graficos 3D y Three.js
+    /models: Archivos de modelos 3D (.gib, glif, .obj, etc)
+    /textures: Imagenes usadas como texturas en modelos o escenas
+    /shaders: Shaders personalizados (archivos .glsl, .vert, .frag)
+
+--------------------------------------------------------------------------------------------------------
+/IMG
+Imagenes estaticas de la pagina web: logos, banners, iconos, etc
+
+--------------------------------------------------------------------------------------------------------
+/FONTS
+Tipografias personalizadas usadas en la pagina web. Por lo general son .woff, .woff2, .ttf
+
+--------------------------------------------------------------------------------------------------------
+/ASSETS
+Recursos adicionales como videos, PDFs, archivos descargables, iconos, etc.
+
+--------------------------------------------------------------------------------------------------------
+/LIB
+Bibliotecas externas que se usaran localmente
+    three.module.js: version de ThreeJS descargada
+    Otras librerias como GSAP, Anime.js, etc
+
+Si el proyecto se agrande, deberiamos incluir porpias subcarpetas por libreria implementada
+
+--------------------------------------------------------------------------------------------------------
+/COMPONENTS
+Fragmentos HTML reutilizables como:
+    navbar.html: Barra de navegacion
+    footer.html: Pie de pagina
+    modal.html: Ventanas emergenetes (por ejemplo)
+
+Sera muy util si mas adelante usamos algun motor de plantillas o JS para cargar los componentes
+mas dinamicamente.
+
+
+
