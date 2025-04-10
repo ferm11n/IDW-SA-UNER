@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Inicio - IDW S.A.</title>
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-<header>
-    <h1>IDW S.A.</h1>
-    <p>Reserva tu casa de cumpleaños ideal</p>
-</header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Salones de Eventos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>IDW S.A.</h1>
+      <p>Reserva tu casa de cumpleaños ideal</p>
+    </header>
+    <nav>
+      <a href="inicio.html">Inicio</a>
+      <a href="infoInstitucional.html">Institucional</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="faq.html">FAQs</a>
+    </nav>
 
-<nav>
-    <a href="inicio.html">Inicio</a>
-    <a href="infoInstitucional.html">Institucional</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="faq.html">FAQs</a>
-</nav>
+    <main>
+      <section>
+          <h2>Bienvenidos a IDW S.A.</h2>
+          <p>
+              IDW S.A. es una empresa especializada en el desarrollo de soluciones digitales orientadas a la gestión eficiente de reservas para casas de cumpleaños infantiles. A través de un enfoque centrado en el usuario, nos dedicamos a crear experiencias web modernas, accesibles y funcionales que facilitan la búsqueda, comparación
+              y contratación de salones de eventos y servicios complementarios. Nuestro sitio web actúa como un completo catálogo interactivo, permitiendo a los usuarios explorar una variada oferta de espacios y prestaciones, aplicando filtros personalizados para encontrar la opción que mejor se adapte a sus necesidades.
+              Con un diseño visual atractivo y adaptativo, priorizamos la usabilidad tanto en dispositivos móviles como de escritorio. Además, incorporamos tecnologías modernas como APIs REST y LocalStorage, garantizando una experiencia fluida, segura y con persistencia de datos en el navegador. En IDW S.A., impulsamos la transformación digital del sector de eventos infantiles, brindando herramientas ágiles para organizar celebraciones inolvidables con solo unos clics.
+          </p>
+      </section>
+      <section>
+        <div class="container">
+          <!-- Formulario para agregar un salón -->
+          <div class="form-container">
+            <h1>Agregar Salón de Evento</h1>
+            <form id="hall-form">
+              <input type="text" id="hall-title" placeholder="Título" required />
+              <textarea id="hall-description" placeholder="Descripción" required></textarea>
+              <input type="text" id="hall-address" placeholder="Dirección" required />
+              <input type="number" id="hall-value" placeholder="Valor" required />
+              <select id="hall-status" required>
+                <option value="Disponible">Disponible</option>
+                <option value="Reservado">Reservado</option>
+              </select>
+              <button type="submit">Agregar Salón</button>
+            </form>
+          </div>
+    
+          <!-- Sección para mostrar la lista de salones -->
+          <div class="halls-container">
+            <h2>Salones de Eventos</h2>
+            <!-- Botón para cargar catálogo -->
+            <button id="load-external" class="external-btn">Cargar Catálogo</button>
+            <ul id="halls-list">
+              <!-- Se renderizarán los salones guardados -->
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  
+    <footer>
+      <p>&copy; 2025 IDW S.A. - Todos los derechos reservados.</p>
+    </footer>
 
-<main>
-    <section>
-        <h2>Bienvenidos a IDW S.A.</h2>
-        <p>
-            IDW S.A. es una empresa especializada en el desarrollo de soluciones digitales orientadas a la gestión eficiente de reservas para casas de cumpleaños infantiles. A través de un enfoque centrado en el usuario, nos dedicamos a crear experiencias web modernas, accesibles y funcionales que facilitan la búsqueda, comparación
-            y contratación de salones de eventos y servicios complementarios. Nuestro sitio web actúa como un completo catálogo interactivo, permitiendo a los usuarios explorar una variada oferta de espacios y prestaciones, aplicando filtros personalizados para encontrar la opción que mejor se adapte a sus necesidades.
-            Con un diseño visual atractivo y adaptativo, priorizamos la usabilidad tanto en dispositivos móviles como de escritorio. Además, incorporamos tecnologías modernas como APIs REST y LocalStorage, garantizando una experiencia fluida, segura y con persistencia de datos en el navegador. En IDW S.A., impulsamos la transformación digital del sector de eventos infantiles, brindando herramientas ágiles para organizar celebraciones inolvidables con solo unos clics.
-        </p>
-    </section>
-</main>
 
-<footer>
-    <p>&copy; 2025 IDW S.A. - Todos los derechos reservados.</p>
-</footer>
-</body>
+    
+    <script src="script.js"></script>
+  </body>
 </html>
