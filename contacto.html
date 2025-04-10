@@ -30,15 +30,27 @@
         </p>
         <form>
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required />
+            <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre" />
+            <span class="obligatorio">*</span>
 
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" required="obligatorio" placeholder="Escribe tu email" />
+            <span class="obligatorio">*</span>
+
+            <label for="email">Telefono:</label>
+            <input type="telefono" id="telefono" name="telefono" required="obligatorio" placeholder="Escribe tu numero" />
+            <span class="obligatorio">*</span>
 
             <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio" placeholder="Contanos que necesitas"></textarea>
+            <span class="obligatorio">*</span>
 
             <input type="submit" value="Enviar" />
+
+            <p class="aviso">
+                <span class="obligatorio"> * </span>los campos son obligatorios.
+            </p>		
+            
         </form>
     </section>
 </main>

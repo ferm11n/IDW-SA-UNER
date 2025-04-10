@@ -7,7 +7,7 @@
 
 body {
     line-height: 1.6;
-    background: #f9f9f9;
+    background: #e5ddd0;
     color: #333;
 }
 
@@ -52,17 +52,49 @@ footer {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    margin: auto;
+  width: 460px; 
+  height: auto;
+  margin: 80px ;
+  border-radius: 10px;  
+  padding-top: 30px;
+  padding-bottom: 20px;  
+  background-color: #fbfbfb; 
+  padding-left: 30px; 
 }
 
-input, textarea {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+input{
+  background-color: #fbfbfb; 
+  width: 408px; 
+  height: 40px; 
+  border-radius: 5px;  
+  border-style: solid; 
+  border-width: 1px; 
+  border-color: #6c44ab; 
+  margin-top: 10px;  
+  padding-left: 10px;
+  margin-bottom: 20px;
+    
+
+}
+
+
+textarea {
+  background-color: #fbfbfb; 
+  width: 405px; 
+  height: 150px; 
+  border-radius: 5px;  
+  border-style: solid; 
+  border-width: 1px; 
+  border-color: #6c44ab; 
+  margin-top: 10px;  
+  padding-left: 10px;
+  margin-bottom: 20px; 
+  padding-top: 15px; 
+}
+
+label{
+  display: block; 
+  float: center;
 }
 
 input[type="submit"] {
@@ -75,3 +107,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #3700b3;
 }
+
+span{
+    color: #6c44ab; 
+  }
