@@ -20,6 +20,7 @@
 
 <main>
     <section>
+
         <h2>Contacto</h2>
         <p>
             En IDW S.A. estamos comprometidos con brindarte la mejor experiencia en la planificación de eventos infantiles. Si tenés dudas, sugerencias, consultas comerciales o simplemente querés saber más sobre nuestros servicios, no dudes en escribirnos.
@@ -28,22 +29,20 @@
 
             También podés comunicarte con nosotros a través de nuestras redes sociales o correo electrónico.
         </p>
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre" />
-            <span class="obligatorio">*</span>
+        <div class="form-contacto-container">
 
-            <label for="email">Correo electrónico:</label>
+        <form>
+            <label for="nombre">Nombre <span class="obligatorio">*</span></label>
+            <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre" />
+
+            <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
             <input type="email" id="email" name="email" required="obligatorio" placeholder="Escribe tu email" />
-            <span class="obligatorio">*</span>
 
             <label for="email">Telefono:</label>
             <input type="telefono" id="telefono" name="telefono" required="obligatorio" placeholder="Escribe tu numero" />
-            <span class="obligatorio">*</span>
 
-            <label for="mensaje">Mensaje:</label>
+            <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
             <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio" placeholder="Contanos que necesitas"></textarea>
-            <span class="obligatorio">*</span>
 
             <input type="submit" value="Enviar" />
 
@@ -52,6 +51,18 @@
             </p>		
             
         </form>
+
+        <div class="info-contacto">
+            <p><img src="img/contacto/telefono.png" alt="Teléfono" style="width:16px; height:16px";> +54 444 111 5479
+            </p>
+            <p><img src="img/contacto/correo.png" alt="correo" style="width:16px; height:16px";> idwsa_falso@gmail.com
+            </p>
+            <p><img src="img/contacto/ubicacion.png" alt="ubicacion" style="width:16px; height:16px";> Avenida siempre viva 742 Springfield
+            </p>
+            <div class="iconos"></div>
+
+        </div>
+    </div>
     </section>
 </main>
 

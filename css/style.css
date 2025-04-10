@@ -22,7 +22,7 @@ nav {
     background: #3700b3;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2rem; 
     padding: 0.5rem;
 }
 
@@ -52,19 +52,21 @@ footer {
 }
 
 form {
-  width: 460px; 
-  height: auto;
-  margin: 80px ;
+  width: 100%; 
+  max-width: 460px; 
+  margin: 80px auto ;
   border-radius: 10px;  
   padding-top: 30px;
   padding-bottom: 20px;  
   background-color: #fbfbfb; 
   padding-left: 30px; 
+  padding-right: 30px;
 }
 
 input{
   background-color: #fbfbfb; 
-  width: 408px; 
+  width: 100%;
+  max-width: 408px;
   height: 40px; 
   border-radius: 5px;  
   border-style: solid; 
@@ -77,10 +79,10 @@ input{
 
 }
 
-
 textarea {
   background-color: #fbfbfb; 
-  width: 405px; 
+  width: 100%;
+  max-width: 408px;
   height: 150px; 
   border-radius: 5px;  
   border-style: solid; 
@@ -93,8 +95,8 @@ textarea {
 }
 
 label{
-  display: block; 
-  float: center;
+  display: inline-flex;
+  align-items: center;
 }
 
 input[type="submit"] {
@@ -109,5 +111,62 @@ input[type="submit"]:hover {
 }
 
 span{
+    font-size: 16px;
     color: #6c44ab; 
+    margin-left: 5px;
+
   }
+
+
+.form-contacto-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.info-contacto{
+    max-width: 460px;
+    background-color: #fbfbfb;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #6c44ab;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-contacto p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.info-contacto img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .form-contacto-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        width: 100%;
+        max-width: 460px;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .info-contacto {
+        width: 100%;
+        max-width: 460px;
+        margin-top: 30px;
+    }
+}
