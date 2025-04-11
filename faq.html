@@ -40,6 +40,10 @@
   <section class="faq animate__animated animate__fadeIn">
     <h2 class="text-center mb-4">Preguntas Frecuentes</h2>
 
+    <div class="mb-4 text-center">
+      <input type="text" id="faqSearch" class="form-control w-75 mx-auto" placeholder="Palabras claves..." />
+    </div>
+
     <div class="accordion mt-4" id="accordionFaqExtra">
 
       <div class="accordion-item">
@@ -215,5 +219,23 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.getElementById('faqSearch').addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase();
+    const items = document.querySelectorAll('.accordion-item');
+
+    items.forEach(item => {
+      const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+      if (question.includes(searchTerm)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
 </body>
 </html>
