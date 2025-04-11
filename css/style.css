@@ -116,3 +116,18 @@ main {
     }
 }
 
+
+/* Buscador de preguntas */
+#faqSearch {
+    max-width: 500px;
+    border: 2px solid #ac68ff;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+#faqSearch:focus {
+    box-shadow: 0 0 0 0.2rem rgba(238, 131, 255, 0.4);
+    outline: none;
+}
+
+
