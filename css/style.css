@@ -1,12 +1,12 @@
 :root {
-    --bs-primary: #6200ea;
+    --bs-primary: #9800ea;
     --bs-body-color: #333;
     --bs-body-bg: #fff;
 }
 
 /* FAQ Styles */
 .faq h2 {
-    color: #3700b3;
+    color: #9800ea;
 }
 
 .accordion-button {
@@ -27,7 +27,7 @@ header {
 }
 
 footer {
-    background-color: #3700b3;
+    background-color: var(--bs-primary);
     color: white;
     text-align: center;
     padding: 1rem;
@@ -54,3 +54,65 @@ body {
 main {
     flex: 1;
 }
+
+/* Animacion animate__fadeIn */
+.animate__animated {
+    --animate-duration: 1.7s;
+}
+
+/*Color rosa a cada conteiner de pregunta*/
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(98, 0, 234, 0.25); /* Violeta suave */
+    outline: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e9dcff; /* Fondo violeta claro al expandir */
+    color: #6e0077;
+}
+
+.accordion-button {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Boton contactanos*/
+.btn-rosa {
+    background-color: #9800ea;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-rosa:hover {
+    background-color: #ac68ff;
+    color: white;
+}
+
+/* Texto de contactenos */
+.text-rosa {
+    color: #ac68ff;
+}
+
+
+/* Diseño responsive para mobile */
+@media (max-width: 576px) {
+    .accordion-button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .accordion-body {
+        font-size: 0.95rem;
+        padding: 1.25rem;
+        background-color: #fef6f9; /* rosa suave */
+        border-radius: 0.5rem;
+    }
+
+    .accordion-item {
+        margin-bottom: 1rem;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+}
+
