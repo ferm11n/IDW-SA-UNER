@@ -1,0 +1,205 @@
+body {
+  background: linear-gradient(to bottom, #110901 , #1a1a1a);
+  color: #ffffff; /* Asegura buen contraste */
+  min-height: 100vh;
+  align-items: center;
+}
+
+h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3rem;
+  font-weight: normal;
+  color:  rgb(252, 86, 114);
+  letter-spacing: 4px;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+.btn{
+    color: rgb(148, 59, 74);
+    background-color: pink;
+    border-color: pink;
+    align-items: center;
+}
+
+.navbar-custom {
+  background-color: transparent !important;
+  backdrop-filter: blur(4px); /* Opcional: efecto glassmorphism */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Sutil línea */
+}
+
+.navbar-custom .navbar-brand img {
+    max-height: 60px; /* Ajustá el tamaño del logo */
+}
+.navbar-custom .nav-link {
+    color: #fff !important;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    margin-left: 15px;
+}
+.navbar-custom .nav-link:hover {
+    color: rgb(255, 181, 193) !important; /* Color de resaltado al pasar el mouse */
+}
+  /* Opcional: cambiar el icono del toggler para que se vea en fondo oscuro */
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45); /* Oscurece la imagen */
+  z-index: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.carousel-item img {
+  height: 600px; /* Ajustá este valor a gusto */
+  object-fit: cover;
+  width: 100%;
+}
+
+.hall-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.hall-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hall-info {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hall-card:hover .hall-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hall-card:hover .hall-info {
+  opacity: 1;
+}
+
+.hall-card .card-img {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+/* Overlay oscuro permanente sobre la imagen */
+.hall-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Asegura que el contenido del overlay quede por encima del oscurecimiento */
+.hall-overlay {
+  position: absolute;
+  z-index: 2;
+}
+
+
+/*eventos destacados*/
+.eventos-destacados {
+    padding: 60px;
+    background-color: #fce8e8;
+    color: black;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  font-weight: normal;
+  color:  rgb(252, 86, 114);
+  letter-spacing: 5px;
+}
+
+
+/* Limpieza completa del estilo de los items */
+.event-item {
+  list-style: none;
+  border: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  background: transparent;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Flecha en hover */
+.event-item:hover::after {
+  content: " →";
+  color: black;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* Mostrar como link */
+.event-item:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Transición de imagen */
+#evento-img {
+  transition: all 0.3s ease-in-out;
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  align-items: end;
+}
+
+.eventos-destacados .col-sm-4 {
+  height: 100%;
+  min-height: 300px; /* o el alto que prefieras */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-img {
+  width: 550px;
+  height: 550px;
+  min-height: 300px;
+  display: flex;
+}
