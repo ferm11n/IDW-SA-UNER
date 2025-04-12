@@ -7,7 +7,7 @@
 
 body {
     line-height: 1.6;
-    background: #ffffff;
+    background: #e5ddd0;
     color: #333;
 }
 
@@ -53,10 +53,11 @@ footer {
 
                                                      /*  PAGINA DE CONTACTO    */
 
+                                                     
 form {
   width: 100%; 
   max-width: 460px; 
-  margin: 80px auto ;
+  margin: 0 auto ;
   border-radius: 10px;  
   padding-top: 30px;
   padding-bottom: 20px;  
@@ -129,6 +130,7 @@ span{
     flex-wrap: wrap;
 }
 
+
 .info-contacto{
     max-width: 460px;
     background-color: #fbfbfb;
@@ -150,6 +152,16 @@ span{
     width: 20px;
     height: 20px;
     margin-right: 10px;
+}
+
+.iconos {
+    display:flex;
+    gap: 10px;
+    margin-top:20px;
+}
+
+.iconos p{
+    margin: 1px;
 }
 
 @media (max-width: 768px) {

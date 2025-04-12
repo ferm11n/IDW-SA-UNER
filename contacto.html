@@ -32,38 +32,53 @@
         </p>
         <div class="form-contacto-container">
 
-        <form>
-            <label for="nombre">Nombre <span class="obligatorio">*</span></label>
-            <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre" />
+            <form>
+                <label for="nombre">Nombre <span class="obligatorio">*</span></label>
+                <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre" />
 
-            <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
-            <input type="email" id="email" name="email" required="obligatorio" placeholder="Escribe tu email" />
+                <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
+                <input type="email" id="email" name="email" required="obligatorio" placeholder="Escribe tu email" />
 
-            <label for="email">Telefono:</label>
-            <input type="telefono" id="telefono" name="telefono" required="obligatorio" placeholder="Escribe tu numero" />
+                <label for="telefono">Telefono</label><span class="obligatorio">*</span>
+                <input type="telefono" id="telefono" name="telefono" required="obligatorio" placeholder="Escribe tu numero" />
 
-            <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
-            <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio" placeholder="Contanos que necesitas"></textarea>
+                <label for="horario">Horario de contacto<span class="obligatorio">*</span></label>
+                <input type="horario" id="horario" name="horario" required="obligatorio" placeholder="Horario disponible para contactar" />
 
-            <input type="submit" value="Enviar" />
+                <label for="provincia">Provincia<span class="obligatorio">*</span></label>
+                <input type="provincia" id="provincia" name="provincia" required="obligatorio" placeholder="Provincia" />
 
-            <p class="aviso">
-                <span class="obligatorio"> * </span>los campos son obligatorios.
-            </p>		
+                <label for="ciudad">Ciudad<span class="obligatorio">*</span></label>
+                <input type="ciudad" id="ciudad" name="ciudad" required="obligatorio" placeholder="Ciudad" />
+
+                <label for="salon">Salones<span class="obligatorio">*</span></label>
+                <input type="salon" id="salon" name="salon" required="obligatorio" placeholder="Ciudad" />
+
+                <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
+                <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio" placeholder="Contanos que necesitas"></textarea>
+
+                <input type="submit" value="Enviar" />
+
+                <p class="aviso">
+                    <span class="obligatorio"> * </span>los campos son obligatorios.
+                </p>		
+                
+            </form>
             
-        </form>
-
-        <div class="info-contacto">
-            <p><img src="img/contacto/telefono.png" alt="Teléfono" style="width:16px; height:16px";> +54 444 111 5479
-            </p>
-            <p><img src="img/contacto/correo.png" alt="correo" style="width:16px; height:16px";> idwsa_falso@gmail.com
-            </p>
-            <p><img src="img/contacto/ubicacion.png" alt="ubicacion" style="width:16px; height:16px";> Avenida siempre viva 742 Springfield
-            </p>
-            <div class="iconos"></div>
-
+            <div class="contacto-redes-container">
+                <div class="info-contacto">
+                    <p><img src="img/contacto/telefono.png" alt="Teléfono" style="width:16px; height:16px";> +54 444 111 5479</p>
+                    <p><img src="img/contacto/correo.png" alt="correo" style="width:16px; height:16px";> idwsa_falso@gmail.com</p>
+                    <p><img src="img/contacto/ubicacion.png" alt="ubicacion" style="width:16px; height:16px";> Avenida siempre viva 742 Springfield</p>
+                
+                    <div class="iconos">
+                        <p><img src="img/contacto/facebook.png " alt="Facebook" style="width:16px; height:16px;"></p>
+                        <p><img src="img/contacto/instagram.png" alt="instagram" style="width:16px; height:16px;"></p>
+                        <p><img src="img/contacto/twitter.png" alt="twitter" style="width:16px; height:16px;"></p>
+                    </div>
+                </div>    
+            </div>  
         </div>
-    </div>
     </section>
 </main>
 
