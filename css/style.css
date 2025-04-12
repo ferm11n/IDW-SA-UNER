@@ -9,6 +9,10 @@
     color: #9800ea;
 }
 
+.accordion-item {
+    margin-bottom: 3.5px;
+}
+
 .accordion-button {
     font-weight: 500;
 }
@@ -129,5 +133,16 @@ main {
     box-shadow: 0 0 0 0.2rem rgba(238, 131, 255, 0.4);
     outline: none;
 }
+
+.form-container {
+    background-color: #e0c9ff;
+}
+
+
+ .form-control:focus {
+     border-color: #f000ff !important; /* Cambia este color por el que prefieras */
+     box-shadow: 0 0 0 0.25rem rgb(201, 128, 206) !important; /* Esto añade un resplandor suave */
+ }
+
 
 
