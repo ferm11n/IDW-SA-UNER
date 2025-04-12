@@ -33,30 +33,51 @@
         <div class="form-contacto-container">
 
             <form>
-                <label for="nombre">Nombre <span class="obligatorio">*</span></label>
-                <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre" />
-
-                <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
-                <input type="email" id="email" name="email" required="obligatorio" placeholder="Escribe tu email" />
-
-                <label for="telefono">Telefono</label><span class="obligatorio">*</span>
-                <input type="telefono" id="telefono" name="telefono" required="obligatorio" placeholder="Escribe tu numero" />
-
-                <label for="horario">Horario de contacto<span class="obligatorio">*</span></label>
-                <input type="horario" id="horario" name="horario" required="obligatorio" placeholder="Horario disponible para contactar" />
-
-                <label for="provincia">Provincia<span class="obligatorio">*</span></label>
-                <input type="provincia" id="provincia" name="provincia" required="obligatorio" placeholder="Provincia" />
-
-                <label for="ciudad">Ciudad<span class="obligatorio">*</span></label>
-                <input type="ciudad" id="ciudad" name="ciudad" required="obligatorio" placeholder="Ciudad" />
-
-                <label for="salon">Salones<span class="obligatorio">*</span></label>
-                <input type="salon" id="salon" name="salon" required="obligatorio" placeholder="Ciudad" />
-
-                <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
-                <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio" placeholder="Contanos que necesitas"></textarea>
-
+                <div class="form-filas">
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre <span class="obligatorio">*</span></label>
+                        <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre y apellido" />
+                    </div>
+                    <div class="form-grupo">
+                        <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
+                        <input type="text" id="email" name="email" required="obligatorio" placeholder="Ingresa tu email" />
+                    </div>
+                </div>
+                <div class="form-filas">
+                    <div class="form-grupo">
+                        <label for="telefono">Telefono<span class="obligatorio">*</span></label>
+                        <input type="text" id="telefono" name="telefono" required="obligatorio" placeholder="Ingresa tu numero" />
+                    </div>
+                    <div class="form-grupo">
+                        <label for="horario">Horario de contacto<span class="obligatorio">*</span></label>
+                        <input type="text" id="horario" name="horario" required="obligatorio" placeholder="Horario disponible para contactar" />
+                    </div>
+                </div>
+                <div class="form-filas">
+                    <div class="form-grupo">
+                        <label for="provincia">Provincia<span class="obligatorio">*</span></label>
+                        <input type="text" id="provincia" name="provincia" required="obligatorio" placeholder="Provincia" />
+                    </div>
+                    <div class="form-grupo">    
+                        <label for="ciudad">Ciudad<span class="obligatorio">*</span></label>
+                        <input type="text" id="ciudad" name="ciudad" required="obligatorio" placeholder="Ciudad" />
+                    </div>
+                </div>
+                <div class="form-grupo">
+                    <label for="salon">Salones<span class="obligatorio">*</span></label>
+                    <select id="salon" name="salon" required="obligatorio">
+                        <option value="" disabled selected>--- Elegi una opción ---</option>
+                        <option value="">--- Solo consulta ---</option>
+                        <option value="">--- Salon Amatista para bodas ---</option>
+                        <option value="">--- Salon Rosa para quinces ---</option>
+                        <option value="">--- Salon Naranja para fiestas y cumpleaños ---</option>
+                        <option value="">--- Salon Celeste para reuniones laborales ---</option>
+                    </select>
+                </div>
+                <div class="form-grupo">
+                    <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio" placeholder="Contanos que necesitas"></textarea>
+                </div>
                 <input type="submit" value="Enviar" />
 
                 <p class="aviso">
