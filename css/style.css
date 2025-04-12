@@ -211,3 +211,29 @@ span{
     color: #333;
     font-size: 15px;
 }
+
+/*  PAGINA DE INSTITUCIÓN   */
+
+.institucional {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 12px;
+    width: calc(100% - 60px);
+    margin: 0.5rem auto; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+
+.institucional h2 {
+    color: #3700b3;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+
+.institucional p {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
