@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*primera sección*/
+.overlay-section {
+    background-image: url(/img/salon-inicio.png); /* Reemplazá con tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+  
+.overlay-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 20px;
+}
+
+/*segunda sección*/
+
+/* Fondo suave general */
+.seccion-elegirnos {
+  background-color: #fdfdfd;
+}
+
+/* Título principal */
+.titulo-elegirnos {
+  color: #f72e81;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Caja de cada razón */
+.caja-razon {
+  background-color: #fadfea; /* rosa más oscuro que combina con #f72e81 */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  height: 100%;
+  border-style: dotted;
+  border-color: #f5cadb;
+  
+}
+
+/* Título de cada razón */
+.razon-titulo {
+  color: #1b1b1b;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Texto descriptivo */
+.razon-texto {
+  color: #1b1b1b;
+  font-size: 1rem;
+}
+
+/* Hover: cambia el color del título */
+.caja-razon:hover .razon-titulo {
+  color: #f72e81; /* tono más fuerte que combina con los otros rosados */
+}
+
+/*----reseñas----*/
+/* Sección de Reseñas */
+.reseñas {
+  background-color: #f8f8f8;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.reseñas h2 {
+  margin: 0;
+  color: rgb(14, 38, 54);
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+  margin-bottom: 0 !important;
+  
+}
+
+/* Tarjetas de reseñas: fondo sutil #fdfdfd */
+.reseña-card {
+  background-color: #fdfdfd;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Hover en la tarjeta para un ligero escalado */
+.reseña-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilos para la sección de estrellas */
+.estrellas-icon {
+  color: #f72e81;
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+/* Ajuste de imagen de perfil */
+.reseña-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.reseña_subtitle {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: -2px;
+  color:#fca5c8;
+  margin-bottom: 20px;
+  margin-top: -15px;
+}
+
+.reseñas .reseña_subtitle{
+  color: grey;
+}

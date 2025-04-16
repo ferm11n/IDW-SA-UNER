@@ -3,22 +3,276 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Comtabile" content="IE=edge"/>
     <title>Catálogo de Salones de Eventos</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/inicio.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+
   </head>
   <body>
-    <header>
-      <h1>IDW S.A.</h1>
-      <p>Reserva tu casa de cumpleaños ideal</p>
+    <header class="header">
+<!-- Fondo con overlay -->
+<!-- Sección completa con imagen de fondo -->
+<!-- Sección completa con imagen de fondo -->
+        <div class="overlay-section">
+          <!-- Navbar con fondo negro semitransparente -->
+          <nav class="navbar navbar-expand-sm navbar-custom bg-black bg-opacity-50 m-0 p-0">
+            <div class="container-fluid" style="padding-left: 20px; padding-right: 20px;">
+              <a class="navbar-brand" href="inicio.html">
+                <img src="./img/logo.png" alt="Logo" style="max-height: 100px;">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item"><a class="nav-link text-white" href="inicio.html">Inicio</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="eventos.html">Eventos</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="salones.html">Salones</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="servicios.html">Servicios</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <!-- Contenido centrado dentro del overlay -->
+          <div class="overlay-content text-center text-white">
+            <!-- Sección con fondo igual al navbar y bordes redondeados -->
+            <div class="container bg-black bg-opacity-50 rounded-3 p-5 w-75 mx-auto">
+              <h1 class="display-4 fw-bold">Realizá tu evento especial</h1>
+              <p>Encontrá los mejores lugares, con la mejor calificación para alvergar tu evento inolvidable</p>
+              <form class="d-flex justify-content-center mt-4" role="search">
+                <button class="btn" style="background-color: #f72e81; color: white; width: 800px; display: flex; align-items: center; justify-content: center; ">
+                  <span class="material-icons" style="font-size: 18px; margin-right: 5px;">edit_square</span> Elegí el salón de tus sueños
+                </button>
+              </form>
+
+              <p class="mt-4 text-white">
+                <span class="material-icons">business</span> Elegir Lugar 
+                <span class="material-icons">chevron_right</span> 
+                <span class="material-icons">restaurant</span> Elegir Servicio 
+                <span class="material-icons">chevron_right</span> 
+                <span class="material-icons">check</span> Evento Realizado
+              </p>
+            </div>
+          </div>
+        </div>
+
     </header>
-    <nav>
-      <a href="inicio.html">Inicio</a>
-      <a href="infoInstitucional.html">Institucional</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="faq.html">FAQs</a>
-    </nav>
+
 
     <main>
+      <!-- Sección: ¿Por qué elegirnos? -->
+            <!-- Sección: ¿Por qué elegirnos? -->
+      <!-- Sección: ¿Por qué elegirnos? -->
+      <section class="seccion-elegirnos py-5">
+        <div class="container text-center">
+          <h2 class="titulo-elegirnos">¿Por qué elegirnos?</h2>
+          <span class="reseña_subtitle">Compromiso, calidad y confianza </span>
+          <div class="row mt-4">
+            <!-- RAZÓN 1 -->
+            <div class="col-md-4 mb-4">
+              <div class="caja-razon p-4">
+                <span class="material-icons icono-razon">event</span>
+                <h5 class="razon-titulo">Variedad de salones</h5>
+                <p class="razon-texto">Contamos con opciones para todo tipo de eventos, desde reuniones íntimas hasta grandes celebraciones.</p>
+              </div>
+            </div>
+            <!-- RAZÓN 2 -->
+            <div class="col-md-4 mb-4">
+              <div class="caja-razon p-4">
+                <span class="material-icons icono-razon">place</span>
+                <h5 class="razon-titulo">Ubicación ideal</h5>
+                <p class="razon-texto">Nuestros salones están ubicados en zonas accesibles para comodidad de tus invitados.</p>
+              </div>
+            </div>
+            <!-- RAZÓN 3 -->
+            <div class="col-md-4 mb-4">
+              <div class="caja-razon p-4">
+                <span class="material-icons icono-razon">room_service</span>
+                <h5 class="razon-titulo">Servicios personalizados</h5>
+                <p class="razon-texto">Ofrecemos paquetes completos con catering, decoración y más, todo ajustado a tus necesidades.</p>
+              </div>
+            </div>
+            <!-- RAZÓN 4 -->
+            <div class="col-md-4 mb-4">
+              <div class="caja-razon p-4">
+                <span class="material-icons icono-razon">support_agent</span>
+                <h5 class="razon-titulo">Atención dedicada</h5>
+                <p class="razon-texto">Nuestro equipo está siempre disponible para ayudarte antes, durante y después de tu evento.</p>
+              </div>
+            </div>
+            <!-- RAZÓN 5 -->
+            <div class="col-md-4 mb-4">
+              <div class="caja-razon p-4">
+                <span class="material-icons icono-razon">star_rate</span>
+                <h5 class="razon-titulo">Alta satisfacción</h5>
+                <p class="razon-texto">Más del 95% de nuestros clientes volverían a elegirnos para su próximo evento.</p>
+              </div>
+            </div>
+            <!-- RAZÓN 6 -->
+            <div class="col-md-4 mb-4">
+              <div class="caja-razon p-4">
+                <span class="material-icons icono-razon">payments</span>
+                <h5 class="razon-titulo">Precios accesibles</h5>
+                <p class="razon-texto">Tenemos planes para todos los presupuestos sin comprometer calidad ni estilo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <!-- Sección: Reseñas -->
+      <section class="reseñas py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Reseñas</h2>
+          <span class="reseña_subtitle">Para que sepas en quien confiar</span>
+          <div class="row">
+            
+            <!-- Reseña 1 -->
+            <div class="col-md-4 mb-4">
+              <div class="card reseña-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="/img/fotos-perfil/Maria.jpg" alt="Foto de Persona" class="rounded-circle me-3">
+                    <div>
+                      <h5 class="card-title mb-0">María García</h5>
+                      <div class="estrellas">
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star_half</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">El salón superó mis expectativas en servicio y decoración, ¡totalmente recomendado!</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Reseña 2 -->
+            <div class="col-md-4 mb-4">
+              <div class="card reseña-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="/img/fotos-perfil/Carlos.jpg" alt="Foto de Persona" class="rounded-circle me-3">
+                    <div>
+                      <h5 class="card-title mb-0">Carlos Pérez</h5>
+                      <div class="estrellas">
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star_half</span>
+                        <span class="material-icons estrellas-icon">star_outline</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">Excelente atención y ubicación. Una experiencia memorable para mi evento.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Reseña 3 -->
+            <div class="col-md-4 mb-4">
+              <div class="card reseña-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="/img/fotos-perfil/Ana.jpg" alt="Foto de Persona" class="rounded-circle me-3">
+                    <div>
+                      <h5 class="card-title mb-0">Ana Martínez</h5>
+                      <div class="estrellas">
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">Una opción perfecta para eventos familiares, la organización fue impecable.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Reseña 4 -->
+            <div class="col-md-4 mb-4">
+              <div class="card reseña-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="/img/fotos-perfil/Luis.jpg" alt="Foto de Persona" class="rounded-circle me-3">
+                    <div>
+                      <h5 class="card-title mb-0">Luis Ramírez</h5>
+                      <div class="estrellas">
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star_half</span>
+                        <span class="material-icons estrellas-icon">star_outline</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">La relación calidad-precio es excelente y el servicio, muy profesional.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Reseña 5 -->
+            <div class="col-md-4 mb-4">
+              <div class="card reseña-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="/img/fotos-perfil/Sofia.jpg" alt="Foto de Persona" class="rounded-circle me-3">
+                    <div>
+                      <h5 class="card-title mb-0">Sofía López</h5>
+                      <div class="estrellas">
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star_half</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">Cada detalle fue cuidado a la perfección, haciendo de mi evento algo único.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Reseña 6 -->
+            <div class="col-md-4 mb-4">
+              <div class="card reseña-card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="/img/fotos-perfil/Miguel.jpg" alt="Foto de Persona" class="rounded-circle me-3">
+                    <div>
+                      <h5 class="card-title mb-0">Miguel Torres</h5>
+                      <div class="estrellas">
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star</span>
+                        <span class="material-icons estrellas-icon">star_outline</span>
+                        <span class="material-icons estrellas-icon">star_outline</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">Una opción recomendable para eventos corporativos. </p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+
+
+
+
       <section>
           <h2>Bienvenidos a IDW S.A.</h2>
           <p>
@@ -27,38 +281,13 @@
               Con un diseño visual atractivo y adaptativo, priorizamos la usabilidad tanto en dispositivos móviles como de escritorio. Además, incorporamos tecnologías modernas como APIs REST y LocalStorage, garantizando una experiencia fluida, segura y con persistencia de datos en el navegador. En IDW S.A., impulsamos la transformación digital del sector de eventos infantiles, brindando herramientas ágiles para organizar celebraciones inolvidables con solo unos clics.
           </p>
       </section>
-      <section>
-        <div class="container">
-          <!-- Formulario para agregar un salón -->
-          <div class="form-container">
-            <h1>Agregar Salón de Evento</h1>
-            <form id="hall-form">
-              <input type="text" id="hall-title" placeholder="Título" required />
-              <textarea id="hall-description" placeholder="Descripción" required></textarea>
-              <input type="text" id="hall-address" placeholder="Dirección" required />
-              <input type="number" id="hall-value" placeholder="Valor" required />
-              <select id="hall-status" required>
-                <option value="Disponible">Disponible</option>
-                <option value="Reservado">Reservado</option>
-              </select>
-              <button type="submit">Agregar Salón</button>
-            </form>
-          </div>
-    
-          <!-- Sección para mostrar la lista de salones -->
-          <div class="halls-container">
-            <h2>Salones de Eventos</h2>
-            <!-- Botón para cargar catálogo -->
-            <button id="load-external" class="external-btn">Cargar Catálogo</button>
-            <ul id="halls-list">
-              <!-- Se renderizarán los salones guardados -->
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
   
     <footer>
+      <div class="row">
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+      </div>
       <p>&copy; 2025 IDW S.A. - Todos los derechos reservados.</p>
     </footer>
 
