@@ -137,3 +137,106 @@
 .reseñas .reseña_subtitle{
   color: grey;
 }
+
+
+/*-----------------------footer---------------------------------*/
+.custom-footer {
+    background-color: #fca5c841;
+    padding: 40px 0 0;
+    border-top: 1px solid #f72e823d;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f72e81;
+    height: 100%;
+}
+
+/* Títulos de sección */
+.footer-title {
+    color: #f72e81;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Enlaces y texto */
+.footer-links a,
+.footer-links p {
+    color: #1b1b1b;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f72e81;
+}
+
+/* Iconos sociales */
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 15px;
+    align-content: center;
+}
+
+.social-icons a {
+    color: #f72e81;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* Información de contacto */
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-info i {
+    min-width: 20px;
+}
+
+/* Mapa */
+.map-container {
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    color: #fca5c8;
+    border-top: 2px solid #f72e81;
+    margin-top: 30px;
+}
+
+/* Alineación responsive */
+@media (max-width: 768px) {
+    .footer-section {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    .col-sm-6 {
+        margin-bottom: 30px;
+    }
+}

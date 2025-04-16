@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
   </head>
@@ -46,8 +47,9 @@
               <h1 class="display-4 fw-bold">Realizá tu evento especial</h1>
               <p>Encontrá los mejores lugares, con la mejor calificación para alvergar tu evento inolvidable</p>
               <form class="d-flex justify-content-center mt-4" role="search">
-                <button class="btn" style="background-color: #f72e81; color: white; width: 800px; display: flex; align-items: center; justify-content: center; ">
-                  <span class="material-icons" style="font-size: 18px; margin-right: 5px;">edit_square</span> Elegí el salón de tus sueños
+                <button class="btn"  style="background-color: #f72e81; color: white; width: 800px; display: flex; align-items: center; justify-content: center; ">
+                  <span class="material-icons" style="font-size: 18px; margin-right: 5px;">edit_square</span> 
+                  <a class="nav-link text-white" href="salones.html">Elegí el salón de tus sueños</a>
                 </button>
               </form>
 
@@ -268,31 +270,91 @@
           </div>
         </div>
       </section>
-
-
-
-
-
-      <section>
-          <h2>Bienvenidos a IDW S.A.</h2>
-          <p>
-              IDW S.A. es una empresa especializada en el desarrollo de soluciones digitales orientadas a la gestión eficiente de reservas para casas de cumpleaños infantiles. A través de un enfoque centrado en el usuario, nos dedicamos a crear experiencias web modernas, accesibles y funcionales que facilitan la búsqueda, comparación
-              y contratación de salones de eventos y servicios complementarios. Nuestro sitio web actúa como un completo catálogo interactivo, permitiendo a los usuarios explorar una variada oferta de espacios y prestaciones, aplicando filtros personalizados para encontrar la opción que mejor se adapte a sus necesidades.
-              Con un diseño visual atractivo y adaptativo, priorizamos la usabilidad tanto en dispositivos móviles como de escritorio. Además, incorporamos tecnologías modernas como APIs REST y LocalStorage, garantizando una experiencia fluida, segura y con persistencia de datos en el navegador. En IDW S.A., impulsamos la transformación digital del sector de eventos infantiles, brindando herramientas ágiles para organizar celebraciones inolvidables con solo unos clics.
-          </p>
-      </section>
   
-    <footer>
-      <div class="row">
-        <div class="col">.col</div>
-        <div class="col">.col</div>
-        <div class="col">.col</div>
-      </div>
-      <p>&copy; 2025 IDW S.A. - Todos los derechos reservados.</p>
+      <footer class="custom-footer">
+        <div class="container">
+            <div class="row align-items-start">
+                <!-- Sección 1: Acerca de -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Sobre Nosotros</h4>
+                        <div class="footer-links">
+                            <p>Somos especialistas en organización de eventos. Creando momentos inolvidables desde 2010.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección 2: Enlaces rápidos -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Enlaces Rápidos</h4>
+                        <div class="footer-links">
+                            <a href="#">Inicio</a>
+                            <a href="#">Salones</a>
+                            <a href="#">Servicios</a>
+                            <a href="#">FAQ</a>
+                            <a href="#">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección 3: Legal -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Legal</h4>
+                        <div class="footer-links">
+                            <a href="#">Términos y condiciones</a>
+                            <a href="#">Política de privacidad</a>
+                            <a href="#">Aviso legal</a>
+                            <a href="#">Política de cookies</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección 4: Contacto y Redes -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Contacto</h4>
+                        <div class="footer-links">
+                            <div class="contact-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Ciudad</p>
+                                <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                                <p><i class="fas fa-envelope"></i> info@eventos.com</p>
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTorre%20Eiffel!5e0!3m2!1ses!2ses!4v1688820300514!5m2!1ses!2ses" 
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright">
+                        © 2023 Nombre Empresa - Todos los derechos reservados
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
