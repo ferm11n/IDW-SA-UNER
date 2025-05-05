@@ -1,12 +1,24 @@
 :root {
-    --bs-primary: #9800ea;
-    --bs-body-color: #333;
+    --bs-primary: #fddfeb;
+    --bs-body-color: #000000;
     --bs-body-bg: #fff;
+}
+
+/*Titulo*/
+h2 {
+    margin: 0;
+    color: rgb(14, 38, 54);
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+    margin-bottom: 0 !important;
+
 }
 
 /* FAQ Styles */
 .faq h2 {
-    color: #9800ea;
+    color: #fda3c5;
 }
 
 .accordion-item {
@@ -22,27 +34,7 @@
     color: var(--bs-body-color);
 }
 
-/* Header & Footer */
-header {
-    background-color: var(--bs-primary);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-footer {
-    background-color: var(--bs-primary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
 /* Navbar */
-nav .nav-link.active {
-    color: var(--bs-primary) !important;
-    font-weight: bold;
-}
-
 
 /* Estilos para mantener el footer abajo */
 html, body {
@@ -50,10 +42,6 @@ html, body {
     margin: 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
 
 main {
     flex: 1;
@@ -66,13 +54,13 @@ main {
 
 /*Color rosa a cada conteiner de pregunta*/
 .accordion-button:focus {
-    box-shadow: 0 0 0 0.25rem rgba(98, 0, 234, 0.25); /* Violeta suave */
+    box-shadow: 0 0 0 0.25rem #fddfeb; /* Violeta suave */
     outline: none;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #e9dcff; /* Fondo violeta claro al expandir */
-    color: #6e0077;
+    background-color: #fddfeb; /* Fondo violeta claro al expandir */
+    color: #dea7b7;
 }
 
 .accordion-button {
@@ -82,20 +70,20 @@ main {
 
 /* Boton contactanos*/
 .btn-rosa {
-    background-color: #9800ea;
-    color: white;
+    background-color: #fca5c8;
+    color: #f8f8f8;
     border: none;
     transition: all 0.3s ease;
 }
 
 .btn-rosa:hover {
-    background-color: #ac68ff;
-    color: white;
+    background-color: #fda3c5;
+    color: #f8f8f8;
 }
 
 /* Texto de contactenos */
 .text-rosa {
-    color: #ac68ff;
+    color: #000000;
 }
 
 
@@ -109,7 +97,7 @@ main {
     .accordion-body {
         font-size: 0.95rem;
         padding: 1.25rem;
-        background-color: #fef6f9; /* rosa suave */
+        background-color: #f8f8f8; /* rosa suave */
         border-radius: 0.5rem;
     }
 
@@ -121,28 +109,118 @@ main {
 }
 
 
-/* Buscador de preguntas */
-#faqSearch {
-    max-width: 500px;
-    border: 2px solid #ac68ff;
-    border-radius: 12px;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-}
-#faqSearch:focus {
-    box-shadow: 0 0 0 0.2rem rgba(238, 131, 255, 0.4);
-    outline: none;
-}
 
 .form-container {
-    background-color: #e0c9ff;
+    background-color: #fddfeb;
 }
 
 
  .form-control:focus {
-     border-color: #f000ff !important; /* Cambia este color por el que prefieras */
-     box-shadow: 0 0 0 0.25rem rgb(201, 128, 206) !important; /* Esto añade un resplandor suave */
+     border-color: #fca5c8 !important; /* Cambia este color por el que prefieras */
+     box-shadow: 0 0 0 0.25rem #fca5c8 !important; /* Esto añade un resplandor suave */
  }
 
+
+ /*footer*/
+.custom-footer {
+    background-color: #fca5c841;
+    padding: 40px 0 0;
+    border-top: 1px solid #f72e823d;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f72e81;
+    height: 100%;
+}
+
+/* Títulos de sección */
+.footer-title {
+    color: #f72e81;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* Enlaces y texto */
+.footer-links a,
+.footer-links p {
+    color: #1b1b1b;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f72e81;
+}
+
+/* Iconos sociales */
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 15px;
+    align-content: center;
+}
+
+.social-icons a {
+    color: #f72e81;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* Información de contacto */
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-info i {
+    min-width: 20px;
+}
+
+/* Mapa */
+.map-container {
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    color: #fca5c8;
+    border-top: 2px solid #f72e81;
+    margin-top: 30px;
+}
+
+/* Alineación responsive */
+@media (max-width: 768px) {
+    .footer-section {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .col-sm-6 {
+        margin-bottom: 30px;
+    }
+}
 
 
