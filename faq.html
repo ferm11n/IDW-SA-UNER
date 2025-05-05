@@ -1,57 +1,299 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preguntas Frecuentes - Salón de Eventos UNER</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preguntas Frecuentes - Salón de Eventos IDW</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-<header>
-  <h1>Salón de Eventos UNER</h1>
-  <p>Reserva tu casa de cumpleaños ideal</p>
-</header>
-  <nav>
-    <a href="inicio.html">Inicio</a>
-    <a href="infoInstitucional.html">Institucional</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="faq.html">FAQs</a>
-  </nav>
+<!-- Header -->
+<!-- Navbar -->
+<div class="overlay-section">
+    <nav class="navbar navbar-expand-sm navbar-custom bg-black bg-opacity-50 m-0 p-0">
+      <div class="container-fluid" style="padding-left: 20px; padding-right: 20px;">
+        <a class="navbar-brand" href="inicio.html">
+          <img src="./img/logo.png" alt="Logo" style="max-height: 100px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-white" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="eventos.html">Eventos</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="salones.html">Salones</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</div>
 
-<main>
-  <section class="faq">
-    <h2>Preguntas Frecuentes</h2>
+<!-- Contenido principal -->
+<main class="container my-5">
+  <section class="faq animate__animated animate__fadeIn">
+    <h2 class="text-center mb-4">Preguntas Frecuentes</h2>
 
-    <div class="pregunta">
-      <h3>¿Qué salones están disponibles para alquilar?</h3>
-      <p>Podés ver todos los salones disponibles en la sección "Catálogo", donde se detallan sus características, capacidad y ubicación.</p>
+    <div class="row">
+      <!-- Columna izquierda: FAQs -->
+      <div class="col-lg-7">
+
+        <div class="accordion" id="accordionFaq">
+          <!-- Pregunta 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                ¿Cuál es la capacidad máxima de los salones?
+              </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Cada salón tiene su capacidad indicada en la descripción. En general, varían entre 30 y 100 personas.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                ¿Se puede reservar por horas?
+              </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                No, las reservas son por evento completo, generalmente con un turno de mañana, tarde o noche.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                ¿Qué métodos de pago aceptan?
+              </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Aceptamos transferencias bancarias, tarjetas de débito y crédito, y pagos en efectivo.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                ¿Se permite llevar comida o bebida?
+              </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Sí, podés traer tu propia comida y bebida, o contratar nuestro servicio de catering.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                ¿Con cuánta anticipación debo reservar?
+              </button>
+            </h2>
+            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Recomendamos reservar con al menos 15 días de anticipación para asegurar disponibilidad.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                ¿Qué pasa si necesito cancelar mi reserva?
+              </button>
+            </h2>
+            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Podés cancelar hasta 72 horas antes del evento sin penalización. Luego de ese plazo, se aplica una retención del 30% del valor.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 7 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading7">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                ¿Los salones cuentan con juegos o animación?
+              </button>
+            </h2>
+            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Algunos salones ofrecen juegos inflables y animación infantil como servicio adicional. Consultá la descripción del salón para más detalles.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 8 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading8">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse7">
+                ¿Se puede visitar el salón antes de reservar?
+              </button>
+            </h2>
+            <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Sí, podés coordinar una visita con anticipación para conocer las instalaciones. Contactanos por el formulario o por WhatsApp para agendar un horario.              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 9 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading9">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                ¿El alquiler incluye decoración?
+              </button>
+            </h2>
+            <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#accordionFaq">
+              <div class="accordion-body">
+                Algunos salones ofrecen decoración básica incluida. También podés traer tu propia decoración o contratar el servicio con nosotros como adicional.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Formulario de contacto -->
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="p-4 form-container rounded shadow-sm">
+          <h5 class="mb-3 text-center">¿En qué podemos ayudarte?</h5>
+          <p class="text-muted text-center">Completá el formulario y nos pondremos en contacto.</p>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="ejemplo@mail.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Consulta</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-rosa btn-lg">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <div class="pregunta">
-      <h3>¿Cómo reservo un salón?</h3>
-      <p>Desde el catálogo seleccionás un salón y completás un formulario de reserva. Los datos se guardan en tu navegador usando almacenamiento local.</p>
-    </div>
-
-    <div class="pregunta">
-      <h3>¿Puedo modificar o cancelar una reserva?</h3>
-      <p>Sí, desde la sección "Mis reservas" podés editar o eliminar cualquier reserva que hayas hecho.</p>
-    </div>
-
-    <div class="pregunta">
-      <h3>¿Los salones incluyen servicios adicionales?</h3>
-      <p>Algunos salones ofrecen servicios como catering o decoración. Esta información está indicada en la descripción del salón.</p>
-    </div>
-
-    <div class="pregunta">
-      <h3>¿Puedo ver cómo quedaría el presupuesto?</h3>
-      <p>En la sección "Presupuesto" podés calcular el precio estimado de tu evento seleccionando distintas opciones.</p>
-    </div>
-
   </section>
 </main>
 
-<footer>
-  <p>&copy; 2025 UNER - Proyecto Integrador</p>
+<!-- Footer -->
+<footer class="custom-footer">
+  <div class="container">
+    <div class="row align-items-start">
+      <!-- Sección 1: Acerca de -->
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4 class="footer-title">Sobre Nosotros</h4>
+          <div class="footer-links">
+            <p>Somos especialistas en organización de eventos. Creando momentos inolvidables desde 2010.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 2: Enlaces rápidos -->
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4 class="footer-title">Enlaces Rápidos</h4>
+          <div class="footer-links">
+            <a href="#">Inicio</a>
+            <a href="#">Salones</a>
+            <a href="#">Servicios</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contacto</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 3: Legal -->
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4 class="footer-title">Legal</h4>
+          <div class="footer-links">
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Aviso legal</a>
+            <a href="#">Política de cookies</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 4: Contacto y Redes -->
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4 class="footer-title">Contacto</h4>
+          <div class="footer-links">
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Ciudad</p>
+              <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+              <p><i class="fas fa-envelope"></i> info@eventos.com</p>
+            </div>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTorre%20Eiffel!5e0!3m2!1ses!2ses!4v1688820300514!5m2!1ses!2ses"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="row">
+      <div class="col-12">
+        <div class="copyright">
+          © 2025 IDW - Todos los derechos reservados
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
