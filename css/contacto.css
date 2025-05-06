@@ -7,19 +7,12 @@
 
 body {
     line-height: 1.6;
-    background: #e5ddd0;
+    background: #273b54;
     color: #333;
 }
 
-header {
-    background: #6200ea;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
-}
-
 nav {
-    background: #3700b3;
+    background: #f72e81;
     display: flex;
     justify-content: center;
     gap: 2rem; 
@@ -85,7 +78,7 @@ input{
   border-radius: 5px;  
   border-style: solid; 
   border-width: 1px; 
-  border-color: #6c44ab; 
+  border-color: #f72e81; 
   margin-top: 10px;  
   padding-left: 10px;
   margin-bottom: 20px;
@@ -99,7 +92,7 @@ textarea {
   border-radius: 5px;  
   border-style: solid; 
   border-width: 1px; 
-  border-color: #6c44ab; 
+  border-color: #f72e81; 
   margin-top: 10px;  
   padding-left: 10px;
   margin-bottom: 20px; 
@@ -112,7 +105,7 @@ select {
     max-width: 408px;
     height: 40px;
     border-radius: 5px;
-    border: 1px solid #6c44ab;
+    border: 1px solid #f72e81;
     margin-top: 10px;
     padding-left: 10px;
     margin-bottom: 20px;
@@ -126,7 +119,7 @@ label{
 }
 
 input[type="submit"] {
-    background-color: #6200ea;
+    background-color: #f72e81;
     color: white;
     border: none;
     cursor: pointer;
@@ -236,31 +229,4 @@ span{
         margin-top: 30px;
         margin-left: 0;
     }
-}
-
-
-/* Pagina faq */
-.faq h2 {
-    color: #3700b3;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.pregunta {
-    background-color: #fbfbfb;
-    border: 1px solid #6c44ab;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.pregunta h3 {
-    color: #6200ea;
-    margin-bottom: 0.5rem;
-}
-
-.pregunta p {
-    color: #333;
-    font-size: 15px;
 }
