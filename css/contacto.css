@@ -1,3 +1,20 @@
+:root {
+    /* Color principal (botones, iconos activos) */
+    --color-primary:      #f72e81;  /* fucsia vibrante */
+  
+    /* Color secundario (header oscuro) */
+    --color-secondary:    #273b54;  /* azul noche */
+  
+    /* Fondo claro rosa (superficie principal) */
+    --surface-light-pink: #fff2f8;  /* rosa muy pálido */
+  
+    /* Fondo alternativo neutro */
+    --surface-light-gray: #f5f5f5;  /* gris cálido claro */
+  
+    /* Color de texto sobre superficies claras */
+    --text-on-surface:    #333333;
+  }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -37,12 +54,7 @@ section {
     margin-bottom: 2rem;
 }
 
-footer {
-    background: #6200ea;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+
 
                                                      /*  PAGINA DE CONTACTO    */
 
@@ -57,6 +69,9 @@ footer {
     flex-wrap: wrap;
     padding-left: 0;
     margin-left: 0;
+    background-color: var(--surface-light-pink);
+    border: 1px solid var(--color-primary);
+    color: var(--text-on-surface);
 }
 
 form {
@@ -66,7 +81,9 @@ form {
   border-radius: 10px;  
   padding-top: 30px;
   padding-bottom: 20px;  
-  background-color: #fbfbfb; 
+  background-color: #fff2f8;
+  border: 1px solid var(--color-primary);
+  color: var(--text-on-surface); 
   padding-left: 30px; 
   padding-right: 30px;
 }
@@ -133,7 +150,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #3700b3;
+    background-color: #d0226b;
 }
 
 span{
@@ -163,10 +180,11 @@ span{
 
 .info-contacto{
     max-width: 520px;
-    background-color: #fbfbfb;
+    background-color: #fff2f8;
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid #6c44ab;
+    border: 1px solid var(--color-primary);
+    color: var(--text-on-surface);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 0;
     margin-left: 0;
