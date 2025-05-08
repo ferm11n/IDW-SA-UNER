@@ -9,7 +9,7 @@
 
 /*primera sección*/
 .overlay-section {
-    background-image: url(/img/salon-inicio.png); /* Reemplazá con tu imagen */
+    background-image: url(/img/salon-inicio.png);
     background-size: cover;
     background-position: center;
     height: 800px;
