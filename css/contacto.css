@@ -28,23 +28,6 @@ body {
     color: #333;
 }
 
-nav {
-    background: #f72e81;
-    display: flex;
-    justify-content: center;
-    gap: 2rem; 
-    padding: 0.5rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
 
 main {
     padding: 2rem;
