@@ -7,14 +7,33 @@ body {
     overflow: hidden;
 }
 
+/*filtro para el fondo*/
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
 .card {
+    position: relative;
+    z-index: 1;
     background-color: #2c2f33;
-    color: #f1f1f1;
-    border: none;
+    color: #ac68ff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+h4 {
+    color: #ac68ff;
 }
 
 .form-label {
-    color: #ccc;
+    color: #ac68ff;
 }
 
 .form-control {
@@ -24,18 +43,109 @@ body {
 }
 
 .form-control:focus {
-    background-color: #2c2f33;
-    border-color: #ff66b2;
-    box-shadow: 0 0 0 0.2rem rgba(255, 102, 178, 0.25);
+    background-color: #ac68ff;
+    border-color: #5c347a;
+    box-shadow: 0 0 0 0.2rem rgba(238, 131, 255, 0.4);
 }
 
 .btn-primary {
-    background-color: #ff66b2;
-    border-color: #ff66b2;
+    background-color: #ac68ff;
+    border-color: #ac68ff;
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #ff4da6;
-    border-color: #ff4da6;
+    background-color: #8631e3;
+    border-color: #8631e3;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    color: #ff66b2;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: #ff4da6;
+}
+
+/* botones redes sociales */
+.btn-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f1f1f1;
+    border: 1px solid #444;
+    background-color: #23272a;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-facebook {
+    color: white;
+    background-color: #3b5998;
+}
+
+.btn-facebook:hover {
+    background-color: #2d4373;
+}
+
+.btn-google {
+    color: white;
+    background-color: #db4437;
+}
+
+.btn-google:hover {
+    background-color: #c1351d;
+}
+
+.btn-instagram {
+    color: white;
+    background-color: #e1306c;
+}
+
+.btn-instagram:hover {
+    background-color: #e24b8b;
+}
+
+.btn-social .fab {
+    font-size: 2rem;
+}
+
+.btn-social span {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    .card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* el enlace de "Registrarse" */
+.text-primary {
+    color: #ac68ff;
+    text-decoration: none;
+}
+
+.text-primary:hover {
+    text-decoration: underline;
+    color: #ff4da6;
+}
+
+.text-muted {
+    color: #ac68ff !important;
+}
+
+.text-muted a {
+    color: #ff66b2;
+}
+
+.text-muted a:hover {
+    color: #ff4da6;
 }
