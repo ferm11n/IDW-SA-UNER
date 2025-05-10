@@ -1,0 +1,41 @@
+body {
+    background-color: #161217;
+    background-image: url("../img/login/ondasVioletas.webp");
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    background-color: #2c2f33;
+    color: #f1f1f1;
+    border: none;
+}
+
+.form-label {
+    color: #ccc;
+}
+
+.form-control {
+    background-color: #23272a;
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+
+.form-control:focus {
+    background-color: #2c2f33;
+    border-color: #ff66b2;
+    box-shadow: 0 0 0 0.2rem rgba(255, 102, 178, 0.25);
+}
+
+.btn-primary {
+    background-color: #ff66b2;
+    border-color: #ff66b2;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ff4da6;
+    border-color: #ff4da6;
+}
