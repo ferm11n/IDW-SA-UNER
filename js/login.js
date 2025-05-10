@@ -21,7 +21,7 @@ function iniciarSesion(event) {
     const username = document.getElementById("username").value.trim().toLowerCase();
     const password = document.getElementById("password").value.trim();
 
-    // Cambié la clave a "usuarios"
+
     const usuarios = JSON.parse(localStorage.getItem("usuarios"));
     const user = usuarios.find(u => u.username.toLowerCase() === username && u.password === password);
 
@@ -29,7 +29,7 @@ function iniciarSesion(event) {
 
     if (user) {
         localStorage.setItem("usuarioActual", JSON.stringify(user));
-        window.location.href = "home.html"; // redirige a home.html
+        window.location.href = "index.html";
     } else {
         if (alertDiv) {
             alertDiv.innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n" +
