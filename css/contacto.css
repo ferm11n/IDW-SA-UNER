@@ -1,18 +1,18 @@
 :root {
     /* Color principal (botones, iconos activos) */
-    --color-primary:      #f72e81;  /* fucsia vibrante */
+    --color-primario:      #f72e81;  /* fucsia vibrante */
   
     /* Color secundario (header oscuro) */
-    --color-secondary:    #273b54;  /* azul noche */
+    --color-secundario:    #273b54;  /* azul noche */
   
     /* Fondo claro rosa (superficie principal) */
-    --surface-light-pink: #fff2f8;  /* rosa muy pálido */
+    --Rosa-palido: #fff2f8;  /* rosa muy pálido */
   
     /* Fondo alternativo neutro */
     --surface-light-gray: #f5f5f5;  /* gris cálido claro */
   
     /* Color de texto sobre superficies claras */
-    --text-on-surface:    #333333;
+    --texto-superficie:    #333333;
   }
 
 * {
@@ -52,9 +52,9 @@ section {
     flex-wrap: wrap;
     padding-left: 0;
     margin-left: 0;
-    background-color: var(--surface-light-pink);
+    background-color: var(--Rosa-palido);
     border: 1px solid var(--color-primary);
-    color: var(--text-on-surface);
+    color: var(--texto-superficie);
 }
 
 form {
@@ -65,8 +65,8 @@ form {
   padding-top: 30px;
   padding-bottom: 20px;  
   background-color: #fff2f8;
-  border: 1px solid var(--color-primary);
-  color: var(--text-on-surface); 
+  border: 1px solid var(--color-primario);
+  color: var(--texto-superficie); 
   padding-left: 30px; 
   padding-right: 30px;
 }
@@ -166,8 +166,8 @@ span{
     background-color: #fff2f8;
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid var(--color-primary);
-    color: var(--text-on-surface);
+    border: 1px solid var(--color-primario);
+    color: var(--texto-superficie);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 0;
     margin-left: 0;
