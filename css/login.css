@@ -28,8 +28,17 @@ body::before {
     padding: 2rem;
 }
 
-h4 {
+.logo {
     color: #ac68ff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 80px;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 150px 150px;
+    height: 120px;
 }
 
 .form-label {
