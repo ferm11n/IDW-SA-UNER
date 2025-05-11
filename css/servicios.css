@@ -9,10 +9,11 @@
 
 /* ESTILOS GENERALES */
 :root {
-    --color-primario: #0096c7;
-    --color-secundario: #48cae4;
-    --color-texto: #2b2d42;
     --color-gris: #6c757d;
+    --rosa-claro: #f8d7e8;
+    --rosa-medio: #e598bb;
+    --rosa-fuerte: #d63384;
+    --rosa-hover: #c2185b;
 }
 
 /* SERVICIOS */
@@ -25,7 +26,6 @@
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
-    color: var(--color-texto);
 }
 
 .servicios-subtitulo {
@@ -43,15 +43,13 @@
 }
 
 .filtro-btn {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 50px;
-    background: #fff;
-    color: var(--color-gris);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border: 2px solid transparent;
+    background-color: var(--rosa-claro);
+    border: 2px solid var(--rosa-medio);
+    color: var(--rosa-fuerte);
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .filtro-btn:hover {
@@ -60,9 +58,8 @@
 }
 
 .filtro-btn.active {
-    background: var(--color-secundario);
+    background-color: var(--rosa-fuerte);
     color: white;
-    border-color: var(--color-primario);
 }
 
 .servicios-contenedor {
@@ -118,32 +115,27 @@
     min-height: 60px;
 }
 
-.card-precio {
+.card-precio,
+.card-precio span,
+.card-precio strong {
     margin: 1rem 0;
     font-size: 1.5rem;
-    color: var(--color-secundario);
+    color: var(--rosa-fuerte) !important;
     font-weight: 700;
 }
 
-.card-precio span {
-    color: var(--color-primario);
-}
 
 .card-boton {
-    width: 100%;
-    padding: 0.75rem;
-    background: var(--color-primario);
+    background-color: var(--rosa-medio);
     color: white;
     border: none;
+    padding: 8px 16px;
     border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
 .card-boton:hover {
-    background: #0077b6;
+    background-color: var(--rosa-fuerte);
     letter-spacing: 1px;
 }
 
@@ -151,11 +143,11 @@
     .servicios-contenedor {
         grid-template-columns: 1fr;
     }
-    
+
     .servicios-filtros {
         flex-direction: column;
     }
-    
+
     .filtro-btn {
         width: 100%;
     }
