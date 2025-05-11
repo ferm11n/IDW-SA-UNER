@@ -1,114 +1,240 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - IDW S.A.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/contacto.css" />
+    <link rel="stylesheet" href="css/inicio.css" />
 </head>
-<body>
-<header>
-    <h1>IDW S.A.</h1>
-    <p>Reserva tu casa de cumpleaños ideal</p>
-</header>
 
-<nav>
-    <a href="index.html">Inicio</a>
-    <a href="infoInstitucional.html">Institucional</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="faq.html">FAQs</a>
-</nav>
+<body style="background-color: #f8f8f8;" class="text-light">
 
-<main>
-    <section>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-custom bg-black bg-opacity-50 m-0 p-0">
+            <div class="container-fluid" style="padding-left: 20px; padding-right: 20px;">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./img/logo.png" alt="Logo" style="max-height: 100px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="salones.html">Salones</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="faq.html">Preguntas</a></li>
+                        <!-- boton dinamico para cerrar sesion -->
+                        <li class="nav-item">
+                            <a id="navLogin" class="nav-link text-white" href="login.html">Entrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <main>
+        <section>
+            <div class="container py-5">
+                <div class="row gx-5">
+                    <div class="col-lg-7">
+                        <div class="card bg-white shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-2"><i class="bi bi-envelope-paper-heart-fill" style="font-size: 2rem; color: var(--bs-primary);"></i>
+                                </div>
+                                <h2 class="text-center fw-bold mb-3" style="color: var(--bs-primary);">Contactanos</h2>
+                                <p class="text-center mb-4" style="color: var(--bs-secondary);">Estamos para ayudarte a organizar tu evento ideal</p>
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control border border-primary" id="nombre" name="nombre" required placeholder="Decinos tu nombre y apellido" />
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="email" name="email" required placeholder="Ingresa tu email" />
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="telefono" class="form-label">Telefono<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ingresa tu numero" />
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="horario" class="form-label" >Horario de contacto<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="horario" name="horario" required placeholder="Horario disponible para contactar" />
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="provincia" class="form-label">Provincia<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="provincia" name="provincia" required placeholder="Provincia" />
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="ciudad" class="form-label">Ciudad<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="ciudad" name="ciudad" required placeholder="Ciudad" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="salon" class="form-label">Salones<span class="text-danger">*</span></label>
+                                        <select id="salon" name="salon" class="form-select" required>
+                                            <option value="" disabled selected>--- Elegi una opción ---</option>
+                                            <option value="">--- Solo consulta ---</option>
+                                            <option value="">--- Salon Amatista para bodas ---</option>
+                                            <option value="">--- Salon Rosa para quinces ---</option>
+                                            <option value="">--- Salon Naranja para fiestas y cumpleaños ---</option>
+                                            <option value="">--- Salon Celeste para reuniones laborales ---</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mensaje" class="form-label">Mensaje <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required placeholder="Contanos que necesitas"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-fucsia">Enviar</button>
 
-        <h2>Contacto</h2>
-        <p>
-            En IDW S.A. estamos comprometidos con brindarte la mejor experiencia en la planificación de eventos infantiles. Si tenés dudas, sugerencias, consultas comerciales o simplemente querés saber más sobre nuestros servicios, no dudes en escribirnos.
-
-            Nuestro equipo está listo para ayudarte a encontrar el salón y los servicios ideales para tu próxima celebración. Completá el formulario y nos pondremos en contacto a la brevedad.
-
-            También podés comunicarte con nosotros a través de nuestras redes sociales o correo electrónico.
-        </p>
-        <div class="form-contacto-container">
-
-            <form>
-                <div class="form-filas">
-                    <div class="form-grupo">
-                        <label for="nombre">Nombre <span class="obligatorio">*</span></label>
-                        <input type="text" id="nombre" name="nombre" required="obligatorio" placeholder="Decinos tu nombre y apellido" />
+                                    <p class="aviso">
+                                        <span class="obligatorio"> * </span>los campos son obligatorios.
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-grupo">
-                        <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
-                        <input type="text" id="email" name="email" required="obligatorio" placeholder="Ingresa tu email" />
+
+                    <div class="col-lg-5">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <div class="p-4" style="background-color: #ffffff; border: 1px solid var(--bs-primary); border-radius: 10px;">
+                                    <p class="d-flex align-items-center mb-3">
+                                        <img src="img/contacto/telefono.png" alt="Teléfono" class="me-2" style="width:16px; height:16px;">+54 444 111 5479</p>
+                                    <p class="d-flex align-items-center mb-3">
+                                        <img src="img/contacto/correo.png" alt="Correo" class="me-2" style="width:16px; height:16px;">idwsa_falso@gmail.com</p>
+                                        <p class="d-flex align-items-center mb-3">
+                                        <img src="img/contacto/ubicacion.png" alt="Ubicación" class="me-2" style="width:16px; height:16px;">Avenida siempre viva 742 Springfield</p>
+
+                                    <div class="d-flex gap-3 mt-3">
+                                        <div class="d-flex gap-3 mt-3">
+                                            <a href="#">
+                                                <div class="rounded-circle d-flex justify-content-center align-items-center" style="width:32px; height:32px; background-color: var(--bs-primary); transition: transform 0.2s;">
+                                                    <i class="bi bi-facebook text-white"></i>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="rounded-circle d-flex justify-content-center align-items-center" style="width:32px; height:32px; background-color: var(--bs-primary); transition: transform 0.2s;">
+                                                    <i class="bi bi-instagram text-white"></i>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="rounded-circle d-flex justify-content-center align-items-center" style="width:32px; height:32px; background-color: var(--bs-primary); transition: transform 0.2s;">
+                                                    <i class="bi bi-twitter text-white"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-filas">
-                    <div class="form-grupo">
-                        <label for="telefono">Telefono<span class="obligatorio">*</span></label>
-                        <input type="text" id="telefono" name="telefono" required="obligatorio" placeholder="Ingresa tu numero" />
-                    </div>
-                    <div class="form-grupo">
-                        <label for="horario">Horario de contacto<span class="obligatorio">*</span></label>
-                        <input type="text" id="horario" name="horario" required="obligatorio" placeholder="Horario disponible para contactar" />
-                    </div>
-                </div>
-                <div class="form-filas">
-                    <div class="form-grupo">
-                        <label for="provincia">Provincia<span class="obligatorio">*</span></label>
-                        <input type="text" id="provincia" name="provincia" required="obligatorio" placeholder="Provincia" />
-                    </div>
-                    <div class="form-grupo">    
-                        <label for="ciudad">Ciudad<span class="obligatorio">*</span></label>
-                        <input type="text" id="ciudad" name="ciudad" required="obligatorio" placeholder="Ciudad" />
-                    </div>
-                </div>
-                <div class="form-grupo">
-                    <label for="salon">Salones<span class="obligatorio">*</span></label>
-                    <select id="salon" name="salon" required="obligatorio">
-                        <option value="" disabled selected>--- Elegi una opción ---</option>
-                        <option value="">--- Solo consulta ---</option>
-                        <option value="">--- Salon Amatista para bodas ---</option>
-                        <option value="">--- Salon Rosa para quinces ---</option>
-                        <option value="">--- Salon Naranja para fiestas y cumpleaños ---</option>
-                        <option value="">--- Salon Celeste para reuniones laborales ---</option>
-                    </select>
-                </div>
-                <div class="form-grupo">
-                    <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
-                    <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio" placeholder="Contanos que necesitas"></textarea>
-                </div>
-                <input type="submit" value="Enviar" />
+            </div>
+        </section>
+    </main>
 
-                <p class="aviso">
-                    <span class="obligatorio"> * </span>los campos son obligatorios.
-                </p>		
-                
-            </form>
-            
-            <div class="contacto-redes-container">
-                <div class="info-contacto">
-                    <p><img src="img/contacto/telefono.png" alt="Teléfono" style="width:16px; height:16px";> +54 444 111 5479</p>
-                    <p><img src="img/contacto/correo.png" alt="correo" style="width:16px; height:16px";> idwsa_falso@gmail.com</p>
-                    <p><img src="img/contacto/ubicacion.png" alt="ubicacion" style="width:16px; height:16px";> Avenida siempre viva 742 Springfield</p>
-                
-                    <div class="iconos">
-                        <p><img src="img/contacto/facebook.png " alt="Facebook" style="width:16px; height:16px;"></p>
-                        <p><img src="img/contacto/instagram.png" alt="instagram" style="width:16px; height:16px;"></p>
-                        <p><img src="img/contacto/twitter.png" alt="twitter" style="width:16px; height:16px;"></p>
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row align-items-start">
+                <!-- Sección 1: Acerca de -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Sobre Nosotros</h4>
+                        <div class="footer-links">
+                            <p>Somos especialistas en organización de eventos. Creando momentos inolvidables desde 2010.
+                            </p>
+                        </div>
                     </div>
-                </div>    
-            </div>  
+                </div>
+
+                <!-- Sección 2: Enlaces rápidos -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Enlaces Rápidos</h4>
+                        <div class="footer-links">
+                            <a href="#">Inicio</a>
+                            <a href="#">Salones</a>
+                            <a href="#">Servicios</a>
+                            <a href="#">FAQ</a>
+                            <a href="#">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 3: Legal -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Legal</h4>
+                        <div class="footer-links">
+                            <a href="#">Términos y condiciones</a>
+                            <a href="#">Política de privacidad</a>
+                            <a href="#">Aviso legal</a>
+                            <a href="#">Política de cookies</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 4: Contacto y Redes -->
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Contacto</h4>
+                        <div class="footer-links">
+                            <div class="contact-info">
+                                <p><i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Ciudad</p>
+                                <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                                <p><i class="fas fa-envelope"></i> info@eventos.com</p>
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTorre%20Eiffel!5e0!3m2!1ses!2ses!4v1688820300514!5m2!1ses!2ses"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright">
+                        © 2023 Nombre Empresa - Todos los derechos reservados
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-</main>
+    </footer>
 
-<footer>
-    <p>&copy; 2025 IDW S.A. - Todos los derechos reservados.</p>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/componentes/barraNavegacion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="js/componentes/barraNavegacion.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
