@@ -1,200 +1,291 @@
 <!DOCTYPE html>
-<html lang="es" data-bs-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo de Salones de Eventos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/salon.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@100..900&family=Playfair+Display:wght@600;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/servicios.css">
+  <link rel="stylesheet" href="/css/salones.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="./img/logo.png" alt="Logo" style="max-height: 100px;">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
-          <li class="nav-item"><a class="nav-link" href="salones.html">Salones</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
+  <header class="header">
+    <!-- Fondo con overlay -->
+    <!-- Sección completa con imagen de fondo -->
+    <!-- Sección completa con imagen de fondo -->
+    <div class="overlay-section">
+      <!-- Navbar con fondo negro semitransparente -->
+      <nav class="navbar navbar-expand-sm navbar-custom bg-black bg-opacity-50 m-0 p-0">
+        <div class="container-fluid" style="padding-left: 20px; padding-right: 20px;">
+          <a class="navbar-brand" href="index.html">
+            <img src="./img/logo.png" alt="Logo" style="max-height: 100px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link text-white" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="salones.html">Salones</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="servicios.html">Servicios</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="faq.html">Preguntas</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="login.html">Entrar</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
-  
-  <!-- Carrusel -->
+    </header>
   <main>
-    <section class="carrusel">
-      <div id="demo" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/carrusel/carrusel1.jpg" class="d-block w-100">
+    <!-- SECCIÓN SERVICIOS -->
+    <section class="servicios">
+      <h2 class="servicios-titulo">🎉 Nuestros Salones </h2>
+      <p class="servicios-subtitulo">aptos para la fiesta de tus sueños </p>
+
+      <!-- Filtros/Pestañas -->
+      <div class="servicios-filtros">
+        <button class="filtro-btn active" data-target="Salones Regulares">🎵 Salones Regulares</button>
+        <button class="filtro-btn" data-target="Salones Tematicos">🎨 Salones Tematicos</button>
+        <button class="filtro-btn" data-target="Salones Infantiles">🤹 Salones Infantiles</button>
+        <button class="filtro-btn" data-target="Eventos">🚀 Eventos</button>
+      </div>
+
+      <!-- Contenedor de tarjetas -->
+      <div class="servicios-contenedor">
+
+        <!-- Salones regulares -->
+        <article class="servicio-card musica" data-categoria="Salones Regulares">
+          <div class="card-imagen">
+            <img src="img/salones/salones-regulares/salonRegular1.jpg" alt="Salones Regulares">
           </div>
-          <div class="carousel-item">
-            <img src="./img/carrusel/carrusel2.jpg" class="d-block w-100">
+          <div class="card-contenido">
+            <h3>Salon Regular 1</h3>
+            <p>Espacio luminoso y colorido, ideal para juegos y actividades creativas.</p>
+            <div class="card-precio"><span>$150</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
           </div>
-          <div class="carousel-item">
-            <img src="./img/carrusel/carrusel3.jpg" class="d-block w-100">
+        </article>
+
+        <article class="servicio-card musica" data-categoria="Salones Regulares">
+          <div class="card-imagen">
+            <img src="img/salones/salones-regulares/salonRegular2.jpg" alt="Salones Regulares">
           </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </section>
-    <section class="eventos-destacados">
-      <br> <br>
-      <div class="row">
-        <div class="col-sm-3">
-          <img src="img/eventos/boda-rendondo.jpg" class="img-fluid w-100">
-        </div>
-        <div class="col-sm-3">
-          <img src="img/eventos/cumpleaños.jpg" class="img-fluid w-100">
-        </div>
-        <div class="col-sm-3">
-          <img src="img/eventos/recepción.jpg" class="img-fluid w-100">
-        </div>
-        <div class="col-sm-3">
-          <img src="img/eventos/boda.jpg" class="img-fluid w-100">
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-3">
-          <img src="img/eventos/4.jpg" class="img-fluid w-100">
-        </div>
-        <div class="col-sm-3">
-          <img src="img/eventos/5.jpg" class="img-fluid w-100">
-        </div>
-        <div class="col-sm-3">
-          <img src="img/eventos/6.jpg" class="img-fluid w-100">
-        </div>
-        <div class="col-sm-3">
-          <img src="img/eventos/7.jpg" class="img-fluid w-100">
-        </div>
-      </div>
-    </section>
-    <div class="position-relative text-center text-white overlay-section">
-      <!-- Imagen de fondo/overlay -->
-      <img src="/img/salon.jpg" alt="Overlay" class="img-overlay img-fluid">
-    
-      <!-- Contenido encima de la imagen -->
-      <div class="content-overlay position-absolute top-50 start-50 translate-middle">
-        <h2 class="fw-bold">Agrega tu salón</h2>
-        <p>Puede ser el salón más buscado en tan solo 4 días</p>
-      </div>
-    </div>
+          <div class="card-contenido">
+            <h3>Salon Regular 2</h3>
+            <p>Ambiente tranquilo y acogedor, perfecto para lectura y talleres.</p>
+            <div class="card-precio"><span>$400</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
 
+        <article class="servicio-card musica" data-categoria="Salones Regulares">
+          <div class="card-imagen">
+            <img src="img/salones/salones-regulares/salonRegular3.jpg" alt="Salones Regulares">
+          </div>
+          <div class="card-contenido">
+            <h3>Salon Regular 3</h3>
+            <p>Sala amplia y versátil, pensada para eventos y dinámicas grupales.</p>
+            <div class="card-precio"><span>$700</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
 
-    <!-- Descripción -->
-    <section class="container form-container text-center">
-      <h2 class="mt-4">SALONES DISPONIBLES</h2>
-    </section>
+        <!-- Salones Tematicos -->
+        <article class="servicio-card decoracion" data-categoria="Salones Tematicos">
+          <div class="card-imagen">
+            <img src="img/salones/salones-tematicos/salonTematicoHalloween.jpg" alt="Halloween">
+          </div>
+          <div class="card-contenido">
+            <h3>Salon con tematica Halloween</h3>
+            <p>Decoración tenebrosa y luces tenues, ideal para una noche de sustos y diversión.</p>
+            <div class="card-precio"><span>$1100</span> / evento</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
 
-    <!-- Lista de salones -->
-    <section class="container halls-container">
-      <div id="halls-list" class="row g-3"></div>
-    </section>
+        <article class="servicio-card decoracion" data-categoria="Salones Tematicos">
+          <div class="card-imagen">
+            <img src="img/salones/salones-tematicos/salonTematicoMitico.jpg" alt="Iluminación">
+          </div>
+          <div class="card-contenido">
+            <h3>Salon con tematica Mitica</h3>
+            <p>Inspirado en leyendas y criaturas mágicas, perfecto para fiestas fantásticas.</p>
+            <div class="card-precio"><span>$800</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
 
-    <!-- Formulario -->
-    <section class="container form-container  text-center">
-      <h2>Agregar Salón de Evento</h2>
-      <form id="hall-form">
-        <div class="mb-3"><input type="text" id="hall-title" class="form-control" placeholder="Título" required /></div>
-        <div class="mb-3"><textarea id="hall-description" class="form-control" placeholder="Descripción" required></textarea></div>
-        <div class="mb-3"><input type="text" id="hall-address" class="form-control" placeholder="Dirección" required /></div>
-        <div class="mb-3"><input type="number" id="hall-value" class="form-control" placeholder="Valor" required /></div>
-        <div class="mb-3">
-          <select id="hall-status" class="form-select" required>
-            <option value="Disponible">Disponible</option>
-            <option value="Reservado">Reservado</option>
-          </select>
-        </div>
-        <div class="mb-3"><input type="url" id="hall-image" class="form-control" placeholder="URL de la imagen" required /></div>
-        <button type="submit" class="btn btn-primary">Agregar Salón</button>
-      </form>
+        <article class="servicio-card decoracion" data-categoria="Salones Tematicos">
+          <div class="card-imagen">
+            <img src="img/salones/salones-tematicos/salonTematicoEpoca.jpg" alt="Iluminación">
+          </div>
+          <div class="card-contenido">
+            <h3>Salon con tematica de la Epoca</h3>
+            <p>Ambiente de época con estandartes y armaduras, digno de reyes y caballeros.</p>
+            <div class="card-precio"><span>$1350</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
+
+        <!-- Salones Infantiles -->
+        <article class="servicio-card animacion" data-categoria="Salones Infantiles">
+          <div class="card-imagen">
+            <img src="img/salones/salones-infantiles/salonInfantil1.jpg" alt="Salon Infantil">
+          </div>
+          <div class="card-contenido">
+            <h3>Salon infantil espacial</h3>
+            <p>Un viaje por las estrellas con luces, planetas y cohetes.</p>
+            <div class="card-precio"><span>$1,200</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
+
+        <article class="servicio-card animacion" data-categoria="Salones Infantiles">
+          <div class="card-imagen">
+            <img src="img/salones/salones-infantiles/salonInfantil2.jpg" alt="Salon Infantil">
+          </div>
+          <div class="card-contenido">
+            <h3>Salon infantil de videojuegos</h3>
+            <p>Colores vivos, juegos y diversión asegurada para los más peques.</p>
+            <div class="card-precio"><span>$1050</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
+
+        <article class="servicio-card animacion" data-categoria="Salones Infantiles">
+          <div class="card-imagen">
+            <img src="img/salones/salones-infantiles/salonInfantil3.jpg" alt="Salon Infantil">
+          </div>
+          <div class="card-contenido">
+            <h3>Salon infantil con trampolines</h3>
+            <p>Aventura entre trampolines, toboganes y mucha imaginación.</p>
+            <div class="card-precio"><span>$700</span> / hora</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
+
+        <!-- Eventos -->
+        <article class="servicio-card experiencias" data-categoria="Eventos">
+          <div class="card-imagen">
+            <img src="img/salones/salones-eventos/eventoNeon.jpg" alt="Eventos">
+          </div>
+          <div class="card-contenido">
+            <h3>Fiesta Neon</h3>
+            <p>Luces fluorescentes, pintura UV y música vibrante para una noche inolvidable.</p>
+            <div class="card-precio"><span>$200</span> por entrada</div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
+
+        <article class="servicio-card experiencias" data-categoria="Eventos">
+          <div class="card-imagen">
+            <img src="img/salones/salones-eventos/eventoColores.jpg" alt="Eventos">
+          </div>
+          <div class="card-contenido">
+            <h3>Batalla de colores</h3>
+            <p>Una fiesta tipo Holi con polvos de colores, música y juegos.</p>
+            <div class="card-precio"><span>$180</span> por entrada </div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
+
+        <article class="servicio-card experiencias" data-categoria="Eventos">
+          <div class="card-imagen">
+            <img src="img/salones/salones-eventos/eventoSensorial.jpg" alt="Eventos">
+          </div>
+          <div class="card-contenido">
+            <h3>Experiencia sensorial </h3>
+            <p>Show inmersivo con proyecciones, aromas y sonidos envolventes.</p>
+            <div class="card-precio"><span>$100</span> por entrada </div>
+            <button class="card-boton">+ Agregar</button>
+          </div>
+        </article>
+
+      </div>
     </section>
   </main>
-
-  <footer>
-    <div class="row">
-      <div class="col">
-        <h3 class="titulo-footer">About us IDW</h3>
-        <p id="p-footer">IDW S.A. se enorgullece de presentar un innovador portal dedicado a la gestión y reserva de salones de cumpleaños infantiles. Nuestro sitio, concebido como un amplio catálogo de salones y servicios, permite a los usuarios filtrar y seleccionar opciones que se adapten a sus necesidades.</p>
-      </div>
-      <div class="col">
-        <h3 class="titulo-footer">Secciones</h3>
-        <a class="nav-link a-footer" href="index.html">Inicio</a>
-        <a class="nav-link a-footer" href="eventos.html">Eventos</a>
-        <a class="nav-link a-footer" href="salones.html">Salones</a>
-        <a class="nav-link a-footer" href="servicios.html">Servicios</a>
-        <a class="nav-link a-footer" href="contacto.html">Contacto</a>
-      </div>
-      <div class="col">
-        <h3 class="titulo-footer">Contactanos</h3>
-          <!-- Instagram (se usa "photo_camera" como sustituto) -->
-          <a href="https://www.instagram.com/tu_cuenta" target="_blank" style="margin: 0 10px; text-decoration:none; color:inherit;">
-            <i class="material-icons" style="font-size: 36px;">photo_camera</i>
-          </a>
-        
-          <!-- Twitter (se usa "alternate_email" como sustituto) -->
-          <a href="https://twitter.com/tu_cuenta" target="_blank" style="margin: 0 10px; text-decoration:none; color:inherit;">
-            <i class="material-icons" style="font-size: 36px;">alternate_email</i>
-          </a>
-        
-          <!-- LinkedIn (se usa "business_center" como sustituto) -->
-          <a href="https://www.linkedin.com/in/tu_perfil" target="_blank" style="margin: 0 10px; text-decoration:none; color:inherit;">
-            <i class="material-icons" style="font-size: 36px;">business_center</i>
-          </a>
-        
-          <!-- Teléfono -->
-          <a href="tel:+123456789" style="margin: 0 10px; text-decoration:none; color:inherit;">
-            <i class="material-icons" style="font-size: 36px;">phone</i>
-          </a>
-        
-          <!-- Correo electrónico -->
-          <a href="mailto:info@example.com" style="margin: 0 10px; text-decoration:none; color:inherit;">
-            <i class="material-icons" style="font-size: 36px;">mail</i>
-          </a>
-          <div class="map-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3298.795157789198!2d-58.37723188477073!3d-31.40781288124265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccf447a7ea8cd%3A0xf7e0ecd94cc2e1f0!2sConcordia%20Entre%20R%C3%ADos%2C%20Entre%20R%C3%ADos%2C%20Argentina!5e0!3m2!1ses!2sus!4v1600000000!5m2!1ses!2sus"
-              width="600px"
-              height="300px"
-              frameborder="0"
-              style="border:0;"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0">
-            </iframe>
+    <footer class="custom-footer">
+      <div class="container">
+        <div class="row align-items-start">
+          <!-- Sección 1: Acerca de -->
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-section">
+              <h4 class="footer-title">Sobre Nosotros</h4>
+              <div class="footer-links">
+                <p>Somos especialistas en organización de eventos. Creando momentos inolvidables desde 2010.</p>
+              </div>
+            </div>
           </div>
+          <!-- Sección 2: Enlaces rápidos -->
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-section">
+              <h4 class="footer-title">Enlaces Rápidos</h4>
+              <div class="footer-links">
+                <a href="#">Inicio</a>
+                <a href="#">Salones</a>
+                <a href="#">Servicios</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contacto</a>
+              </div>
+            </div>
+          </div>
+          <!-- Sección 3: Legal -->
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-section">
+              <h4 class="footer-title">Legal</h4>
+              <div class="footer-links">
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de cookies</a>
+              </div>
+            </div>
+          </div>
+          <!-- Sección 4: Contacto y Redes -->
+          <div class="col-md-3 col-sm-6">
+            <div class="footer-section">
+              <h4 class="footer-title">Contacto</h4>
+              <div class="footer-links">
+                <div class="contact-info">
+                  <p><i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Ciudad</p>
+                  <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                  <p><i class="fas fa-envelope"></i> info@eventos.com</p>
+                </div>
+                <div class="social-icons">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-whatsapp"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mapa -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTorre%20Eiffel!5e0!3m2!1ses!2ses!4v1688820300514!5m2!1ses!2ses"
+                      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright">
+              © 2023 Nombre Empresa - Todos los derechos reservados
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div>
-    <p>&copy; 2025 IDW S.A. - Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    </footer>
+      <script src="servicios.js"></script>
 </body>
 </html>

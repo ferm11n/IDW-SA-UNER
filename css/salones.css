@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+:root {
+    --rosa-claro: #f8d7e8;
+    --rosa-medio: #e598bb;
+    --rosa-fuerte: #d63384;
+    --rosa-hover: #c2185b;
+}
+
+
+.card-boton {
+    background-color: var(--rosa-medio);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.card-boton:hover {
+    background-color: var(--rosa-fuerte);
+    color: #fff;
+}
+
+
+.card-precio,
+.card-precio span,
+.card-precio strong {
+    color: var(--rosa-fuerte) !important;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.filtro-btn {
+    background-color: var(--rosa-claro);
+    border: 2px solid var(--rosa-medio);
+    color: var(--rosa-fuerte);
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.filtro-btn:hover {
+    background-color: var(--rosa-medio);
+    color: white;
+}
+
+
+.filtro-btn.active {
+    background-color: var(--rosa-fuerte);
+    color: white;
+}
+
+
+.filtro-btn.filtro-btn:focus,
+.filtro-btn.filtro-btn:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
