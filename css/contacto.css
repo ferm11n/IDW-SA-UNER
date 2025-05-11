@@ -1,23 +1,29 @@
 :root {
     /* Color principal (botones, iconos activos) */
-    --color-primario:      #f72e81;  /* fucsia vibrante */
+    --bs-primary:    #f72e81;  /* fucsia vibrante */
     
-    --color-primario-hover:      #d0226b;
+    --bs-primary-hover: #d0226b;
     /* Color secundario (header oscuro) */
-    --color-secundario:    #273b54;  /* azul noche */
+    --bs-secondary:    #273b54;  /* azul noche */
   
     /* Fondo claro rosa (superficie principal) */
     --rosa-palido: #fff2f8;  /* rosa muy pálido */
   
     /* Fondo alternativo neutro */
-    --gris-claro: #f5f5f5;  /* gris cálido claro */
+    --bs-body-bg: #f5f5f5;  /* gris cálido claro */
 
     --blanco: #ffffff;
   
     /* Color de texto sobre superficies claras */
-    --texto-default:    #333333;
+    --bs-body-color:    #333333;
   }
 
+body .form-control:focus,
+body .form-select:focus,
+body textarea.form-control:focus {
+  border-color: var(--bs-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(247,46,129,0.25) !important;
+}
 main {
     padding: 2rem;
 }
@@ -33,12 +39,12 @@ section {
 
 
 .btn-fucsia {
-  background-color: var(--color-primario);
+  background-color: var(--bs-primary);
   color: white;
   border: none;
 }
 .btn-fucsia:hover {
-  background-color: var(--color-primario-hover);
+  background-color: var(--bs-primary-hover);
 }
 
 
@@ -50,8 +56,8 @@ section {
     background-color: #fff2f8;
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid var(--color-primario);
-    color: var(--texto-default);
+    border: 1px solid var(--bs-primary);
+    color: var(--bs-body-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 0;
     margin-left: 0;
