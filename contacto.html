@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - IDW S.A.</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/contacto.css" />
     <link rel="stylesheet" href="css/inicio.css" />
 </head>
 
-<body>
+<body style="background-color: #f8f8f8;" class="text-light">
 
     <header>
         <nav class="navbar navbar-expand-sm navbar-custom bg-black bg-opacity-50 m-0 p-0">
@@ -37,97 +39,107 @@
             </div>
         </nav>
     </header>
+    
+    
     <main>
         <section>
+            <div class="container py-5">
+                <div class="row gx-5">
+                    <div class="col-lg-7">
+                        <div class="card bg-white shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-2"><i class="bi bi-envelope-paper-heart-fill" style="font-size: 2rem; color: var(--color-primario);"></i>
+                                </div>
+                                <h2 class="text-center fw-bold mb-3" style="color: var(--color-primario);">Contactanos</h2>
+                                <p class="text-center mb-4" style="color: var(--color-secundario);">Estamos para ayudarte a organizar tu evento ideal</p>
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Decinos tu nombre y apellido" />
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="email" name="email" required placeholder="Ingresa tu email" />
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="telefono" class="form-label">Telefono<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="telefono" name="telefono" required placeholder="Ingresa tu numero" />
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="horario" class="form-label" >Horario de contacto<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="horario" name="horario" required placeholder="Horario disponible para contactar" />
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="provincia" class="form-label">Provincia<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="provincia" name="provincia" required placeholder="Provincia" />
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="ciudad" class="form-label">Ciudad<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="ciudad" name="ciudad" required placeholder="Ciudad" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="salon" class="form-label">Salones<span class="text-danger">*</span></label>
+                                        <select id="salon" name="salon" class="form-select" required>
+                                            <option value="" disabled selected>--- Elegi una opción ---</option>
+                                            <option value="">--- Solo consulta ---</option>
+                                            <option value="">--- Salon Amatista para bodas ---</option>
+                                            <option value="">--- Salon Rosa para quinces ---</option>
+                                            <option value="">--- Salon Naranja para fiestas y cumpleaños ---</option>
+                                            <option value="">--- Salon Celeste para reuniones laborales ---</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mensaje" class="form-label">Mensaje <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required placeholder="Contanos que necesitas"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-fucsia">Enviar</button>
 
-            <h2>Contacto</h2>
-            <p>
-                En IDW S.A. estamos comprometidos con brindarte la mejor experiencia en la planificación de eventos
-                infantiles. Si tenés dudas, sugerencias, consultas comerciales o simplemente querés saber más sobre
-                nuestros servicios, no dudes en escribirnos.
-
-                Nuestro equipo está listo para ayudarte a encontrar el salón y los servicios ideales para tu próxima
-                celebración. Completá el formulario y nos pondremos en contacto a la brevedad.
-
-                También podés comunicarte con nosotros a través de nuestras redes sociales o correo electrónico.
-            </p>
-            <div class="container py-5" style="background-color: var(--surface-light-pink);">
-
-                <form>
-                    <div class="form-filas">
-                        <div class="form-grupo">
-                            <label for="nombre">Nombre <span class="obligatorio">*</span></label>
-                            <input type="text" id="nombre" name="nombre" required="obligatorio"
-                                placeholder="Decinos tu nombre y apellido" />
-                        </div>
-                        <div class="form-grupo">
-                            <label for="email">Correo electrónico <span class="obligatorio">*</span></label>
-                            <input type="text" id="email" name="email" required="obligatorio"
-                                placeholder="Ingresa tu email" />
+                                    <p class="aviso">
+                                        <span class="obligatorio"> * </span>los campos son obligatorios.
+                                    </p>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-filas">
-                        <div class="form-grupo">
-                            <label for="telefono">Telefono<span class="obligatorio">*</span></label>
-                            <input type="text" id="telefono" name="telefono" required="obligatorio"
-                                placeholder="Ingresa tu numero" />
-                        </div>
-                        <div class="form-grupo">
-                            <label for="horario">Horario de contacto<span class="obligatorio">*</span></label>
-                            <input type="text" id="horario" name="horario" required="obligatorio"
-                                placeholder="Horario disponible para contactar" />
-                        </div>
-                    </div>
-                    <div class="form-filas">
-                        <div class="form-grupo">
-                            <label for="provincia">Provincia<span class="obligatorio">*</span></label>
-                            <input type="text" id="provincia" name="provincia" required="obligatorio"
-                                placeholder="Provincia" />
-                        </div>
-                        <div class="form-grupo">
-                            <label for="ciudad">Ciudad<span class="obligatorio">*</span></label>
-                            <input type="text" id="ciudad" name="ciudad" required="obligatorio" placeholder="Ciudad" />
-                        </div>
-                    </div>
-                    <div class="form-grupo">
-                        <label for="salon">Salones<span class="obligatorio">*</span></label>
-                        <select id="salon" name="salon" required="obligatorio">
-                            <option value="" disabled selected>--- Elegi una opción ---</option>
-                            <option value="">--- Solo consulta ---</option>
-                            <option value="">--- Salon Amatista para bodas ---</option>
-                            <option value="">--- Salon Rosa para quinces ---</option>
-                            <option value="">--- Salon Naranja para fiestas y cumpleaños ---</option>
-                            <option value="">--- Salon Celeste para reuniones laborales ---</option>
-                        </select>
-                    </div>
-                    <div class="form-grupo">
-                        <label for="mensaje">Mensaje <span class="obligatorio">*</span></label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required="obligatorio"
-                            placeholder="Contanos que necesitas"></textarea>
-                    </div>
-                    <input type="submit" value="Enviar" />
 
-                    <p class="aviso">
-                        <span class="obligatorio"> * </span>los campos son obligatorios.
-                    </p>
+                    <div class="col-lg-5">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <div class="p-4" style="background-color: #ffffff; border: 1px solid var(--color-primario); border-radius: 10px;">
+                                    <p class="d-flex align-items-center mb-3">
+                                        <img src="img/contacto/telefono.png" alt="Teléfono" class="me-2" style="width:16px; height:16px;">+54 444 111 5479</p>
+                                    <p class="d-flex align-items-center mb-3">
+                                        <img src="img/contacto/correo.png" alt="Correo" class="me-2" style="width:16px; height:16px;">idwsa_falso@gmail.com</p>
+                                        <p class="d-flex align-items-center mb-3">
+                                        <img src="img/contacto/ubicacion.png" alt="Ubicación" class="me-2" style="width:16px; height:16px;">Avenida siempre viva 742 Springfield</p>
 
-                </form>
-
-                <div class="contacto-redes-container">
-                    <div class="info-contacto">
-                        <p><img src="img/contacto/telefono.png" alt="Teléfono" style="width:16px; height:16px" ;> +54
-                            444 111 5479</p>
-                        <p><img src="img/contacto/correo.png" alt="correo" style="width:16px; height:16px" ;>
-                            idwsa_falso@gmail.com</p>
-                        <p><img src="img/contacto/ubicacion.png" alt="ubicacion" style="width:16px; height:16px" ;>
-                            Avenida siempre viva 742 Springfield</p>
-
-                        <div class="iconos">
-                            <p><img src="img/contacto/facebook.png " alt="Facebook" style="width:16px; height:16px;">
-                            </p>
-                            <p><img src="img/contacto/instagram.png" alt="instagram" style="width:16px; height:16px;">
-                            </p>
-                            <p><img src="img/contacto/twitter.png" alt="twitter" style="width:16px; height:16px;"></p>
+                                    <div class="d-flex gap-3 mt-3">
+                                        <div class="d-flex gap-3 mt-3">
+                                            <a href="#">
+                                                <div class="rounded-circle d-flex justify-content-center align-items-center" style="width:32px; height:32px; background-color: var(--color-primario); transition: transform 0.2s;">
+                                                    <i class="bi bi-facebook text-white"></i>
+                                                </div>
+                                            </a>
+  <a href="#">
+    <div class="rounded-circle d-flex justify-content-center align-items-center" style="width:32px; height:32px; background-color: var(--color-primario); transition: transform 0.2s;">
+      <i class="bi bi-instagram text-white"></i>
+    </div>
+  </a>
+  <a href="#">
+    <div class="rounded-circle d-flex justify-content-center align-items-center" style="width:32px; height:32px; background-color: var(--color-primario); transition: transform 0.2s;">
+      <i class="bi bi-twitter text-white"></i>
+    </div>
+  </a>
+</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
