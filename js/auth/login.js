@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     if (!localStorage.getItem("usuarios")) {
+        //Usuarios de prueba
         const usuarios = [
             { username: "admin", password: "123", role: "admin" },
             { username: "usuario1", password: "123", role: "user" },
