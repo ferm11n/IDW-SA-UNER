@@ -240,3 +240,14 @@
         margin-bottom: 30px;
     }
 }
+
+
+/*ESTO ES PARA LA IMAGEN DE INSTITUCIONAL (NO DEBERIA IR ACA)*/
+.mini-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+/*----------------------------------------------------------*/
