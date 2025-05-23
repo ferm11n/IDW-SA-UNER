@@ -65,12 +65,12 @@ main {
 
 /*Color rosa a cada conteiner de pregunta*/
 .accordion-button:focus {
-    box-shadow: 0 0 0 0.25rem #fddfeb; /* Violeta suave */
+    box-shadow: 0 0 0 0.25rem #fddfeb;
     outline: none;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #fddfeb; /* Fondo violeta claro al expandir */
+    background-color: #fddfeb;
     color: #dea7b7;
 }
 
@@ -108,7 +108,7 @@ main {
     .accordion-body {
         font-size: 0.95rem;
         padding: 1.25rem;
-        background-color: #f8f8f8; /* rosa suave */
+        background-color: #f8f8f8;
         border-radius: 0.5rem;
     }
 
@@ -127,8 +127,8 @@ main {
 
 
  .form-control:focus {
-     border-color: #fca5c8 !important; /* Cambia este color por el que prefieras */
-     box-shadow: 0 0 0 0.25rem #fca5c8 !important; /* Esto añade un resplandor suave */
+     border-color: #fca5c8 !important;
+     box-shadow: 0 0 0 0.25rem #fca5c8 !important;
  }
 
 
