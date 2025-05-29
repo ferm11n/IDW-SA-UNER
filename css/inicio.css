@@ -153,6 +153,7 @@
     border-bottom: 2px solid #f72e81;
     height: 100%;
     text-align: center;
+    justify-content: center;
 }
 
 /* Títulos de sección */
@@ -202,10 +203,14 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    justify-content: center;
+
 }
 
 .contact-info i {
     min-width: 20px;
+    text-align: center;
+    justify-content: center;
 }
 
 /* Mapa */

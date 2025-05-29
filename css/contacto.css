@@ -92,6 +92,24 @@ section {
     margin-right: 10px;
 }
 
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 15px;
+    align-content: center;
+}
+
+.social-icons a {
+    color: #f72e81;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
 .iconos {
     display:flex;
     gap: 20px;
@@ -109,8 +127,34 @@ section {
     transition: transform 0.2s ease;
 }
 
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
 .iconos img:hover {
     transform: scale(1.3);
+}
+
+.footer-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f72e81;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-links a,
+.footer-links p {
+    color: #1b1b1b;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f72e81;
 }
 
 
