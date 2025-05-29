@@ -16,9 +16,15 @@
   <body>
     <header class="header">
     <!-- Sección completa con imagen de fondo -->
-        <div class="overlay-section">
+        <div class="bg-image"
+            style="background-image: url('/img/salon-inicio.png');
+                min-height: 800px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;"
+        >
           <!-- Navbar con fondo negro semitransparente -->
-          <nav class="navbar navbar-expand-sm navbar-custom bg-black bg-opacity-50 m-0 p-0">
+          <nav class="navbar navbar-expand-sm navbar-custom bg-black bg-opacity-50 m-0 p-0 relative-top">
             <div class="container-fluid" style="padding-left: 20px; padding-right: 20px;">
               <a class="navbar-brand" href="index.html">
                 <img src="./img/logo.png" alt="Logo" style="max-height: 100px;">
@@ -46,25 +52,28 @@
           <!-- Contenido centrado dentro del overlay -->
           <div class="overlay-content text-center text-white">
             <!-- Sección con fondo igual al navbar y bordes redondeados -->
-            <div class="container bg-black bg-opacity-50 rounded-3 p-5 w-75 mx-auto">
-              <h1 class="display-4 fw-bold">Realizá tu evento especial</h1>
-              <p>Encontrá los mejores lugares, con la mejor calificación para alvergar tu evento inolvidable</p>
-              <form class="d-flex justify-content-center mt-4" role="search">
-                <button class="btn"  style="background-color: #f72e81; color: white; width: 800px; display: flex; align-items: center; justify-content: center; ">
-                  <span class="material-icons" style="font-size: 18px; margin-right: 5px;">edit_square</span> 
-                  <a class="nav-link text-white" href="salones.html">Elegí el salón de tus sueños</a>
-                </button>
-              </form>
+              <div class="container bg-black bg-opacity-50 rounded-3 p-4 p-md-5 w-100 mx-auto text-center">
+                  <h1 class="fs-2 fs-md-1 fw-bold text-white">Realizá tu evento especial</h1>
+                  <p class="text-white">Encontrá los mejores lugares, con la mejor calificación para alvergar tu evento inolvidable</p>
 
-              <p class="mt-4 text-white">
-                <span class="material-icons">business</span> Elegir Lugar 
-                <span class="material-icons">chevron_right</span> 
-                <span class="material-icons">restaurant</span> Elegir Servicio 
-                <span class="material-icons">chevron_right</span> 
-                <span class="material-icons">check</span> Evento Realizado
-              </p>
-            </div>
+                  <form class="d-flex justify-content-center mt-4" role="search">
+                      <button class="btn w-100 w-md-75 w-lg-50 d-flex align-items-center justify-content-center"
+                              style="background-color: #f72e81; color: white;">
+                          <span class="material-icons me-2" style="font-size: 18px;">edit_square</span>
+                          <a class="nav-link text-white p-0" href="salones.html">Elegí el salón de tus sueños</a>
+                      </button>
+                  </form>
+
+                  <p class="mt-4 text-white d-flex flex-wrap justify-content-center align-items-center gap-2">
+                      <span class="material-icons">business</span> Elegir Lugar
+                      <span class="material-icons">chevron_right</span>
+                      <span class="material-icons">restaurant</span> Elegir Servicio
+                      <span class="material-icons">chevron_right</span>
+                      <span class="material-icons">check</span> Evento Realizado
+                  </p>
+              </div>
           </div>
+        </div>
         </div>
     </header>
 
@@ -270,7 +279,7 @@
         </div>
       </section>
   
-      <footer class="custom-footer">
+      <footer class="custom-footer text-center">
             <div class="container">
                 <div class="row align-items-start">
                     <!-- Sección 1: Acerca de -->
@@ -312,16 +321,16 @@
                     </div>
 
                     <!-- Sección 4: Contacto y Redes -->
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-section">
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="footer-section text-center">
                             <h4 class="footer-title">Contacto</h4>
-                            <div class="footer-links">
+                            <div class="footer-links text-center">
                                 <div class="contact-info">
                                     <p><i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Ciudad</p>
                                     <p><i class="fas fa-phone"></i> +34 123 456 789</p>
                                     <p><i class="fas fa-envelope"></i> info@eventos.com</p>
                                 </div>
-                                <div class="social-icons">
+                                <div class="social-icons text-center">
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                     <a href="#"><i class="fab fa-whatsapp"></i></a>
                                     <a href="#"><i class="fab fa-twitter"></i></a>

@@ -4,6 +4,7 @@
     background-color: #fddfeb;
     padding: 40px 0 0;
     border-top: 1px solid #f72e823d;
+    text-align: center;
 }
 
 .footer-section {
@@ -11,6 +12,7 @@
     padding-bottom: 20px;
     border-bottom: 2px solid #f72e81;
     height: 100%;
+    text-align: center;
 }
 
 /* Títulos de sección */
@@ -42,12 +44,14 @@
     gap: 12px;
     margin-top: 15px;
     align-content: center;
+    justify-content: center;
 }
 
 .social-icons a {
     color: #f72e81;
     font-size: 1.5rem;
     transition: transform 0.3s;
+    justify-content: center;
 }
 
 .social-icons a:hover {
@@ -60,10 +64,12 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    justify-content: center;
 }
 
 .contact-info i {
     min-width: 20px;
+    align-content: center;
 }
 
 /* Mapa */
@@ -99,4 +105,81 @@
     .col-sm-6 {
         margin-bottom: 30px;
     }
+}
+
+/* ==========================================================================
+   Animation Keyframes
+   ========================================================================== */
+/* Fade-in and slide-up animation for elements */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(140px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Media Queries para diseño responsivo*/
+/* Ajustado para pantallas medianas (tabletas y mas) */
+@media (max-width: 992px) {
+    .navbar-nav {
+        padding: 15px;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        min-width: 100%;
+    }
+}
+
+/* Ajustado a pantallas chicas (celulares) */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .intro {
+        padding: 60px 20px;
+    }
+
+    .intro h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro p {
+        font-size: 0.9rem;
+    }
+
+    .footer-section h4, .footer-section p, .social-icons, .newsletter-form{
+        text-align: center;
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+    }
+    .newsletter-form{
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 7px;
+    }
+
 }
