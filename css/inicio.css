@@ -7,13 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.bg-image {
-    background-image: url(/img/salon-inicio.png);
-    min-height: 800px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+
 
 .container-fluid {
     padding-left: 20px;
