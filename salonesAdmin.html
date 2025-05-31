@@ -116,25 +116,25 @@
     </section>
 
     <!-- Lista de salones -->
-    <section class="container halls-container">
-      <div id="halls-list" class="row g-3"></div>
+    <section class="container salones-container">
+      <div id="salones-list" class="row g-3"></div>
     </section>
 
     <!-- Formulario -->
     <section class="container form-container  text-center">
       <h2>Agregar Salón de Evento</h2>
-      <form id="hall-form">
-        <div class="mb-3"><input type="text" id="hall-title" class="form-control" placeholder="Título" required /></div>
-        <div class="mb-3"><textarea id="hall-description" class="form-control" placeholder="Descripción" required></textarea></div>
-        <div class="mb-3"><input type="text" id="hall-address" class="form-control" placeholder="Dirección" required /></div>
-        <div class="mb-3"><input type="number" id="hall-value" class="form-control" placeholder="Valor" required /></div>
+      <form id="salon-form">
+        <div class="mb-3"><input type="text" id="salon-title" class="form-control" placeholder="Título" required /></div>
+        <div class="mb-3"><textarea id="salon-description" class="form-control" placeholder="Descripción" required></textarea></div>
+        <div class="mb-3"><input type="text" id="salon-address" class="form-control" placeholder="Dirección" required /></div>
+        <div class="mb-3"><input type="number" id="salon-value" class="form-control" placeholder="Valor" required /></div>
         <div class="mb-3">
-          <select id="hall-status" class="form-select" required>
+          <select id="salon-status" class="form-select" required>
             <option value="Disponible">Disponible</option>
             <option value="Reservado">Reservado</option>
           </select>
         </div>
-        <div class="mb-3"><input type="url" id="hall-image" class="form-control" placeholder="URL de la imagen" required /></div>
+        <div class="mb-3"><input type="url" id="salon-image" class="form-control" placeholder="URL de la imagen" required /></div>
         <button type="submit" class="btn btn-primary">Agregar Salón</button>
       </form>
     </section>

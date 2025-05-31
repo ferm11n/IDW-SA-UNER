@@ -30,3 +30,6 @@ export const SALONES_INICIALES = [
         imagen: "img/salones/salones-infantiles/salonInfantil3.jpg"
     }
 ];
+
+
+window.SALONES_INICIALES = SALONES_INICIALES;
