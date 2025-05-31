@@ -74,3 +74,78 @@ mas dinamicamente.
 
 
 
+<=======================================================================================================>
+
+Facu - CRUD de Salones (Admin)
+Se encargara de crear, editar, eliminar y mostrar salones desde una pagina de administracion (Gestion)
+
+Tarea:
+        * Formulario para agregar salones
+        * Mostrar todos los salones en una tabla o tarjetas
+        * Implementar los botones de Editar y Eliminar
+        * Guradar y leer los datos desde LocalStorage (persistencia)
+        * Utilizar datos.js si es que hay datos predefinidos para comenzar
+
+Archivos:
+            * salonesAdmin.html -> pagina exclusiva para el administrador
+            * js/salones.js -> toda la logica del CRUD
+            * datos.js -> archivo que contiene los salones precargados
+
+
+Se espera un panel para administrar salones totalmente FUNCIONAL
+
+<=======================================================================================================>
+
+Integrante2 - Catalogo Publico de Salones
+Mostrara los salones al publico general, de forma visual y responsive
+
+Tareas:
+        * Leer los salones desde LocalStorage
+        * Mostrar cada salon con una tarjeta Bootstrap
+        * Usar imagenes, estilos css
+        * No descuidar el responsive
+
+Archivos:
+          * salones.html -> pagina publica que muestra el catalogo
+          * salones.css -> estilos propios de salones
+          * js/salonesCatalogo.js -> logica para cargar y mostrar los salones
+
+Se espera que todos los salones sean cargados desde el almacenamiento y visualizados en Salones
+
+<=======================================================================================================>
+
+Integrante3 - Servicios + Filtros + Presupuesto (Opcional si llegamos a hacerlo)
+Permite elegir servicios adicionales y armar un presupuesto
+
+Tareas:
+        * Agregar servicios a un carrito o presupuesto
+        * Mostrar en la UI el total de servicios y salones elegidos
+
+Archivos:
+          * servicios.html -> mostrara los servicios disponibles
+          * js/servicios.js -> logica para mostrar, filtrar y agregar al carrito
+
+Opcional:
+          * CRUD para servicios al igual que con los salones
+
+Se espera que quede listo el sistema de presupuesto (carrito)
+
+<=======================================================================================================>
+
+Integrante4 - Inicializacion + Test + Imagenes
+Asegurar que funcione bien desde la primera carga y sean integrados bien los datos
+
+Tareas:
+        * Crear main.js que:
+                            * verificar si el LocalStorage esta vacio
+                            * Si lo esta, lo llenara con los datos de datos.js
+        * Asegurar que todas las paginas carguen datos correctamente
+        * Implementar iamgenes que cambien automaticamente (slider o un rotador) con imagenes.js
+        * Probar q todo este integrado y funcionando
+
+Archivos:
+          * main.js -> carga datos iniciales
+          * imagenes.js -> cambia imagenes automaticamente (puede ser carrusel)
+          * Que todos los html este conectados a sus scripts sin problema
+
+<=======================================================================================================>
