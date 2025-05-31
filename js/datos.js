@@ -6,7 +6,8 @@ export const SALONES_INICIALES = [
         direccion: "Pepperoni 1765",
         valor: 570,
         estado: "Disponible",
-        imagen: "img/salones/salones-infantiles/salonInfantil1.jpg"
+        imagen: "img/salones/salones-infantiles/salonInfantil1.jpg",
+        role: "salon"
     },
 
     {
@@ -17,5 +18,15 @@ export const SALONES_INICIALES = [
         valor: 1000,
         estado: "Reservado",
         imagen: "img/salones/salones-infantiles/salonInfantil2.jpg"
+    },
+
+    {
+        id: 3,
+        titulo: "Salon Fiesta Tres",
+        descripcion: "ideal para cumpleaños infantiles Tres",
+        direccion: "Tomatioli 175",
+        valor: 100,
+        estado: "Disponible",
+        imagen: "img/salones/salones-infantiles/salonInfantil3.jpg"
     }
 ];
