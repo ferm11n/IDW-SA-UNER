@@ -1,3 +1,9 @@
+//ESTE ES EL ARCHIVO DE SALONESADMIN PERO EL VIEJO
+//EL NUEVO SE LLAMA salonesAdmin.js y contiene la misma LOGICA
+// <=========================================================>
+
+
+
 const hallForm = document.getElementById("hall-form");
 const hallsList = document.getElementById("halls-list");
 let halls = [];
