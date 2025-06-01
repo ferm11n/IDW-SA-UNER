@@ -1,4 +1,4 @@
-export const DATOS_INICIALES = [
+/*export const DATOS_INICIALES = [
     {
         id: 1,
         titulo: "Salon Fiesta",
@@ -61,4 +61,4 @@ export const DATOS_INICIALES = [
         role: "servicio",
         categoria: "musica"
     }
-];
+];*/
