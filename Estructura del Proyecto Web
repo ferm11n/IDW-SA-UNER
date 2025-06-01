@@ -137,8 +137,8 @@ Asegurar que funcione bien desde la primera carga y sean integrados bien los dat
 
 Tareas:
         * Crear main.js que:
-                            * verificar si el LocalStorage esta vacio
-                            * Si lo esta, lo llenara con los datos de datos.js
+        * verificar si el LocalStorage esta vacio
+        * Si lo esta, lo llenara con los datos de datos.js
         * Asegurar que todas las paginas carguen datos correctamente
         * Implementar iamgenes que cambien automaticamente (slider o un rotador) con imagenes.js
         * Probar q todo este integrado y funcionando
@@ -149,3 +149,11 @@ Archivos:
           * Que todos los html este conectados a sus scripts sin problema
 
 <=======================================================================================================>
+
+
+📁 js/
+│ ├── main.js              → Inicializa datos base en LocalStorage si no existen.
+│ ├── salones.js           → CRUD para la vista de administración (agregar, eliminar, modificar salones).
+│ ├── salonesCatalogo.js   → Muestra los salones guardados en LocalStorage en `salones.html`.
+│ ├── servicios.js         → Filtros + presupuesto (lo que ya tenés).
+│ ├── imagenes.js          → Cambio dinámico de imagen (lo que tenés al final de script.js).

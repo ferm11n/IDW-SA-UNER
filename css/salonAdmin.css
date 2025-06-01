@@ -46,7 +46,7 @@ h2 {
 .navbar-custom .nav-link:hover {
   color: rgb(255, 181, 193) !important;
 }
-  /* Opcional: cambiar el icono del toggler para que se vea en fondo oscuro */
+/* Opcional: cambiar el icono del toggler para que se vea en fondo oscuro */
 .navbar-toggler-icon {
   filter: invert(1);
 }
@@ -237,90 +237,6 @@ h2 {
   filter: invert(1);
 }
 
-.carousel-item {
-  position: relative;
-}
-
-.carousel-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  position: relative;
-  z-index: 0;
-}
-
-.carousel-item img {
-  height: 900px;
-  object-fit: cover;
-  width: 100%;
-}
-
-.hall-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.hall-overlay {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  height: 100%;
-  pointer-events: none;
-}
-
-.hall-info {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.hall-card:hover .hall-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.hall-card:hover .hall-info {
-  opacity: 1;
-}
-
-.hall-card .card-img {
-  height: 300px;
-  object-fit: cover;
-  width: 100%;
-  display: block;
-}
-
-/* Overlay oscuro permanente sobre la imagen */
-.hall-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Asegura que el contenido del overlay quede por encima del oscurecimiento */
-.hall-overlay {
-  position: absolute;
-  z-index: 2;
-}
-
-
 /*eventos destacados*/
 .eventos-destacados {
   padding: 150px 0;
@@ -403,3 +319,101 @@ footer{
   margin-left: 20px ;
 }
 
+.salon-editando {
+  border: 2px solid #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+  transition: background-color 0.3s, border 0.3s;
+}
+
+#salon-form.edit-mode {
+  background-color: rgba(238, 131, 255, 0.4);
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(238, 131, 255, 0.4);
+  transition: background-color 0.3s, border 0.3s;
+}
+
+#servicio-form.edit-mode {
+  background-color: rgba(238, 131, 255, 0.4);
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(238, 131, 255, 0.4);
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.salon-borrando {
+  opacity: 0;
+  transform: scaleY(0.9);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.card.salon-card {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* servicios */
+.salon-card, .servicio-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+/* Imagen como fondo en ambas tarjetas si es el caso */
+.salon-card img, .servicio-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 160px;
+}
+
+/* Títulos de tarjetas */
+.salon-card h5, .servicio-card h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+
+/* Textos de descripción */
+.salon-card p, .servicio-card p {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+/* Botones dentro de tarjetas */
+.salon-card button, .servicio-card button {
+  background-color: #f8a5c2;
+  color: #000;
+  border: none;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.salon-card button:hover, .servicio-card button:hover {
+  background-color: #ff69b4;
+  color: #fff;
+}
+
+/* Animación al hacer hover */
+.salon-card:hover, .servicio-card:hover {
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+/* sombra en el texto*/
+.card-text, .card-titulo{
+  text-shadow:1px 1px 4px rgba(0,0,0,0.8)
+}
+
+/* fondo oscuro ligero*/
+.servicio-info, .salon-info{
+  background-color:rgba(0,0,0,0.4);
+  border-radius:8px;
+}

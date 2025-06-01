@@ -32,6 +32,9 @@
                       <li class="nav-item"><a class="nav-link text-white" href="contacto.html">Contacto</a></li>
                       <li class="nav-item"><a class="nav-link text-white" href="institucion.html">Institucional</a></li>
                       <li class="nav-item"><a class="nav-link text-white" href="faq.html">Preguntas</a></li>
+                      <li class="nav-item" id="navGestion" style="display: none;">
+                          <a class="nav-link text-white" href="gestionAdmin.html">Gestion</a>
+                      </li>
                       <!-- boton dinamico para cerrar sesion -->
                       <li class="nav-item">
                           <a id="navLogin" class="nav-link text-white" href="login.html">Entrar</a>
@@ -49,115 +52,9 @@
             <p class="servicios-subtitulo">Combina elementos para crear tu evento perfecto</p>
 
             <!-- Filtros/Pestañas -->
-            <div class="servicios-filtros">
-                <button class="filtro-btn active" data-target="musica">🎵 Música & Sonido</button>
-                <button class="filtro-btn" data-target="decoracion">🎨 Decoración Temática</button>
-                <button class="filtro-btn" data-target="animacion">🤹 Animación & Entretenimiento</button>
-                <button class="filtro-btn" data-target="experiencias">🚀 Experiencias Extras</button>
-            </div>
 
             <!-- Contenedor de tarjetas -->
             <div class="servicios-contenedor">
-
-                <!-- Música -->
-                <article class="servicio-card musica" data-categoria="musica">
-                    <div class="card-imagen">
-                        <img src="img/servicios/djPremium.jpg" alt="DJ Premium">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>DJ Premium</h3>
-                        <p>Mix profesional con equipos y efectos de luz sincronizados</p>
-                        <div class="card-precio"><span>$150</span> / hora</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
-
-                <article class="servicio-card musica" data-categoria="musica">
-                    <div class="card-imagen">
-                        <img src="img/servicios/bandasEnVivo.jpg" alt="Banda en Vivo">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>Bandas en Vivo</h3>
-                        <p>Grupos musicales profesionales (rock, jazz, tropical)</p>
-                        <div class="card-precio"><span>$400</span> / hora</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
-
-                <!-- Decoración -->
-                <article class="servicio-card decoracion" data-categoria="decoracion">
-                    <div class="card-imagen">
-                        <img src="img/servicios/esculturas3d.jpg" alt="Decoración 3D">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>Esculturas 3D</h3>
-                        <p>Estructuras luminosas de hasta 5 metros de altura</p>
-                        <div class="card-precio"><span>$800</span> / evento</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
-
-                <article class="servicio-card decoracion" data-categoria="decoracion">
-                    <div class="card-imagen">
-                        <img src="img/servicios/iluminacionMapeada.jpg" alt="Iluminación">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>Iluminación Mapeada</h3>
-                        <p>Proyecciones dinámicas sincronizadas con música</p>
-                        <div class="card-precio"><span>$300</span> / hora</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
-
-                <!-- Animación -->
-                <article class="servicio-card animacion" data-categoria="animacion">
-                    <div class="card-imagen">
-                        <img src="img/servicios/showDrones.jpg" alt="Show de Drones">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>Show de Drones</h3>
-                        <p>Coreografía aérea con 50+ drones LED</p>
-                        <div class="card-precio"><span>$1,200</span> / show</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
-
-                <article class="servicio-card animacion" data-categoria="animacion">
-                    <div class="card-imagen">
-                        <img src="img/servicios/ilusionismo.jpg" alt="Magia 360">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>Magia 360°</h3>
-                        <p>Espectáculo de ilusionismo envolvente</p>
-                        <div class="card-precio"><span>$250</span> / show</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
-
-                <!-- Experiencias -->
-                <article class="servicio-card experiencias" data-categoria="experiencias">
-                    <div class="card-imagen">
-                        <img src="img/servicios/realidadVirtual.jpg" alt="Realidad Virtual">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>Realidad Virtual</h3>
-                        <p>Disfrutá de 15 estaciones interactivas con juegos multijugador.</p>
-                        <div class="card-precio"><span>$200</span> / hora</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
-
-                <article class="servicio-card experiencias" data-categoria="experiencias">
-                    <div class="card-imagen">
-                        <img src="img/servicios/paintballLaser.jpg" alt="Paintball Laser">
-                    </div>
-                    <div class="card-contenido">
-                        <h3>Laser Tag</h3>
-                        <p>Arena techada con sistema de puntuación digital</p>
-                        <div class="card-precio"><span>$180</span> / hora</div>
-                        <button class="card-boton">+ Agregar</button>
-                    </div>
-                </article>
 
             </div>
         </section>
@@ -246,7 +143,11 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="js/datos.js"></script>
     <script src="js/servicios.js"></script>
     <script src="js/componentes/barraNavegacion.js"></script>
+    <script type="module" src="js/renderServiciosPublicos.js"></script>
+    <script src="js/auth/proteccion.js"></script>
+
 </body>
 </html>

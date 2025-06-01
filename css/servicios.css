@@ -64,13 +64,17 @@
 
 .servicios-contenedor {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .servicio-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     background: white;
     border-radius: 15px;
     overflow: hidden;
@@ -89,7 +93,7 @@
 
 .card-imagen img {
     width: 100%;
-    height: 100%;
+    height: 150%;
     object-fit: cover;
     transition: transform 0.3s;
 }
@@ -102,8 +106,9 @@
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-grow: 1;
 }
 
 .card-contenido h3 {
