@@ -73,15 +73,21 @@ function getSalon(event) {
     const titulo = document.getElementById("salon-titulo").value.trim();
     const descripcion = document.getElementById("salon-descripcion").value.trim();
     const direccion = document.getElementById("salon-direccion").value.trim();
-    const valor = document.getElementById("salon-valor").value.trim();
+    const valorInput = document.getElementById("salon-valor").value.trim();
     const estado = document.getElementById("salon-estado").value.trim();
     const imagen = document.getElementById("salon-imagen").value.trim();
 
-
-    if (!titulo || !descripcion || !direccion || !valor || !imagen) {
+    if (!titulo || !descripcion || !direccion || !valorInput || !imagen) {
     alert("Por favor, complete todos los campos.");
     return;
   }
+
+    const valor = Number(valorInput);
+    if (isNaN(valor) || valor <= 0) {
+      alert("Por favor, ingrese un valor numérico mayor a 0.");
+      return;
+    }
+
     if(editingSalonId){
       salones= salones.map(salon=> {
         if(salon.id === editingSalonId){
