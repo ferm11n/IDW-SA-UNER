@@ -73,7 +73,7 @@ function getSalon(event) {
     const titulo = document.getElementById("salon-titulo").value.trim();
     const descripcion = document.getElementById("salon-descripcion").value.trim();
     const direccion = document.getElementById("salon-direccion").value.trim();
-    const valor = document.getElementById("salon-valor").value.trim();
+    const valorInput = document.getElementById("salon-valor").value.trim();
     const estado = document.getElementById("salon-estado").value.trim();
     const imagen = document.getElementById("salon-imagen").value.trim();
 
@@ -82,6 +82,11 @@ function getSalon(event) {
     alert("Por favor, complete todos los campos.");
     return;
   }
+    const valor = parseFloat(valorInput);
+    if (isNaN(valor) || valor <= 0) {
+      alert("Ingrese un valor numérico mayor a cero.");
+      return;
+    }
     if(editingSalonId){
       salones= salones.map(salon=> {
         if(salon.id === editingSalonId){

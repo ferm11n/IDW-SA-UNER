@@ -32,4 +32,33 @@ export const SALONES_INICIALES = [
 ];
 
 
+export const SERVICIOS_INICIALES = [
+  {
+    id: 1,
+    titulo: "Animación infantil",
+    descripcion: "Payasos, magos y shows temáticos para cumpleaños.",
+    valor: 300,
+    estado: "Disponible",
+    imagen: "img/servicios/animacion1.jpg",
+    role: "servicio"
+  },
+  {
+    id: 2,
+    titulo: "Catering Básico",
+    descripcion: "Snacks, gaseosas y torta personalizada.",
+    valor: 450,
+    estado: "Reservado",
+    imagen: "img/servicios/catering1.jpg"
+  },
+  {
+    id: 3,
+    titulo: "Decoración Temática",
+    descripcion: "Globos, pancartas, y ambientación temática.",
+    valor: 600,
+    estado: "Disponible",
+    imagen: "img/servicios/decoracion1.jpg"
+  }
+];
+
 window.SALONES_INICIALES = SALONES_INICIALES;
+window.SERVICIOS_INICIALES = SERVICIOS_INICIALES;

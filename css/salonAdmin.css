@@ -426,3 +426,22 @@ footer{
 .card.salon-card {
   transition: opacity 0.3s, transform 0.3s;
 }
+
+/* servicios */
+.servicio-editando {
+  border: 2px solid #17a2b8; /* un borde cian */
+  background-color: rgba(23, 162, 184, 0.1);
+  transition: background-color 0.3s, border 0.3s;
+}
+
+
+.servicio-borrando {
+  opacity: 0;
+  transform: scaleY(0.9);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+.card.servicio-card {
+  transition: opacity 0.3s, transform 0.3s;
+}
