@@ -50,7 +50,7 @@ function renderSalones() {
     <div class="col">
       <div class="card salon-card bg-dark text-white border-0 position-relative overflow-hidden" data-id="${salon.id}">
         <img src="${salon.imagen}" class="card-img" alt="${salon.titulo}" style="object-fit: cover; height: 300px;">
-        <div class="card-img-overlay salon-overlay d-flex flex-column justify-content-end p-3">
+        <div class="card-img-overlay salon-overlay d-flex flex-column justify-content-start p-3">
           <div class="salon-info">
             <h5 class="card-titulo">${salon.titulo}</h5>
             <p class="card-text">${salon.descripcion}</p>

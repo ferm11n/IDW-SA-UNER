@@ -51,7 +51,7 @@ function renderServicios() {
       <div class="col">
         <div class="card servicio-card bg-dark text-white border-0 position-relative overflow-hidden" data-id="${servicio.id}">
           <img src="${servicio.imagen}" class="card-img" alt="${servicio.titulo}" style="object-fit: cover; height: 300px;">
-          <div class="card-img-overlay servicio-overlay d-flex flex-column justify-content-end p-3">
+          <div class="card-img-overlay servicio-overlay d-flex flex-column justify-content-start p-3">
             <div class="servicio-info">
               <h5 class="card-titulo">${servicio.titulo}</h5>
               <p class="card-text">${servicio.descripcion}</p>
