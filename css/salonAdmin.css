@@ -403,3 +403,26 @@ footer{
   margin-left: 20px ;
 }
 
+.salon-editando {
+  border: 2px solid #ffc107;     
+  background-color: rgba(255, 193, 7, 0.1); 
+  transition: background-color 0.3s, border 0.3s;
+}
+
+#salon-form.edit-mode {
+  background-color: #fff3cd; 
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ffeeba;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.salon-borrando {
+  opacity: 0;
+  transform: scaleY(0.9);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.card.salon-card {
+  transition: opacity 0.3s, transform 0.3s;
+}
