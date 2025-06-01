@@ -15,5 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isPaginaAdmin && (!usuarioActual || usuarioActual.role !== "admin")) {
         alert("Acceso denegado pipi. Afueraaaaa!!!")
         window.location.href = "index.html"
+        return;
     }
+
 });
