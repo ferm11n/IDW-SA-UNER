@@ -84,7 +84,7 @@ function getServicio(event) {
     }
     const valor = parseFloat(valorInput);
     if (isNaN(valor) || valor <= 0) {
-        alert("Ingrese un valor numérico mayor a cero.");
+        alert("Ingrese un valor numérico mayor a 0.");
         return;
     }
 

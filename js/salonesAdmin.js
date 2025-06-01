@@ -84,7 +84,7 @@ function getSalon(event) {
 
     const valor = Number(valorInput);
     if (isNaN(valor) || valor <= 0) {
-      alert("Por favor, ingrese un valor numérico mayor a 0.");
+      alert("Ingrese un valor numérico mayor a 0.");
       return;
     }
 
