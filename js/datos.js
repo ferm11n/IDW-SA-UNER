@@ -1,4 +1,4 @@
-/*export const DATOS_INICIALES = [
+export const SALONES_INICIALES = [
     {
         id: 1,
         titulo: "Salon Fiesta",
@@ -17,8 +17,7 @@
         direccion: "Albaca 1755",
         valor: 1000,
         estado: "Reservado",
-        imagen: "img/salones/salones-infantiles/salonInfantil2.jpg",
-        role: "salon"
+        imagen: "img/salones/salones-infantiles/salonInfantil2.jpg"
     },
 
     {
@@ -28,37 +27,37 @@
         direccion: "Tomatioli 175",
         valor: 100,
         estado: "Disponible",
-        imagen: "img/salones/salones-infantiles/salonInfantil3.jpg",
-        role: "salon"
-    },
-
-    {
-        id: 4,
-        titulo: "DJ Premium",
-        descripcion: "Mix profesional con equipos y efectos de luz sincronizados",
-        valor: 150,
-        imagen: "img/servicios/djPremium.jpg",
-        role: "servicio",
-        categoria: "musica"
-    },
-
-    {
-        id: 5,
-        titulo: "Bandas en vivo",
-        descripcion: "Grupos musicales profesionales (rock, jazz y tropical)",
-        valor: 400,
-        imagen: "img/servicios/bandasEnVivo.jpg",
-        role: "servicio",
-        categoria: "musica"
-    },
-
-    {
-        id: 6,
-        titulo: "Esculturas 3D",
-        descripcion: "Estructuras luminosas de hasta 5 metros de altura",
-        valor: 800,
-        imagen: "img/servicios/esculturas3d.jpg",
-        role: "servicio",
-        categoria: "musica"
+        imagen: "img/salones/salones-infantiles/salonInfantil3.jpg"
     }
-];*/
+];
+
+
+export const SERVICIOS_INICIALES = [
+    {
+        id: 1,
+        titulo: "Bandas en vivo",
+        descripcion: "Bandas de los mejores generos para elegir",
+        valor: 300,
+        estado: "Disponible",
+        imagen: "img/servicios/bandasEnVivo.jpg"
+    },
+    {
+        id: 2,
+        titulo: "Magos e ilusionismo",
+        descripcion: "Los mejores magos y artistas de la ilusion, a tu disposicion",
+        valor: 450,
+        estado: "Reservado",
+        imagen: "img/servicios/ilusionismo.jpg"
+    },
+    {
+        id: 3,
+        titulo: "Dj Premium",
+        descripcion: "Los mejores dj para ponerte la mejor musica del momennto",
+        valor: 600,
+        estado: "Disponible",
+        imagen: "img/servicios/djPremium.jpg"
+    }
+];
+
+window.SALONES_INICIALES = SALONES_INICIALES;
+window.SERVICIOS_INICIALES = SERVICIOS_INICIALES;

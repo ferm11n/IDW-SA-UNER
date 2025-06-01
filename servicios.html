@@ -33,7 +33,7 @@
                       <li class="nav-item"><a class="nav-link text-white" href="institucion.html">Institucional</a></li>
                       <li class="nav-item"><a class="nav-link text-white" href="faq.html">Preguntas</a></li>
                       <li class="nav-item" id="navGestion" style="display: none;">
-                          <a class="nav-link text-white" href="salonesAdmin.html">Gestion</a>
+                          <a class="nav-link text-white" href="gestionAdmin.html">Gestion</a>
                       </li>
                       <!-- boton dinamico para cerrar sesion -->
                       <li class="nav-item">
@@ -52,12 +52,6 @@
             <p class="servicios-subtitulo">Combina elementos para crear tu evento perfecto</p>
 
             <!-- Filtros/Pestañas -->
-            <div class="servicios-filtros">
-                <button class="filtro-btn active" data-target="musica">🎵 Música & Sonido</button>
-                <button class="filtro-btn" data-target="decoracion">🎨 Decoración Temática</button>
-                <button class="filtro-btn" data-target="animacion">🤹 Animación & Entretenimiento</button>
-                <button class="filtro-btn" data-target="experiencias">🚀 Experiencias Extras</button>
-            </div>
 
             <!-- Contenedor de tarjetas -->
             <div class="servicios-contenedor">
@@ -149,9 +143,10 @@
             </div>
         </div>
     </footer>
+    <script type="module" src="js/datos.js"></script>
     <script src="js/servicios.js"></script>
     <script src="js/componentes/barraNavegacion.js"></script>
-    <script type="module" src="js/serviciosCatalogo.js"></script>
+    <script type="module" src="js/renderServiciosPublicos.js"></script>
     <script src="js/auth/proteccion.js"></script>
 
 </body>
