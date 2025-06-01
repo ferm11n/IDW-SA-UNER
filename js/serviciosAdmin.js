@@ -1,4 +1,3 @@
-// js/serviciosAdmin.js
 import { SERVICIOS_INICIALES } from "./datos.js";
 
 const servicioForm        = document.getElementById("servicio-form");

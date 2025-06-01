@@ -35,28 +35,27 @@ export const SALONES_INICIALES = [
 export const SERVICIOS_INICIALES = [
   {
     id: 1,
-    titulo: "Animación infantil",
-    descripcion: "Payasos, magos y shows temáticos para cumpleaños.",
+    titulo: "Bandas en vivo",
+    descripcion: "Bandas de los mejores generos para elegir",
     valor: 300,
     estado: "Disponible",
-    imagen: "img/servicios/animacion1.jpg",
-    role: "servicio"
+    imagen: "img/servicios/bandasEnVivo.jpg"
   },
   {
     id: 2,
-    titulo: "Catering Básico",
-    descripcion: "Snacks, gaseosas y torta personalizada.",
+    titulo: "Magos e ilusionismo",
+    descripcion: "Los mejores magos y artistas de la ilusion, a tu disposicion",
     valor: 450,
     estado: "Reservado",
-    imagen: "img/servicios/catering1.jpg"
+    imagen: "img/servicios/ilusionismo.jpg"
   },
   {
     id: 3,
-    titulo: "Decoración Temática",
-    descripcion: "Globos, pancartas, y ambientación temática.",
+    titulo: "Dj Premium",
+    descripcion: "Los mejores dj para ponerte la mejor musica del momennto",
     valor: 600,
     estado: "Disponible",
-    imagen: "img/servicios/decoracion1.jpg"
+    imagen: "img/servicios/djPremium.jpg"
   }
 ];
 

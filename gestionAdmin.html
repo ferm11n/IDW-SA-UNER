@@ -107,47 +107,15 @@
 <!-- Formulario Servicios -->
             <h5 class="text-center">Agregar / Editar Servicio</h5>
             <form id="servicio-form" class="mt-3">
-              <input
-                type="text"
-                id="servicio-titulo"
-                class="form-control mb-2"
-                placeholder="Título"
-                required
-              />
-              <textarea
-                id="servicio-descripcion"
-                class="form-control mb-2"
-                placeholder="Descripción"
-                required
-              ></textarea>
-              <input
-                type="number"
-                id="servicio-valor"
-                class="form-control mb-2"
-                placeholder="Valor"
-                required
-              />
+              <input type="text" id="servicio-titulo" class="form-control mb-2" placeholder="Título" required/>
+              <textarea id="servicio-descripcion" class="form-control mb-2" placeholder="Descripción" required></textarea>
+              <input type="number" id="servicio-valor" class="form-control mb-2" placeholder="Valor" required/>
               <select id="servicio-estado" class="form-select mb-2" required>
                 <option value="Disponible">Disponible</option>
-                <option value="Reservado">Reservado</option>
-              </select>
-              <input
-                type="url"
-                id="servicio-imagen"
-                class="form-control mb-2"
-                placeholder="URL de la imagen"
-                required
-              />
-              <button type="submit" class="btn btn-success w-100">
-                Guardar
-              </button>
-              <button
-                type="button"
-                id="cancel-edit-servicio"
-                class="btn btn-secondary w-100 mt-2 d-none"
-              >
-                Cancelar
-              </button>
+                <option value="Reservado">Reservado</option></select>
+              <input type="url" id="servicio-imagen" class="form-control mb-2" placeholder="URL de la imagen" required/>
+              <button type="submit" class="btn btn-success w-100">Guardar</button>
+              <button type="button" id="cancel-edit-servicio" class="btn btn-secondary w-100 mt-2 d-none">Cancelar</button>
             </form>
           </div>
         </div>
@@ -155,60 +123,7 @@
     </div>
   </div>
 
-<!-- footer -->
-  <footer class="mt-5">
-    <div class="row">
-      <div class="col">
-        <h3 class="titulo-footer">About us IDW</h3>
-        <p id="p-footer">
-          IDW S.A. se enorgullece de presentar un innovador portal dedicado a la
-          gestión y reserva de salones de cumpleaños infantiles. Nuestro sitio,
-          concebido como un amplio catálogo de salones y servicios, permite a los
-          usuarios filtrar y seleccionar opciones que se adapten a sus necesidades.
-        </p>
-      </div>
-      <div class="col">
-        <h3 class="titulo-footer">Secciones</h3>
-        <a class="nav-link a-footer" href="index.html">Inicio</a>
-        <a class="nav-link a-footer" href="eventos.html">Eventos</a>
-        <a class="nav-link a-footer" href="admin.html">Admin</a>
-        <a class="nav-link a-footer" href="servicios.html">Servicios</a>
-        <a class="nav-link a-footer" href="contacto.html">Contacto</a>
-      </div>
-      <div class="col">
-        <h3 class="titulo-footer">Contactanos</h3>
-<!-- Iconos -->
-        <a href="https://www.instagram.com/tu_cuenta" target="_blank" class="mx-2 text-decoration-none text-inherit">
-          <i class="material-icons" style="font-size: 36px;">photo_camera</i>
-        </a>
-        <a href="https://twitter.com/tu_cuenta" target="_blank" class="mx-2 text-decoration-none text-inherit">
-          <i class="material-icons" style="font-size: 36px;">alternate_email</i>
-        </a>
-        <a href="https://www.linkedin.com/in/tu_perfil" target="_blank" class="mx-2 text-decoration-none text-inherit">
-          <i class="material-icons" style="font-size: 36px;">business_center</i>
-        </a>
-        <a href="tel:+123456789" class="mx-2 text-decoration-none text-inherit">
-          <i class="material-icons" style="font-size: 36px;">phone</i>
-        </a>
-        <a href="mailto:info@example.com" class="mx-2 text-decoration-none text-inherit">
-          <i class="material-icons" style="font-size: 36px;">mail</i>
-        </a>
-        <div class="map-container mt-3">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3298.795157789198!2d-58.37723188477073!3d-31.40781288124265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccf447a7ea8cd%3A0xf7e0ecd94cc2e1f0!2sConcordia%20Entre%20R%C3%ADos%2C%20Entre%20R%C3%ADos%2C%20Argentina!5e0!3m2!1ses!2sus!4v1600000000!5m2!1ses!2sus"
-            width="100%"
-            height="200"
-            frameborder="0"
-            style="border:0;"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-    <p class="text-center">&copy; 2025 IDW S.A. - Todos los derechos reservados.</p>
-  </footer>
+
 
 <!-- Scripts  -->
   <script type="module" src="js/datos.js"></script>
