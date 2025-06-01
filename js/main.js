@@ -1,4 +1,4 @@
-import {SALONES_INICIALES} from "./datos.js";
+import {SALONES_INICIALES} from "./js/datos.js";
 
 if (!localStorage.getItem("halls")) {
     localStorage.setItem("halls", JSON.stringify(SALONES_INICIALES));

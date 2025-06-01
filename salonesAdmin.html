@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/salonAdmin.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@100..900&family=Playfair+Display:wght@600;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <!-- SalonesAdmin sera el archivo con el cual los administradores agreguen salones y demas -->
@@ -124,18 +123,19 @@
     <section class="container form-container  text-center">
       <h2>Agregar Salón de Evento</h2>
       <form id="salon-form">
-        <div class="mb-3"><input type="text" id="salon-title" class="form-control" placeholder="Título" required /></div>
-        <div class="mb-3"><textarea id="salon-description" class="form-control" placeholder="Descripción" required></textarea></div>
-        <div class="mb-3"><input type="text" id="salon-address" class="form-control" placeholder="Dirección" required /></div>
-        <div class="mb-3"><input type="number" id="salon-value" class="form-control" placeholder="Valor" required /></div>
+        <div class="mb-3"><input type="text" id="salon-titulo" class="form-control" placeholder="Título" required /></div>
+        <div class="mb-3"><textarea id="salon-descripcion" class="form-control" placeholder="Descripción" required></textarea></div>
+        <div class="mb-3"><input type="text" id="salon-direccion" class="form-control" placeholder="Dirección" required /></div>
+        <div class="mb-3"><input type="number" id="salon-valor" class="form-control" placeholder="Valor" required /></div>
         <div class="mb-3">
-          <select id="salon-status" class="form-select" required>
+          <select id="salon-estado" class="form-select" required>
             <option value="Disponible">Disponible</option>
             <option value="Reservado">Reservado</option>
           </select>
         </div>
-        <div class="mb-3"><input type="url" id="salon-image" class="form-control" placeholder="URL de la imagen" required /></div>
-        <button type="submit" class="btn btn-primary">Agregar Salón</button>
+        <div class="mb-3"><input type="url" id="salon-imagen" class="form-control" placeholder="URL de la imagen" required /></div>
+        <button type="submit" id="submit-button" class="btn btn-primary">Agregar Salón</button>
+        <button type="button" id="cancel-edit" class="btn btn-secondary d-none">Cancelar</button>
       </form>
     </section>
   </main>

@@ -1,4 +1,4 @@
-import { SALONES_INICIALES } from "./datos";
+import { SALONES_INICIALES } from "./datos.js";
 
 const salonForm = document.getElementById("salon-form");
 const salonesList = document.getElementById("salones-list");
@@ -48,15 +48,16 @@ function renderSalones() {
 
     salonesList.innerHTML = salones.map(salon => `
     <div class="col-md-4">
-      <div class="card salon-card bg-dark text-white border-0 position-relative overflow-hidden">
-        <img src="${salon.image}" class="card-img" alt="${salon.title}" style="object-fit: cover; height: 300px;">
+      <div class="card salon-card bg-dark text-white border-0 position-relative overflow-hidden" data-id="${salon.id}">
+        <img src="${salon.imagen}" class="card-img" alt="${salon.titulo}" style="object-fit: cover; height: 300px;">
         <div class="card-img-overlay salon-overlay d-flex flex-column justify-content-end p-3">
           <div class="salon-info">
-            <h5 class="card-title">${salon.title}</h5>
-            <p class="card-text">${salon.description}</p>
-            <p class="card-text"><small>${salon.address}</small></p>
-            <p class="card-text"><strong>Valor:</strong> $${salon.value}</p>
-            <p class="card-text"><strong>Estado:</strong> ${salon.status}</p>
+            <h5 class="card-titulo">${salon.titulo}</h5>
+            <p class="card-text">${salon.descripcion}</p>
+            <p class="card-text"><small>${salon.direccion}</small></p>
+            <p class="card-text"><strong>Valor:</strong> $${salon.valor}</p>
+            <p class="card-text"><strong>Estado:</strong> ${salon.estado}</p>
+            <button class="btn btn-warning mt-2 me-2" onclick="editSalon(${salon.id})">Editar</button>
             <button class="btn btn-danger mt-2" onclick="deleteSalon(${salon.id})">Eliminar</button>
           </div>
         </div>
@@ -69,58 +70,76 @@ function renderSalones() {
 function getSalon(event) {
     event.preventDefault();
 
-    const title = document.getElementById("salon-title").value.trim();
-    const description = document.getElementById("salon-description").value.trim();
-    const address = document.getElementById("salon-address").value.trim();
-    const value = document.getElementById("salon-value").value.trim();
-    const status = document.getElementById("salon-status").value;
-    const image = document.getElementById("salon-image").value.trim();
+    const titulo = document.getElementById("salon-titulo").value.trim();
+    const descripcion = document.getElementById("salon-descripcion").value.trim();
+    const direccion = document.getElementById("salon-direccion").value.trim();
+    const valor = document.getElementById("salon-valor").value.trim();
+    const estado = document.getElementById("salon-estado").value.trim();
+    const imagen = document.getElementById("salon-imagen").value.trim();
 
 
-    if (!title || !description || !address || !value || !image) {
+    if (!titulo || !descripcion || !direccion || !valor || !imagen) {
     alert("Por favor, complete todos los campos.");
     return;
   }
     if(editingSalonId){
       salones= salones.map(salon=> {
         if(salon.id === editingSalonId){
-          return {id: salon.id, title, description, address, value, status, image};
+          return {id: salon.id, titulo, descripcion, direccion, valor, estado, imagen};
         }
         return salon
       });
       editingSalonId=null;
+      salonForm.classList.remove("edit-mode");
+      document.querySelectorAll(".card.salon-editando").forEach(card => {
+        card.classList.remove("salon-editando");
+      });
       submitButton.textContent= "Agregar Salon";
       cancelEditButton.classList.add("d-none");
     } else {
         const newSalon = {
             id: salonId++,
-            title,
-            description,
-            address,
-            value,
-            status,
-            image
+            titulo,
+            descripcion,
+            direccion,
+            valor,
+            estado,
+            imagen
         };
         salones.push(newSalon);
     }
     saveSalonesToStorage();
     renderSalones();
     salonForm.reset();
+
+    console.log("salones:", salones);
 }
 
 function editSalon(id){
+  document.querySelectorAll(".card.salon-editando").forEach(card=>{
+    card.classList.remove("salon-editando");
+  });
+  salonForm.classList.remove("edit-mode");
+
   const salonAEditar= salones.find(salon => salon.id === id);
   if(!salonAEditar) return;
-  document.getElementById("salon-title").value = salonAEditar.title;
-  document.getElementById("salon-description").value = salonAEditar.description;
-  document.getElementById("salon-address").value = salonAEditar.address;
-  document.getElementById("salon-value").value = salonAEditar.value;
-  document.getElementById("salon-status").value = salonAEditar.status;
-  document.getElementById("salon-image").value = salonAEditar.image;
+  document.getElementById("salon-titulo").value = salonAEditar.titulo;
+  document.getElementById("salon-descripcion").value = salonAEditar.descripcion;
+  document.getElementById("salon-direccion").value = salonAEditar.direccion;
+  document.getElementById("salon-valor").value = salonAEditar.valor;
+  document.getElementById("salon-estado").value = salonAEditar.estado;
+  document.getElementById("salon-imagen").value = salonAEditar.imagen;
 
   editingSalonId=id;
   submitButton.textContent="Guardar Cambios";
   cancelEditButton.classList.remove("d-none");
+
+  const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
+  if (tarjeta) {
+    tarjeta.classList.add("salon-editando");
+  }
+  salonForm.classList.add("edit-mode");
+
 }
 
 function cancelEdit() {
@@ -128,38 +147,34 @@ function cancelEdit() {
   salonForm.reset();
   submitButton.textContent = "Agregar Salón";
   cancelEditButton.classList.add("d-none");
+  salonForm.classList.remove("edit-mode");
+
+  document.querySelectorAll(".card.salon-editando").forEach(card=> {
+    card.classList.remove("salon-editando");
+  });
 }
 
 // Eliminar salón
 function deleteSalon(id) {
-  if(confirm("Esta accion borrara el salon, ¿esta seguro?"))
+  if(!confirm("Esta accion borrara el salon, ¿esta seguro?")){
+    return;
+  }
+  const tarjeta=document.querySelector(`.card[data-id="${id}"]`);
+  if (tarjeta){
+    tarjeta.classList.add("salon-borrando");
+    setTimeout(() => {
+      salones=salones.filter(salon => salon.id !== id);
+      saveSalonesToStorage();
+      renderSalones();
+    }, 300);
+  }else {
     salones = salones.filter(salon => salon.id !== id);
     saveSalonesToStorage();
     renderSalones();
+  }
 }
 
-salonForm.addEventListener("submit", getSalon);
 cancelEditButton.addEventListener("click", cancelEdit);
-
-loadSalonesFromStorage();
-renderSalones();
 
 window.editSalon = editSalon;
 window.deleteSalon = deleteSalon ;
-
-//script para imagenes
-document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('.event-item');
-  const img = document.getElementById('evento-img');
-
-  items.forEach(item => {
-    item.addEventListener('mouseover', () => {
-      const newImg = item.getAttribute('data-img');
-      img.setAttribute('src', newImg);
-    });
-
-    item.addEventListener('mouseout', () => {
-      img.setAttribute('src', './img/eventos/evento-default.jpg');
-    });
-  });
-});

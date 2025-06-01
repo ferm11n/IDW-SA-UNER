@@ -88,7 +88,7 @@ Tarea:
 
 Archivos:
             * salonesAdmin.html -> pagina exclusiva para el administrador
-            * js/salones.js -> toda la logica del CRUD
+            * js/salonesAdmin.js -> toda la logica del CRUD
             * datos.js -> archivo que contiene los salones precargados
 
 
