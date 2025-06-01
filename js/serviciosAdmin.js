@@ -47,19 +47,19 @@ function renderServicios() {
     return;
   }
 
-  serviciosList.innerHTML = servicios
-    .map(
-      (servicio) => `
-      <div class="col-12">
+  serviciosList.innerHTML = servicios.map(servicio => `
+      <div class="col">
         <div class="card servicio-card bg-dark text-white border-0 position-relative overflow-hidden" data-id="${servicio.id}">
-          <img src="${servicio.imagen}" class="card-img" alt="${servicio.titulo}" style="object-fit: cover; height: 200px;">
+          <img src="${servicio.imagen}" class="card-img" alt="${servicio.titulo}" style="object-fit: cover; height: 300px;">
           <div class="card-img-overlay servicio-overlay d-flex flex-column justify-content-end p-3">
-            <h5 class="card-titulo">${servicio.titulo}</h5>
-            <p class="card-text">${servicio.descripcion}</p>
-            <p class="card-text"><strong>Valor:</strong> $${servicio.valor}</p>
-            <p class="card-text"><strong>Estado:</strong> ${servicio.estado}</p>
-            <button class="btn btn-sm btn-warning mt-2 me-2" onclick="editServicio(${servicio.id})">Editar</button>
-            <button class="btn btn-sm btn-danger mt-2" onclick="deleteServicio(${servicio.id})">Eliminar</button>
+            <div class="servicio-info">
+              <h5 class="card-titulo">${servicio.titulo}</h5>
+              <p class="card-text">${servicio.descripcion}</p>
+              <p class="card-text"><strong>Valor:</strong> $${servicio.valor}</p>
+              <p class="card-text"><strong>Estado:</strong> ${servicio.estado}</p>
+              <button class="btn btn-warning mt-2 me-2" onclick="editServicio(${servicio.id})">Editar</button>
+              <button class="btn btn-danger mt-2" onclick="deleteServicio(${servicio.id})">Eliminar</button>
+            </div>
           </div>
         </div>
       </div>

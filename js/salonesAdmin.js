@@ -47,7 +47,7 @@ function renderSalones() {
     }
 
     salonesList.innerHTML = salones.map(salon => `
-    <div class="col-md-4">
+    <div class="col">
       <div class="card salon-card bg-dark text-white border-0 position-relative overflow-hidden" data-id="${salon.id}">
         <img src="${salon.imagen}" class="card-img" alt="${salon.titulo}" style="object-fit: cover; height: 300px;">
         <div class="card-img-overlay salon-overlay d-flex flex-column justify-content-end p-3">

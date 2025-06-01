@@ -428,20 +428,68 @@ footer{
 }
 
 /* servicios */
-.servicio-editando {
-  border: 2px solid #17a2b8; /* un borde cian */
-  background-color: rgba(23, 162, 184, 0.1);
-  transition: background-color 0.3s, border 0.3s;
+.salon-card, .servicio-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  transition: transform 0.2s ease;
 }
 
-
-.servicio-borrando {
-  opacity: 0;
-  transform: scaleY(0.9);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+/* Imagen como fondo en ambas tarjetas si es el caso */
+.salon-card img, .servicio-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 160px;
 }
 
+/* Títulos de tarjetas */
+.salon-card h5, .servicio-card h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
 
-.card.servicio-card {
-  transition: opacity 0.3s, transform 0.3s;
+/* Textos de descripción */
+.salon-card p, .servicio-card p {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+/* Botones dentro de tarjetas */
+.salon-card button, .servicio-card button {
+  background-color: #f8a5c2;
+  color: #000;
+  border: none;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.salon-card button:hover, .servicio-card button:hover {
+  background-color: #ff69b4;
+  color: #fff;
+}
+
+/* Animación al hacer hover */
+.salon-card:hover, .servicio-card:hover {
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+/* sombra en el texto*/
+.card-text, .card-titulo{
+  text-shadow:1px 1px 4px rgba(0,0,0,0.8)
+}
+
+/* fondo oscuro ligero*/
+.servicio-info, .salon-info{
+  background-color:rgba(0,0,0,0.4);
+  border-radius:8px;
 }
