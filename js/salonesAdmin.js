@@ -120,6 +120,7 @@ function getSalon(event) {
     console.log("salones:", salones);
 }
 
+//Pasar a modo edicion
 function editSalon(id){
   document.querySelectorAll(".card.salon-editando").forEach(card=>{
     card.classList.remove("salon-editando");
@@ -147,6 +148,7 @@ function editSalon(id){
 
 }
 
+//Cancelar edicion
 function cancelEdit() {
   editingSalonId = null;
   salonForm.reset();

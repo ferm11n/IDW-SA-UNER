@@ -10,20 +10,20 @@ let servicios = [];
 let servicioId = 1;
 let editingServicioId = null;
 
-// Inicializar
+//Inicializar
 loadServiciosFromStorage();
 renderServicios();
 
 servicioForm.addEventListener("submit", getServicio);
 cancelEditServicio.addEventListener("click", cancelEditServicioFn);
 
-// Guardar en LocalStorage
+//Guardar en LocalStorage
 function saveServiciosToStorage() {
   localStorage.setItem("servicios", JSON.stringify(servicios));
   localStorage.setItem("servicioId", servicioId.toString());
 }
 
-// Cargar desde LocalStorage o datos iniciales
+//Cargar desde LocalStorage
 function loadServiciosFromStorage() {
   const storedServicios = localStorage.getItem("servicios");
   const storedServicioId = localStorage.getItem("servicioId");
@@ -41,7 +41,7 @@ function loadServiciosFromStorage() {
   }
 }
 
-// Renderizar tarjetas de servicios
+//Renderizar tarjetas
 function renderServicios() {
   if (!servicios.length) {
     serviciosList.innerHTML = "<p class='text-muted'>No se han agregado servicios.</p>";
@@ -69,7 +69,7 @@ function renderServicios() {
     .join("");
 }
 
-// Agregar o actualizar servicio
+//Agregar o actualizar servicio
 function getServicio(event) {
     event.preventDefault();
 
@@ -112,7 +112,7 @@ function getServicio(event) {
   renderServicios();
 }
 
-// Pasar a modo edición
+//Pasar a modo edicion
 function editServicio(id) {
     document.querySelectorAll(".card.servicio-editando").forEach((c) => c.classList.remove("servicio-editando"));
     servicioForm.classList.remove("edit-mode");
@@ -135,7 +135,7 @@ function editServicio(id) {
     servicioForm.classList.add("edit-mode");
 }
 
-// Cancelar edición
+//Cancelar edicion
 function cancelEditServicioFn() {
     editingServicioId = null;
     servicioForm.reset();
@@ -145,7 +145,7 @@ function cancelEditServicioFn() {
     document.querySelectorAll(".card.servicio-editando").forEach((c) => c.classList.remove("servicio-editando"));
 }
 
-// Eliminar servicio con animación
+//Eliminar servicio
 function deleteServicio(id) {
     if (!confirm("¿Seguro que querés eliminar este servicio?")) return;
 
