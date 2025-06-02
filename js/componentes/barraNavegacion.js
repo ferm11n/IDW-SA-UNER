@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLogin = document.getElementById("navLogin");
 
     if (user && navLogin) {
-        navLogin.textContent = "Cerrar sesión";
+        navLogin.textContent = "Salir";
         navLogin.href = "#";
         navLogin.addEventListener("click", (e) => {
             e.preventDefault();
