@@ -23,6 +23,11 @@ const salones = [
 function mostrarSalones(lista) {
   contenedor.innerHTML = "";
 
+  if (!lista.length) {
+    contenedor.innerHTML = '<p class="text-muted text-center">No hay salones.</p>'
+    return;
+  }
+
   lista.forEach(item => {
     const card = document.createElement("article");
     card.classList.add("servicio-card", "animacion");
