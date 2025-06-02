@@ -74,7 +74,7 @@
 .servicio-card {
     display: flex;
     flex-direction: column;
-    width: 100%;                /* Que use todo el ancho en móvil */
+    width: 100%;                /* Que use todo el ancho en mobile */
     max-width: 300px;           /* Pero no se pase de este tamaño */
     margin-left: auto;
     margin-right: auto;         /* Esto la centra automáticamente */

@@ -78,7 +78,7 @@
 /* ==========================================================================
    Animation Keyframes
    ========================================================================== */
-/* Fade-in and slide-up animation for elements */
+/* Animación de entrada y salida gradual de elementos */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
