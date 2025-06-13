@@ -7,7 +7,7 @@ export const SALONES_PRINCIPALES = [
         precio: 800,
         servicios: ["Sonido normal", "Juego de luces", "Comida Gourmet"],
         imagenes: ["img/salonesInicialesUno.jpeg"],
-        descripcion: "Salon diseñado para eventos empresariales"
+        descripcion: "Salon para eventos empresariales"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const SALONES_PRINCIPALES = [
         precio: 500,
         servicios: ["Diversion para niños", "Catering normal", "Pelotero"],
         imagenes: ["img/salonesInicialesDos.jpg"],
-        descripcion: "Un salon ambientado a la naturaleza"
+        descripcion: "salon ambientado a la naturaleza"
     },
     {
         id: 3,
@@ -47,7 +47,7 @@ export const SALONES_PRINCIPALES = [
         precio: 510,
         servicios: ["Sonido profesional", "Juego de luces", "Decoraciones"],
         imagenes: ["img/salonesInicialesCinco.jpeg"],
-        descripcion: "Un salon especialmente si tiene muchos invitados"
+        descripcion: "Un salon para muchos invitados"
     },
     {
         id: 6,
