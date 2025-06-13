@@ -5,10 +5,28 @@ const botonesFiltro = document.querySelectorAll(".filtro-btn");
 
 // Cargar salones desde localStorage o usar datos iniciales
 const serviciosLocales = JSON.parse(localStorage.getItem("servicios")) || [];
+
+
+// Unificar servicios: datos base + locales
 const servicios = [
-    ...SERVICIOS_PRINCIPALES,
-    ...serviciosLocales
+  ...SERVICIOS_PRINCIPALES.map(servicio => ({
+    titulo: servicio.titulo,
+    descripcion: servicio.descripcion,
+    valor: servicio.valor,
+    imagen: Array.isArray(servicio.imagen) ? servicio.imagen[0] : servicio.imagen,
+    categoria: servicio.categoria || "Otros"
+  })),
+
+    ...serviciosLocales.map(servicio => ({
+    titulo: servicio.titulo,
+    descripcion: servicio.descripcion,
+    valor: servicio.valor,
+    imagen: Array.isArray(servicio.imagen) ? servicio.imagen[0] : servicio.imagen,
+    categoria: servicio.categoria || "Otros"
+  }))
 ];
+
+
 
 //Funcion para renderizar servicios
 function mostrarServicios(lista) {
@@ -44,17 +62,4 @@ function mostrarServicios(lista) {
 //Mostramos todos los servicios al cargar
 mostrarServicios(servicios);
 
-//filtramos por categoria
-botonesFiltro.forEach(boton => {
-  boton.addEventListener("click", () => {
-    botonesFiltro.forEach(btn => btn.classList.remove("active"));
-    boton.classList.add("active");
 
-    const categoriaSeleccionada = boton.dataset.target;
-    const filtrados = servicios.filter(servicios =>
-      servicio.categoria?.toLowerCase() === categoriaSeleccionada.toLowerCase()
-    );
-
-    mostrarServicios(categoriaSeleccionada ? filtrados : servicios);
-  });
-});
