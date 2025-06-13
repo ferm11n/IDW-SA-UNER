@@ -62,93 +62,6 @@ export const SALONES_PRINCIPALES = [
 ];
 
 export const SERVICIOS_PRINCIPALES = [
-<<<<<<< HEAD
-    {   
-        id: 1, 
-        nombre: "Sonido normal", 
-        precio: 50000 
-
-    },
-    {   
-        id: 2, 
-        nombre: "Sonido profesional", 
-        precio: 120000 
-    },
-    {   
-        id: 3, 
-        nombre: "Juego de luces", 
-        precio: 80000 
-    },
-    {   
-        id: 4,
-        nombre: "Comida Gourmet",
-        precio: 30000 
-    },
-    {   
-        id: 5,
-        nombre: "Catering normal",
-        precio: 200000 
-    },
-    {   
-        id: 6, 
-        nombre: "Catering profesional", 
-        precio: 500000 
-    },
-    {   
-        id: 7, 
-        nombre: "Diversion para niños", 
-        precio: 150000
-    },
-    {   
-        id: 8, 
-        nombre: "Musica", 
-        precio: 100000 
-    },
-    {   
-        id: 9, 
-        nombre: "Decoraciones", 
-        precio: 180000 
-    }
-];
-
-export const IMAGENES_PRINCIPALES = [
-    {   
-        id: 1, 
-        nombre: "Salón Maestro - Principal", 
-        url: "img/salonesInicialesUno.jpeg", 
-        salonId: 1 
-
-    },
-    {   
-        id: 2, 
-        nombre: "Salón Verde - Principal", 
-        url: "img/salonesInicialesDos.jpg", 
-        salonId: 2 
-    },
-    {   
-        id: 3, 
-        nombre: "Salón Child - Principal", 
-        url: "img/salonesInicialesTres.jpeg", 
-        salonId: 3 
-    },
-    {   
-        id: 4, 
-        nombre: "Salón Rojo - Principal", 
-        url: "img/salonesInicialesCuatro.jpg", 
-        salonId: 4 
-    },
-    {   
-        id: 5, 
-        nombre: "Salón Super Maestro - Principal", 
-        url: "img/salonesInicialesCinco.jpeg", 
-        salonId: 5 
-    },
-    {   
-        id: 6, 
-        nombre: "Salón Naranja - Principal", 
-        url: "img/salonesInicialesSeis.jpeg", 
-        salonId: 6 }
-=======
     { id: 1, titulo: "Sonido normal", valor: 50000 },
     { id: 2, titulo: "Sonido profesional", valor: 120000 },
     { id: 3, titulo: "Juego de luces", valor: 80000 },
@@ -167,5 +80,4 @@ export const IMAGENES_PRINCIPALES = [
     { id: 4, titulo: "Salón Rojo - Principal", url: "img/salonesInicialesCuatro.jpg", salonId: 4 },
     { id: 5, titulo: "Salón Super Maestro - Principal", url: "img/salonesInicialesCinco.jpeg", salonId: 5 },
     { id: 6, titulo: "Salón Naranja - Principal", url: "img/salonesInicialesSeis.jpeg", salonId: 6 }
->>>>>>> d6fd3be1b4e4bd8194efc1acf5e99c5327403f56
 ];
