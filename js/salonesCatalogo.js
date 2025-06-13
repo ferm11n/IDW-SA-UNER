@@ -9,11 +9,11 @@ const salonesLocales = JSON.parse(localStorage.getItem("salones")) || [];
 // Unificar salones: iniciales + locales
 const salones = [
   ...SALONES_PRINCIPALES.map(salon => ({
-    titulo: salon.nombre,
+    titulo: salon.titulo,
     descripcion: salon.descripcion,
-    direccion: salon.ubicacion,
-    valor: salon.precio,
-    imagen: salon.imagenes[0],
+    direccion: salon.direccion,
+    valor: salon.valor,
+    imagen: salon.imagen[0],
     categoria: salon.capacidad > 150 ? "Grande" : "Otros"
   })),
   ...salonesLocales.map(salon => ({
