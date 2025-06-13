@@ -24,24 +24,28 @@ function saveSalonesToStorage() {
 function loadSalonesFromStorage() {
     const storedSalones = JSON.parse(localStorage.getItem("salones")) || [];
     const storedId = parseInt(localStorage.getItem("salonId")) || 1;
+    const precargadosYaInsertados = localStorage.getItem("salonesPrecargados") === "true";
 
-    // Adaptar los precargados
-    const precargadosAdaptados = SALONES_PRINCIPALES.map(p => ({
-        id: p.id,
-        titulo: p.nombre,
-        descripcion: p.descripcion,
-        direccion: p.ubicacion,
-        valor: p.precio,
-        estado: p.capacidad > 150 ? "Grande" : "Otros",
-        imagen: p.imagenes[0],
-        origen: "inicial"
-    }));
+    if (!precargadosYaInsertados) {
+        const precargadosAdaptados = SALONES_PRINCIPALES.map(p => ({
+            id: p.id,
+            titulo: p.nombre,
+            descripcion: p.descripcion,
+            direccion: p.ubicacion,
+            valor: p.precio,
+            estado: p.capacidad > 150 ? "Grande" : "Otros",
+            imagen: p.imagenes[0],
+            origen: "inicial"
+        }));
 
-    const idsEnStorage = new Set(storedSalones.map(s => s.id));
+        const idsEnStorage = new Set(storedSalones.map(s => s.id));
+        const nuevosPrecargados = precargadosAdaptados.filter(s => !idsEnStorage.has(s.id));
+        salones = [...storedSalones, ...nuevosPrecargados];
 
-    const nuevosPrecargados = precargadosAdaptados.filter(s => !idsEnStorage.has(s.id));
-
-    salones = [...storedSalones, ...nuevosPrecargados];
+        localStorage.setItem("salonesPrecargados", "true");
+    } else {
+        salones = storedSalones;
+    }
 
     const maxId = salones.reduce((max, salon) => salon.id > max ? salon.id : max, 0);
     salonId = Math.max(storedId, maxId + 1);
