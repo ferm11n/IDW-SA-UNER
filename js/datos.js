@@ -62,110 +62,102 @@ export const SALONES_PRINCIPALES = [
 ];
 
 export const SERVICIOS_PRINCIPALES = [
-<<<<<<< HEAD
+
+//    HEAD
     {   
         id: 1, 
-        nombre: "Sonido normal", 
-        precio: 50000 
+        titulo: "Bandas En Vivo", 
+        valor: 50000,
+        imagen: ["img/servicios/bandasEnVivo.jpg"],
+        descripcion: "Una banda en vivo. "
 
     },
     {   
         id: 2, 
-        nombre: "Sonido profesional", 
-        precio: 120000 
+        titulo: "DJ Premium", 
+        valor: 120000,
+        imagen: ["img/servicios/djPremium.jpg"],
+        descripcion: "DJ´S de lo mas divertidos. "
     },
     {   
         id: 3, 
-        nombre: "Juego de luces", 
-        precio: 80000 
+        titulo: "Escultura 3D", 
+        valor: 80000,
+        imagen: ["img/servicios/esculturas3d.jpg"],
+        descripcion: "Figuras historicas. "
     },
     {   
         id: 4,
-        nombre: "Comida Gourmet",
-        precio: 30000 
+        titulo: "Show de Luces",
+        valor: 30000,
+        imagen: ["img/servicios/iluminacionMapeada.jpg"],
+        descripcion: "Efectos de luces y destellos. "
     },
     {   
         id: 5,
-        nombre: "Catering normal",
-        precio: 200000 
+        titulo: "Ilusionismo",
+        valor: 200000,
+        imagen: ["img/servicios/ilusionismo.jpg"],
+        descripcion: "Juegos de ilusiones a la vista. "
     },
     {   
         id: 6, 
-        nombre: "Catering profesional", 
-        precio: 500000 
+        titulo: "Paintball Laser", 
+        valor: 500000,
+        imagen: ["img/servicios/paintballLaser.jpg"],
+        descripcion: "Demuestra quien tiene la mejor punteria. "
     },
     {   
         id: 7, 
-        nombre: "Diversion para niños", 
-        precio: 150000
+        titulo: "Realidad Virtual", 
+        valor: 150000,
+        imagen: ["img/servicios/realidadVirtual.jpg"],
+        descripcion: "Mejor que META. "
     },
     {   
         id: 8, 
-        nombre: "Musica", 
-        precio: 100000 
-    },
-    {   
-        id: 9, 
-        nombre: "Decoraciones", 
-        precio: 180000 
+        titulo: "Show de Drones", 
+        valor: 100000,
+        imagen: ["img/servicios/showDrones.jpg"],
+        descripcion: "Directo desde China. "
     }
 ];
 
 export const IMAGENES_PRINCIPALES = [
     {   
         id: 1, 
-        nombre: "Salón Maestro - Principal", 
+        titulo: "Salón Maestro - Principal", 
         url: "img/salonesInicialesUno.jpeg", 
         salonId: 1 
 
     },
     {   
         id: 2, 
-        nombre: "Salón Verde - Principal", 
+        titulo: "Salón Verde - Principal", 
         url: "img/salonesInicialesDos.jpg", 
         salonId: 2 
     },
     {   
         id: 3, 
-        nombre: "Salón Child - Principal", 
+        titulo: "Salón Child - Principal", 
         url: "img/salonesInicialesTres.jpeg", 
         salonId: 3 
     },
     {   
         id: 4, 
-        nombre: "Salón Rojo - Principal", 
+        titulo: "Salón Rojo - Principal", 
         url: "img/salonesInicialesCuatro.jpg", 
         salonId: 4 
     },
     {   
         id: 5, 
-        nombre: "Salón Super Maestro - Principal", 
+        titulo: "Salón Super Maestro - Principal", 
         url: "img/salonesInicialesCinco.jpeg", 
         salonId: 5 
     },
     {   
         id: 6, 
-        nombre: "Salón Naranja - Principal", 
+        titulo: "Salón Naranja - Principal", 
         url: "img/salonesInicialesSeis.jpeg", 
         salonId: 6 }
-=======
-    { id: 1, titulo: "Sonido normal", valor: 50000 },
-    { id: 2, titulo: "Sonido profesional", valor: 120000 },
-    { id: 3, titulo: "Juego de luces", valor: 80000 },
-    { id: 4, titulo: "Comida Gourmet", valor: 30000 },
-    { id: 5, titulo: "Catering normal", valor: 200000 },
-    { id: 6, titulo: "Catering profesional", valor: 500000 },
-    { id: 7, titulo: "Diversion para niños", valor: 150000 },
-    { id: 8, titulo: "Musica", valor: 100000 },
-    { id: 9, titulo: "Decoraciones", valor: 180000 }
-];
-
-export const IMAGENES_PRINCIPALES = [
-    { id: 1, titulo: "Salón Maestro - Principal", url: "img/salonesInicialesUno.jpeg", salonId: 1 },
-    { id: 2, titulo: "Salón Verde - Principal", url: "img/salonesInicialesDos.jpg", salonId: 2 },
-    { id: 3, titulo: "Salón Child - Principal", url: "img/salonesInicialesTres.jpeg", salonId: 3 },
-    { id: 4, titulo: "Salón Rojo - Principal", url: "img/salonesInicialesCuatro.jpg", salonId: 4 },
-    { id: 5, titulo: "Salón Super Maestro - Principal", url: "img/salonesInicialesCinco.jpeg", salonId: 5 },
-    { id: 6, titulo: "Salón Naranja - Principal", url: "img/salonesInicialesSeis.jpeg", salonId: 6 }
->>>>>>> d6fd3be1b4e4bd8194efc1acf5e99c5327403f56
 ];
