@@ -160,4 +160,14 @@ export const IMAGENES_PRINCIPALES = [
         titulo: "Salón Naranja - Principal", 
         url: "img/salonesInicialesSeis.jpeg", 
         salonId: 6 }
+
+];
+
+export const IMAGENES_PRINCIPALES = [
+    { id: 1, titulo: "Salón Maestro - Principal", url: "img/salonesInicialesUno.jpeg", salonId: 1 },
+    { id: 2, titulo: "Salón Verde - Principal", url: "img/salonesInicialesDos.jpg", salonId: 2 },
+    { id: 3, titulo: "Salón Child - Principal", url: "img/salonesInicialesTres.jpeg", salonId: 3 },
+    { id: 4, titulo: "Salón Rojo - Principal", url: "img/salonesInicialesCuatro.jpg", salonId: 4 },
+    { id: 5, titulo: "Salón Super Maestro - Principal", url: "img/salonesInicialesCinco.jpeg", salonId: 5 },
+    { id: 6, titulo: "Salón Naranja - Principal", url: "img/salonesInicialesSeis.jpeg", salonId: 6 }
 ];
