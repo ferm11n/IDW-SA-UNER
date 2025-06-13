@@ -1,4 +1,4 @@
-import { SALONES_INICIALES } from "./datos.js";
+import { SALONES_PRINCIPALES } from "./datos.js";
 
 const salonForm = document.getElementById("salon-form");
 const salonesList = document.getElementById("salones-list");
@@ -28,8 +28,8 @@ function loadSalonesFromStorage() {
 
     if (storedSalones) {
       salones = JSON.parse(storedSalones);
-    } else if(typeof SALONES_INICIALES !== "undefined"){
-      salones = SALONES_INICIALES;
+    } else if(typeof SALONES_PRINCIPALES !== "undefined"){
+      salones = SALONES_PRINCIPALES;
       salonId= salones.reduce((max, salon) => (salon.id > max ? salon.id : max), 0)+1;
       saveSalonesToStorage();
     }

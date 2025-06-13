@@ -1,4 +1,4 @@
-import { SERVICIOS_INICIALES } from "./datos.js";
+import { SERVICIOS_PRINCIPALES } from "./datos.js";
 
 const contenedorServicios = document.querySelector(".servicios-contenedor");
 const botonesFiltro = document.querySelectorAll(".filtro-btn");
@@ -6,7 +6,7 @@ const botonesFiltro = document.querySelectorAll(".filtro-btn");
 // Cargar salones desde localStorage o usar datos iniciales
 const serviciosLocales = JSON.parse(localStorage.getItem("servicios")) || [];
 const servicios = [
-    ...SERVICIOS_INICIALES,
+    ...SERVICIOS_PRINCIPALES,
     ...serviciosLocales
 ];
 

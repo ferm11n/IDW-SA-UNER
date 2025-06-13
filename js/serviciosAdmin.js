@@ -1,4 +1,4 @@
-import { SERVICIOS_INICIALES } from "./datos.js";
+import { SERVICIOS_PRINCIPALES } from "./datos.js";
 
 const servicioForm        = document.getElementById("servicio-form");
 const serviciosList       = document.getElementById("servicios-list");
@@ -29,8 +29,8 @@ function loadServiciosFromStorage() {
 
   if (storedServicios) {
     servicios = JSON.parse(storedServicios);
-  } else if (typeof SERVICIOS_INICIALES !== "undefined") {
-    servicios = SERVICIOS_INICIALES;
+  } else if (typeof SERVICIOS_PRINCIPALES !== "undefined") {
+    servicios = SERVICIOS_PRINCIPALES;
     servicioId = servicios.reduce((max, s) => (s.id > max ? s.id : max), 0) + 1;
     saveServiciosToStorage();
   }

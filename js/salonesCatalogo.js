@@ -1,4 +1,4 @@
-import { SALONES_INICIALES } from "./datos.js";
+import { SALONES_PRINCIPALES } from "./datos.js";
 
 const contenedor = document.querySelector(".servicios-contenedor");
 const botonesFiltro = document.querySelectorAll(".filtro-btn");
@@ -8,7 +8,14 @@ const salonesLocales = JSON.parse(localStorage.getItem("salones")) || [];
 
 // Unificar salones: iniciales + locales
 const salones = [
-  ...SALONES_INICIALES,
+  ...SALONES_PRINCIPALES.map(salon => ({
+    titulo: salon.nombre,
+    descripcion: salon.descripcion,
+    direccion: salon.ubicacion,
+    valor: salon.precio,
+    imagen: salon.imagenes[0],
+    categoria: salon.capacidad > 150 ? "Grande" : "Otros"
+  })),
   ...salonesLocales.map(salon => ({
     titulo: salon.titulo,
     descripcion: salon.descripcion,
