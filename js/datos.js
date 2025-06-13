@@ -123,6 +123,7 @@ export const SERVICIOS_PRINCIPALES = [
     }
 ];
 
+
 export const IMAGENES_PRINCIPALES = [
     {   
         id: 1, 
@@ -162,3 +163,4 @@ export const IMAGENES_PRINCIPALES = [
         salonId: 6 }
 
 ];
+
