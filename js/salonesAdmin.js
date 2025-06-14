@@ -29,12 +29,12 @@ function loadSalonesFromStorage() {
     if (!precargadosYaInsertados) {
         const precargadosAdaptados = SALONES_PRINCIPALES.map(p => ({
             id: p.id,
-            titulo: p.nombre,
+            titulo: p.titulo,
             descripcion: p.descripcion,
-            direccion: p.ubicacion,
-            valor: p.precio,
+            direccion: p.direccion,
+            valor: p.valor,
             estado: p.capacidad > 150 ? "Grande" : "Otros",
-            imagen: p.imagenes[0],
+            imagen: p.imagen[0],
             origen: "inicial"
         }));
 

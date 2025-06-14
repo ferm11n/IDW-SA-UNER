@@ -12,14 +12,14 @@ if (!precargadosYaInsertados) {
   const titulosLocales = salonesLocales.map(s => s.titulo);
 
   const precargadosAdaptados = SALONES_PRINCIPALES
-      .filter(salon => !titulosLocales.includes(salon.nombre))
+      .filter(salon => !titulosLocales.includes(salon.titulo))
       .map(salon => ({
     id: salon.id,
-    titulo: salon.nombre,
+    titulo: salon.titulo,
     descripcion: salon.descripcion,
-    direccion: salon.ubicacion,
-    valor: salon.precio,
-    imagen: salon.imagenes[0],
+    direccion: salon.direccion,
+    valor: salon.valor,
+    imagen: salon.imagen[0],
     categoria: salon.capacidad > 150 ? "Grande" : "Otros",
     origen: salon.origen || "inicial"
   }));
