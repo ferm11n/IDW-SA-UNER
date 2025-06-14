@@ -66,12 +66,12 @@ function renderSalones() {
         <img src="${salon.imagen}" class="card-img" alt="${salon.titulo}" style="object-fit: cover; height: 300px;">
         <div class="card-img-overlay salon-overlay d-flex flex-column justify-content-start p-3">
           <div class="salon-info">
+            <span class="badge bg-${salon.origen === 'inicial' ? 'info' : 'secondary'} mb-2">${salon.origen === 'inicial' ? 'Precargado' : 'Admin'}</span>
             <h5 class="card-titulo">${salon.titulo}</h5>
             <p class="card-text">${salon.descripcion}</p>
             <p class="card-text"><small>${salon.direccion}</small></p>
             <p class="card-text"><strong>Valor:</strong> $${salon.valor}</p>
             <p class="card-text"><strong>Estado:</strong> ${salon.estado}</p>
-            <span class="badge bg-${salon.origen === 'inicial' ? 'info' : 'secondary'} mb-2">${salon.origen === 'inicial' ? 'Precargado' : 'Admin'}</span>
             <button class="btn btn-warning mt-2 me-2" onclick="editSalon(${salon.id})">Editar</button>
             <button class="btn btn-danger mt-2" onclick="deleteSalon(${salon.id})">Eliminar</button>
           </div>

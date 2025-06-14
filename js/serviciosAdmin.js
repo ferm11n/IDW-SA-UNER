@@ -56,7 +56,6 @@ function renderServicios() {
               <h5 class="card-titulo">${servicio.titulo}</h5>
               <p class="card-text">${servicio.descripcion}</p>
               <p class="card-text"><strong>Valor:</strong> $${servicio.valor}</p>
-              <p class="card-text"><strong>Estado:</strong> ${servicio.estado}</p>
               <button class="btn btn-warning mt-2 me-2" onclick="editServicio(${servicio.id})">Editar</button>
               <button class="btn btn-danger mt-2" onclick="deleteServicio(${servicio.id})">Eliminar</button>
             </div>

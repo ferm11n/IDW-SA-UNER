@@ -4,21 +4,30 @@ const contenedor = document.querySelector(".servicios-contenedor");
 const botonesFiltro = document.querySelectorAll(".filtro-btn");
 
 // Cargar servicios desde localStorage
-const serviciosLocales = JSON.parse(localStorage.getItem("servicios")) || [];
+let serviciosLocales = JSON.parse(localStorage.getItem("servicios")) || [];
+const serviciosPrecargadosYaInsertados = localStorage.getItem("serviciosPrecargados") === "true";
+
 
 // Unificar servicios: iniciales + locales
-const servicios = [
-  ...SERVICIOS_PRINCIPALES.map(servicio => ({
-    titulo: servicio.titulo,
-    valor: servicio.valor,
-    descripcion: servicio.descripcion,
-  })),
-  ...servicioLocales.map(servicio => ({
-    titulo: servicio.titulo,
-    valor: servicio.valor,
-    descripcion: servicio.descripcion,
-  }))
-];
+if (!serviciosPrecargadosYaInsertados) {
+  const titulosLocales = serviciosLocales.map(s => s.titulo);
+
+  const serviciosPrecargadosAdaptados = SERVICIOS_PRINCIPALES
+      .filter(servicio => !titulosLocales.includes(servicio.titulo))
+      .map(servicio => ({
+        id: servicio.id,
+        titulo: servicio.titulo,
+        descripcion: servicio.descripcion,
+        valor: servicio.valor,
+        imagen: servicio.imagen[0],
+      }));
+
+  serviciosLocales = [...serviciosLocales, ...serviciosPrecargadosAdaptados];
+  localStorage.setItem("servicios", JSON.stringify(serviciosLocales));
+  localStorage.setItem("serviciosPrecargados", "true");
+}
+
+const servicios = serviciosLocales;
 
 // Función para mostrar tarjetas
 function mostrarServicios(lista) {
