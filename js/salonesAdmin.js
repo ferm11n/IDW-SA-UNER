@@ -71,7 +71,7 @@ function renderSalones() {
             <p class="card-text"><small>${salon.direccion}</small></p>
             <p class="card-text"><strong>Valor:</strong> $${salon.valor}</p>
             <p class="card-text"><strong>Estado:</strong> ${salon.estado}</p>
-            <span class="badge bg-${salon.origen === 'inicial' ? 'info' : 'secondary'} mb-2">${salon.origen === 'inicial' ? 'Precargado' : 'Admin'}</span>
+            <!-- <span class="badge bg-${salon.origen === 'inicial' ? 'info' : 'secondary'} mb-2">${salon.origen === 'inicial' ? 'Precargado' : 'Admin'}</span> -->
             <button class="btn btn-warning mt-2 me-2" onclick="editSalon(${salon.id})">Editar</button>
             <button class="btn btn-danger mt-2" onclick="deleteSalon(${salon.id})">Eliminar</button>
           </div>

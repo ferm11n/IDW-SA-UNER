@@ -48,7 +48,7 @@ function mostrarSalones(lista) {
     card.innerHTML = `
       <div class="card-imagen">
         <img src="${item.imagen}" alt="${item.titulo}">
-        <span class="badge badge-origen">${item.origen === 'inicial' ? 'Precargado' : 'Admin'}</span>
+        <!-- <span class="badge badge-origen">${item.origen === 'inicial' ? 'Precargado' : 'Admin'}</span> -->
       </div>
       <div class="card-contenido">
         <h3>${item.titulo}</h3>
