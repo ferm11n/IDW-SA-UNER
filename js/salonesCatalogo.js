@@ -4,27 +4,32 @@ const contenedor = document.querySelector(".servicios-contenedor");
 const botonesFiltro = document.querySelectorAll(".filtro-btn");
 
 // Cargar salones desde localStorage
-const salonesLocales = JSON.parse(localStorage.getItem("salones")) || [];
+let salonesLocales = JSON.parse(localStorage.getItem("salones")) || [];
+const precargadosYaInsertados = localStorage.getItem("salonesPrecargados") === "true";
 
 // Unificar salones: iniciales + locales
-const salones = [
-  ...SALONES_PRINCIPALES.map(salon => ({
-    titulo: salon.titulo,
+if (!precargadosYaInsertados) {
+  const titulosLocales = salonesLocales.map(s => s.titulo);
+
+  const precargadosAdaptados = SALONES_PRINCIPALES
+      .filter(salon => !titulosLocales.includes(salon.nombre))
+      .map(salon => ({
+    id: salon.id,
+    titulo: salon.nombre,
     descripcion: salon.descripcion,
-    direccion: salon.direccion,
-    valor: salon.valor,
-    imagen: salon.imagen[0],
-    categoria: salon.capacidad > 150 ? "Grande" : "Otros"
-  })),
-  ...salonesLocales.map(salon => ({
-    titulo: salon.titulo,
-    descripcion: salon.descripcion,
-    direccion: salon.direccion,
-    valor: salon.valor,
-    imagen: salon.imagen,
-    categoria: salon.estado || "Otros"
-  }))
-];
+    direccion: salon.ubicacion,
+    valor: salon.precio,
+    imagen: salon.imagenes[0],
+    categoria: salon.capacidad > 150 ? "Grande" : "Otros",
+    origen: salon.origen || "inicial"
+  }));
+
+  salonesLocales = [...salonesLocales, ...precargadosAdaptados];
+  localStorage.setItem("salones", JSON.stringify(salonesLocales));
+  localStorage.setItem("salonesPrecargados", "true");
+}
+
+const salones = salonesLocales;
 
 // Función para mostrar tarjetas
 function mostrarSalones(lista) {
@@ -43,6 +48,7 @@ function mostrarSalones(lista) {
     card.innerHTML = `
       <div class="card-imagen">
         <img src="${item.imagen}" alt="${item.titulo}">
+        <span class="badge badge-origen">${item.origen === 'inicial' ? 'Precargado' : 'Admin'}</span>
       </div>
       <div class="card-contenido">
         <h3>${item.titulo}</h3>
@@ -69,8 +75,8 @@ botonesFiltro.forEach(boton => {
     const categoria = boton.dataset.target;
 
     const filtrados = !categoria
-      ? salones
-      : salones.filter(salon => salon.categoria === categoria);
+        ? salones
+        : salones.filter(salon => salon.categoria === categoria);
 
     mostrarSalones(filtrados);
   });

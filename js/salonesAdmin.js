@@ -2,14 +2,13 @@ import { SALONES_PRINCIPALES } from "./datos.js";
 
 const salonForm = document.getElementById("salon-form");
 const salonesList = document.getElementById("salones-list");
-const submitButton= document.getElementById("submit-button");
-const cancelEditButton=document.getElementById("cancel-edit");
+const submitButton = document.getElementById("submit-button");
+const cancelEditButton = document.getElementById("cancel-edit");
 
 let salones = [];
 let salonId = 1;
-let editingSalonId= null;
+let editingSalonId = null;
 
-// Inicializar
 loadSalonesFromStorage();
 renderSalones();
 
@@ -23,20 +22,35 @@ function saveSalonesToStorage() {
 
 // Cargar desde LocalStorage
 function loadSalonesFromStorage() {
-    const storedSalones = localStorage.getItem("salones");
-    const storedSalonId = localStorage.getItem("salonId");
+    const storedSalones = JSON.parse(localStorage.getItem("salones")) || [];
+    const storedId = parseInt(localStorage.getItem("salonId")) || 1;
+    const precargadosYaInsertados = localStorage.getItem("salonesPrecargados") === "true";
 
-    if (storedSalones) {
-      salones = JSON.parse(storedSalones);
-    } else if(typeof SALONES_PRINCIPALES !== "undefined"){
-      salones = SALONES_PRINCIPALES;
-      salonId= salones.reduce((max, salon) => (salon.id > max ? salon.id : max), 0)+1;
-      saveSalonesToStorage();
+    if (!precargadosYaInsertados) {
+        const precargadosAdaptados = SALONES_PRINCIPALES.map(p => ({
+            id: p.id,
+            titulo: p.nombre,
+            descripcion: p.descripcion,
+            direccion: p.ubicacion,
+            valor: p.precio,
+            estado: p.capacidad > 150 ? "Grande" : "Otros",
+            imagen: p.imagenes[0],
+            origen: "inicial"
+        }));
+
+        const idsEnStorage = new Set(storedSalones.map(s => s.id));
+        const nuevosPrecargados = precargadosAdaptados.filter(s => !idsEnStorage.has(s.id));
+        salones = [...storedSalones, ...nuevosPrecargados];
+
+        localStorage.setItem("salonesPrecargados", "true");
+    } else {
+        salones = storedSalones;
     }
 
-    if (storedSalonId) {
-      salonId = parseInt(storedSalonId, 10);
-    }
+    const maxId = salones.reduce((max, salon) => salon.id > max ? salon.id : max, 0);
+    salonId = Math.max(storedId, maxId + 1);
+
+    saveSalonesToStorage();
 }
 
 // Renderizar tarjetas
@@ -57,6 +71,7 @@ function renderSalones() {
             <p class="card-text"><small>${salon.direccion}</small></p>
             <p class="card-text"><strong>Valor:</strong> $${salon.valor}</p>
             <p class="card-text"><strong>Estado:</strong> ${salon.estado}</p>
+            <span class="badge bg-${salon.origen === 'inicial' ? 'info' : 'secondary'} mb-2">${salon.origen === 'inicial' ? 'Precargado' : 'Admin'}</span>
             <button class="btn btn-warning mt-2 me-2" onclick="editSalon(${salon.id})">Editar</button>
             <button class="btn btn-danger mt-2" onclick="deleteSalon(${salon.id})">Eliminar</button>
           </div>
@@ -66,7 +81,7 @@ function renderSalones() {
   `).join("");
 }
 
-// Agregar salón
+// Agregar o editar salón
 function getSalon(event) {
     event.preventDefault();
 
@@ -78,30 +93,33 @@ function getSalon(event) {
     const imagen = document.getElementById("salon-imagen").value.trim();
 
     if (!titulo || !descripcion || !direccion || !valorInput || !imagen) {
-    alert("Por favor, complete todos los campos.");
-    return;
-  }
+        alert("Por favor, complete todos los campos.");
+        return;
+    }
 
     const valor = Number(valorInput);
     if (isNaN(valor) || valor <= 0) {
-      alert("Ingrese un valor numérico mayor a 0.");
-      return;
+        alert("Ingrese un valor numérico mayor a 0.");
+        return;
     }
 
-    if(editingSalonId){
-      salones= salones.map(salon=> {
-        if(salon.id === editingSalonId){
-          return {id: salon.id, titulo, descripcion, direccion, valor, estado, imagen};
-        }
-        return salon
-      });
-      editingSalonId=null;
-      salonForm.classList.remove("edit-mode");
-      document.querySelectorAll(".card.salon-editando").forEach(card => {
-        card.classList.remove("salon-editando");
-      });
-      submitButton.textContent= "Agregar Salon";
-      cancelEditButton.classList.add("d-none");
+    if (editingSalonId) {
+        salones = salones.map(salon => {
+            if (salon.id === editingSalonId) {
+                return { ...salon, titulo, descripcion, direccion, valor, estado, imagen };
+            }
+            return salon;
+        });
+
+        editingSalonId = null;
+        salonForm.classList.remove("edit-mode");
+        submitButton.textContent = "Agregar Salón";
+        cancelEditButton.classList.add("d-none");
+
+        document.querySelectorAll(".card.salon-editando").forEach(card => {
+            card.classList.remove("salon-editando");
+        });
+
     } else {
         const newSalon = {
             id: salonId++,
@@ -110,79 +128,75 @@ function getSalon(event) {
             direccion,
             valor,
             estado,
-            imagen
+            imagen,
+            origen: "local"
         };
         salones.push(newSalon);
     }
+
     saveSalonesToStorage();
     renderSalones();
     salonForm.reset();
-
-    console.log("salones:", salones);
 }
 
-//Pasar a modo edicion
-function editSalon(id){
-  document.querySelectorAll(".card.salon-editando").forEach(card=>{
-    card.classList.remove("salon-editando");
-  });
-  salonForm.classList.remove("edit-mode");
+// Editar
+function editSalon(id) {
+    const salonAEditar = salones.find(salon => salon.id === id);
+    if (!salonAEditar) return;
 
-  const salonAEditar= salones.find(salon => salon.id === id);
-  if(!salonAEditar) return;
-  document.getElementById("salon-titulo").value = salonAEditar.titulo;
-  document.getElementById("salon-descripcion").value = salonAEditar.descripcion;
-  document.getElementById("salon-direccion").value = salonAEditar.direccion;
-  document.getElementById("salon-valor").value = salonAEditar.valor;
-  document.getElementById("salon-estado").value = salonAEditar.estado;
-  document.getElementById("salon-imagen").value = salonAEditar.imagen;
+    document.getElementById("salon-titulo").value = salonAEditar.titulo;
+    document.getElementById("salon-descripcion").value = salonAEditar.descripcion;
+    document.getElementById("salon-direccion").value = salonAEditar.direccion;
+    document.getElementById("salon-valor").value = salonAEditar.valor;
+    document.getElementById("salon-estado").value = salonAEditar.estado;
+    document.getElementById("salon-imagen").value = salonAEditar.imagen;
 
-  editingSalonId=id;
-  submitButton.textContent="Guardar Cambios";
-  cancelEditButton.classList.remove("d-none");
+    editingSalonId = id;
+    submitButton.textContent = "Guardar Cambios";
+    cancelEditButton.classList.remove("d-none");
 
-  const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
-  if (tarjeta) {
-    tarjeta.classList.add("salon-editando");
-  }
-  salonForm.classList.add("edit-mode");
+    document.querySelectorAll(".card.salon-editando").forEach(card => {
+        card.classList.remove("salon-editando");
+    });
 
+    const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
+    if (tarjeta) tarjeta.classList.add("salon-editando");
+
+    salonForm.classList.add("edit-mode");
 }
 
-//Cancelar edicion
+// Cancelar edición
 function cancelEdit() {
-  editingSalonId = null;
-  salonForm.reset();
-  submitButton.textContent = "Agregar Salón";
-  cancelEditButton.classList.add("d-none");
-  salonForm.classList.remove("edit-mode");
+    editingSalonId = null;
+    salonForm.reset();
+    submitButton.textContent = "Agregar Salón";
+    cancelEditButton.classList.add("d-none");
+    salonForm.classList.remove("edit-mode");
 
-  document.querySelectorAll(".card.salon-editando").forEach(card=> {
-    card.classList.remove("salon-editando");
-  });
+    document.querySelectorAll(".card.salon-editando").forEach(card => {
+        card.classList.remove("salon-editando");
+    });
 }
 
-// Eliminar salón
+// Eliminar
 function deleteSalon(id) {
-  if(!confirm("Esta accion borrara el salon, ¿esta seguro?")){
-    return;
-  }
-  const tarjeta=document.querySelector(`.card[data-id="${id}"]`);
-  if (tarjeta){
-    tarjeta.classList.add("salon-borrando");
-    setTimeout(() => {
-      salones=salones.filter(salon => salon.id !== id);
-      saveSalonesToStorage();
-      renderSalones();
-    }, 300);
-  }else {
-    salones = salones.filter(salon => salon.id !== id);
-    saveSalonesToStorage();
-    renderSalones();
-  }
+    if (!confirm("Esta acción eliminará el salón. ¿Está seguro?")) return;
+
+    const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
+    if (tarjeta) {
+        tarjeta.classList.add("salon-borrando");
+        setTimeout(() => {
+            salones = salones.filter(salon => salon.id !== id);
+            saveSalonesToStorage();
+            renderSalones();
+        }, 300);
+    } else {
+        salones = salones.filter(salon => salon.id !== id);
+        saveSalonesToStorage();
+        renderSalones();
+    }
 }
 
 cancelEditButton.addEventListener("click", cancelEdit);
-
 window.editSalon = editSalon;
-window.deleteSalon = deleteSalon ;
+window.deleteSalon = deleteSalon;
