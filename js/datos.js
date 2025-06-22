@@ -67,7 +67,7 @@ export const SERVICIOS_PRINCIPALES = [
     {   
         id: 1, 
         titulo: "Bandas En Vivo", 
-        valor: 50000,
+        valor: 50,
         imagen: ["img/servicios/bandasEnVivo.jpg"],
         descripcion: "Una banda en vivo. "
 
@@ -75,49 +75,49 @@ export const SERVICIOS_PRINCIPALES = [
     {   
         id: 2, 
         titulo: "DJ Premium", 
-        valor: 120000,
+        valor: 120,
         imagen: ["img/servicios/djPremium.jpg"],
         descripcion: "DJ´S de lo mas divertidos. "
     },
     {   
         id: 3, 
         titulo: "Escultura 3D", 
-        valor: 80000,
+        valor: 80,
         imagen: ["img/servicios/esculturas3d.jpg"],
         descripcion: "Figuras historicas. "
     },
     {   
         id: 4,
         titulo: "Show de Luces",
-        valor: 30000,
+        valor: 30,
         imagen: ["img/servicios/iluminacionMapeada.jpg"],
         descripcion: "Efectos de luces y destellos. "
     },
     {   
         id: 5,
         titulo: "Ilusionismo",
-        valor: 200000,
+        valor: 200,
         imagen: ["img/servicios/ilusionismo.jpg"],
         descripcion: "Juegos de ilusiones a la vista. "
     },
     {   
         id: 6, 
         titulo: "Paintball Laser", 
-        valor: 500000,
+        valor: 500,
         imagen: ["img/servicios/paintballLaser.jpg"],
         descripcion: "Demuestra quien tiene la mejor punteria. "
     },
     {   
         id: 7, 
         titulo: "Realidad Virtual", 
-        valor: 150000,
+        valor: 150,
         imagen: ["img/servicios/realidadVirtual.jpg"],
         descripcion: "Mejor que META. "
     },
     {   
         id: 8, 
         titulo: "Show de Drones", 
-        valor: 100000,
+        valor: 100,
         imagen: ["img/servicios/showDrones.jpg"],
         descripcion: "Directo desde China. "
     }
