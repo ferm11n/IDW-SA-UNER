@@ -1,42 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
-    if (!localStorage.getItem("usuarios")) {
-        //Usuarios de prueba
-        const usuarios = [
-            { username: "admin", password: "123", role: "admin" },
-            { username: "usuario1", password: "123", role: "user" },
-            { username: "usuario2", password: "123", role: "user" },
-            { username: "usuario3", password: "123", role: "user" },
-            { username: "usuario4", password: "123", role: "user" },
-            { username: "usuario5", password: "123", role: "user" }
-        ];
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    const form = document.getElementById("formLogin");
+    if (form) {
+        form.addEventListener("submit", iniciarSesion);
     }
 
-    const form = document.getElementById("formLogin");
-    if (form) form.addEventListener("submit", iniciarSesion);
+    const token = sessionStorage.getItem("accessToken");
+    if (token) {
+        window.location.href = "index.html";
+    }
 });
 
-function iniciarSesion(event) {
+async function iniciarSesion(event) {
     event.preventDefault();
 
-    const username = document.getElementById("username").value.trim().toLowerCase();
+    const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
+    const alerta = document.getElementById("alerta");
 
+    try {
+        // Intento de login
+        const res = await fetch("https://dummyjson.com/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        });
 
-    const usuarios = JSON.parse(localStorage.getItem("usuarios"));
-    const user = usuarios.find(u => u.username.toLowerCase() === username && u.password === password);
+        if (!res.ok) throw new Error("Credenciales incorrectas");
 
-    const alertDiv = document.getElementById("alert");
+        const loginData = await res.json();
 
-    if (user) {
-        localStorage.setItem("usuarioActual", JSON.stringify(user));
+        // Traemos los datos completos del usuario para obtener el rol
+        const userRes = await fetch(`https://dummyjson.com/users/${loginData.id}`);
+        if (!userRes.ok) throw new Error("No se pudo obtener info del usuario");
+
+        const fullUserDatos = await userRes.json();
+        fullUserDatos.token = loginData.token;
+
+        // Guardamos todo en sessionStorage
+        sessionStorage.setItem("accessToken", fullUserDatos.token);
+        sessionStorage.setItem("usuarioActual", JSON.stringify(fullUserDatos));
+
         window.location.href = "index.html";
-    } else {
-        if (alertDiv) {
-            alertDiv.innerHTML = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n" +
-                "          Usuario o contraseña incorrectos.\n" +
-                "          <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Cerrar\"></button>\n" +
-                "        </div>"
+
+    } catch (error) {
+        if (alerta) {
+            alerta.innerHTML = `
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Usuario o contraseña incorrectos.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                </div>`;
         } else {
             alert("Usuario o contraseña incorrectos.");
         }
