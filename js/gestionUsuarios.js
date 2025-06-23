@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const fila = document.createElement('tr');
       fila.innerHTML = `
         <td>
+          <button class="btn btn-danger">Eliminar</button>
+          <button class="btn btn-warning">Editar</button>
           <button class="btn btn-info btn-sm ver-mas" data-user='${JSON.stringify(user)}'>Ver más</button>
         </td>
         <td>${user.username}</td>
