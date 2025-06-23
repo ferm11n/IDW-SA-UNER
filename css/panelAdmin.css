@@ -1,0 +1,53 @@
+body {
+  background-color: #0e0b1b;
+  font-family: 'Outfit', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Color rosa para títulos */
+.text-pink {
+  color: #f72e81 !important;
+  font-size: 2.2rem;  /* texto más grande */
+  font-weight: 700;
+}
+
+/* Efecto hover para escalar y sombra */
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(247, 46, 129, 0.5);
+}
+
+/* Tarjetas */
+.card {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 16px;
+  min-height: 250px;   /* altura más grande */
+  padding: 2rem;       /* más espacio interior */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:1rem 0
+}
+
+/* Separación mayor entre las tarjetas */
+.row.g-4 {
+  gap: 5rem; /* más espacio entre columnas y filas */
+}
+
+/* Texto descriptivo */
+.text-white-50 {
+  font-size: 1.5rem;
+  margin-top: 1.0rem;
+}
+
+header h1 {
+  margin: 0;
+  padding: 2rem 0;   
+  text-align: center;
+}

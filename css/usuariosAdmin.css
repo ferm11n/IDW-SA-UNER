@@ -1,0 +1,37 @@
+body {
+  background-color: #010218;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+}
+
+h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  color: #f06292;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.table thead th {
+  color: #fff;
+  background-color: #1b1b2f;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #ff99c8;
+}
+
+.table tbody tr:hover {
+  background-color: #2c2c44;
+}
+
+.btn-warning {
+  background-color: #ffca28;
+  color: #000;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #e53935;
+  color: #fff;
+  border: none;
+}
