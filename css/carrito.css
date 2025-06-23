@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --rosa-claro: #f8d7e8;
+    --rosa-medio: #e598bb;
+    --rosa-fuerte: #d63384;
+    --rosa-hover: #c2185b;
+}
+
+#contenidoCarrito .card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#contenidoCarrito .card:hover {
+    transform: translateY(-5px);
+}
+
+#contenidoCarrito .list-group-item {
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#contenidoCarrito .list-group-item:last-child {
+    border-bottom: none;
+
+}
+
+#contenidoCarrito h5 {
+    color: var(--rosa-medio);
+    font-weight: 700;
+}
+
+.text-end h5 {
+    font-size: 1.5rem;
+}
+
+#btnFinalizarCompra {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+}
+
+.text-rosa {
+    color: var(--rosa-medio);
+}
+
+
+.btn-rosa {
+    background-color: var(--rosa-medio); !important;
+    color: white; !important;
+    font-weight: 600;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-rosa:hover {
+    background-color: var(--rosa-hover);
+}
+
+.text-rosa-total {
+    color: var(--rosa-fuerte);
+}
+
+@media (max-width: 768px) {
+    #contenidoCarrito .card {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #contenidoCarrito .card-title {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    #contenidoCarrito .list-group-item {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #contenidoCarrito .list-group-item div {
+        margin-top: 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text-end h5 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    #btnFinalizarCompra {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .btn-rosa {
+        width: 100%;
+        text-align: center;
+    }
+
+    #contenidoCarrito .eliminar-btn {
+        margin-top: 0.5rem;
+        align-self: flex-end;
+    }
+}

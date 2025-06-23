@@ -1,29 +1,27 @@
 import { SALONES_PRINCIPALES } from "./datos.js";
+import { agregarSalonAlCarrito } from "./carrito.js";
 
 const contenedor = document.querySelector(".servicios-contenedor");
 const botonesFiltro = document.querySelectorAll(".filtro-btn");
 
-// Cargar salones desde localStorage
+// LocalStorage y precarga
 let salonesLocales = JSON.parse(localStorage.getItem("salones")) || [];
 const precargadosYaInsertados = localStorage.getItem("salonesPrecargados") === "true";
 
-// Unificar salones: iniciales + locales
 if (!precargadosYaInsertados) {
   const titulosLocales = salonesLocales.map(s => s.titulo);
-
   const precargadosAdaptados = SALONES_PRINCIPALES
-      .filter(salon => !titulosLocales.includes(salon.titulo))
-      .map(salon => ({
-    id: salon.id,
-    titulo: salon.titulo,
-    descripcion: salon.descripcion,
-    direccion: salon.direccion,
-    valor: salon.valor,
-    imagen: salon.imagen[0],
-    categoria: salon.capacidad > 150 ? "Grande" : "Otros",
-    origen: salon.origen || "inicial"
-  }));
-
+      .filter(s => !titulosLocales.includes(s.titulo))
+      .map(s => ({
+        id: s.id,
+        titulo: s.titulo,
+        descripcion: s.descripcion,
+        direccion: s.direccion,
+        valor: s.valor,
+        imagen: s.imagen[0],
+        categoria: s.capacidad > 150 ? "Grande" : "Otros",
+        origen: s.origen || "inicial"
+      }));
   salonesLocales = [...salonesLocales, ...precargadosAdaptados];
   localStorage.setItem("salones", JSON.stringify(salonesLocales));
   localStorage.setItem("salonesPrecargados", "true");
@@ -31,12 +29,11 @@ if (!precargadosYaInsertados) {
 
 const salones = salonesLocales;
 
-// Función para mostrar tarjetas
 function mostrarSalones(lista) {
   contenedor.innerHTML = "";
 
   if (!lista.length) {
-    contenedor.innerHTML = '<p class="text-muted text-center">No hay salones.</p>'
+    contenedor.innerHTML = '<p class="text-muted text-center">No hay salones.</p>';
     return;
   }
 
@@ -55,29 +52,27 @@ function mostrarSalones(lista) {
         <p>${item.descripcion}</p>
         <p><strong>Dirección:</strong> ${item.direccion}</p>
         <div class="card-precio"><span>$${item.valor}</span> / hora</div>
-        <button class="card-boton">+ Agregar</button>
+        <button class="card-boton btn-agregar-salon">+ Agregar</button>
       </div>
     `;
+
+    card.querySelector(".btn-agregar-salon").addEventListener("click", () => {
+      agregarSalonAlCarrito(item);
+    });
 
     contenedor.appendChild(card);
   });
 }
 
-// Mostrar todos los salones al cargar
 mostrarSalones(salones);
 
-// Filtro por categoría
+// Filtros
 botonesFiltro.forEach(boton => {
   boton.addEventListener("click", () => {
     botonesFiltro.forEach(btn => btn.classList.remove("active"));
     boton.classList.add("active");
-
     const categoria = boton.dataset.target;
-
-    const filtrados = !categoria
-        ? salones
-        : salones.filter(salon => salon.categoria === categoria);
-
+    const filtrados = !categoria ? salones : salones.filter(s => s.categoria === categoria);
     mostrarSalones(filtrados);
   });
 });
