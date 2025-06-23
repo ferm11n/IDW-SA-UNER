@@ -86,3 +86,14 @@ h2 {
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 500px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+ 
+  .table tbody td {
+    white-space: nowrap; 
+    max-width: none;     
+  }
+}
