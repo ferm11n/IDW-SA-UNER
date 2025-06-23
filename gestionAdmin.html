@@ -62,21 +62,22 @@
 <!-- Formulario Salones -->
             <h5 class="text-center">Agregar / Editar Salón</h5>
             <form id="salon-form" class="mt-3">
-              <input
-                type="text"
-                id="salon-titulo"
-                class="form-control mb-2"
-                placeholder="Título"
-                required
-              />
-              <textarea id="salon-descripcion" class="form-control mb-2" placeholder="Descripción" required></textarea>
-              <input type="text" id="salon-direccion" class="form-control mb-2" placeholder="Dirección" required/>
+                <input
+                        type="text"
+                        id="salon-titulo"
+                        class="form-control mb-1"
+                        placeholder="Título"
+                        maxlength="21"
+                        required
+                />
+              <textarea id="salon-descripcion" class="form-control mb-2" placeholder="Descripción" maxlength="35" required></textarea>
+              <input type="text" id="salon-direccion" class="form-control mb-2" placeholder="Dirección" maxlength="35" required/>
               <input type="number" id="salon-valor" class="form-control mb-2" placeholder="Valor" required/>
               <select id="salon-estado" class="form-select mb-2" required>
                 <option value="Disponible">Disponible</option>
                 <option value="Reservado">Reservado</option>
               </select>
-              <input type="url" id="salon-imagen" class="form-control mb-2" placeholder="URL de la imagen" required/>
+              <input type="text" id="salon-imagen" class="form-control mb-2" placeholder="URL de la imagen" required/>
               <button type="submit" id="submit-button" class="btn btn-success w-100">Guardar</button>
               <button type="button" id="cancel-edit" class="btn btn-secondary w-100 mt-2 d-none">Cancelar</button>
             </form>
@@ -99,13 +100,13 @@
 <!-- Formulario Servicios -->
             <h5 class="text-center">Agregar / Editar Servicio</h5>
             <form id="servicio-form" class="mt-3">
-              <input type="text" id="servicio-titulo" class="form-control mb-2" placeholder="Título" required/>
-              <textarea id="servicio-descripcion" class="form-control mb-2" placeholder="Descripción" required></textarea>
+              <input type="text" id="servicio-titulo" class="form-control mb-2" placeholder="Título" maxlength="21" required/>
+              <textarea id="servicio-descripcion" class="form-control mb-2" placeholder="Descripción" maxlength="35" required></textarea>
               <input type="number" id="servicio-valor" class="form-control mb-2" placeholder="Valor" required/>
               <select id="servicio-estado" class="form-select mb-2" required>
                 <option value="Disponible">Disponible</option>
                 <option value="Reservado">Reservado</option></select>
-              <input type="url" id="servicio-imagen" class="form-control mb-2" placeholder="URL de la imagen" required/>
+              <input type="text" id="servicio-imagen" class="form-control mb-2" placeholder="URL de la imagen" required/>
               <button type="submit" class="btn btn-success w-100">Guardar</button>
               <button type="button" id="cancel-edit-servicio" class="btn btn-secondary w-100 mt-2 d-none">Cancelar</button>
             </form>

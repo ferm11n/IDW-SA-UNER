@@ -77,10 +77,26 @@ function getServicio(event) {
     const estado      = document.getElementById("servicio-estado").value.trim();
     const imagen      = document.getElementById("servicio-imagen").value.trim();
 
+    // Definir limites de caracteres
+    const MAX_TITULO = 21;
+    const MAX_DESC = 35;
+
     if (!titulo || !descripcion || !valorInput || !imagen) {
         alert("Por favor, complete todos los campos.");
         return;
     }
+
+    //Validamos longitudes
+    if (titulo.length > MAX_TITULO) {
+        alert(`El titulo no puede tener mas de ${MAX_TITULO} caracteres.`)
+        return;
+    }
+
+    if (descripcion.length > MAX_DESC) {
+        alert(`La descripcion no puede tener mas de ${MAX_DESC} caracteres.`)
+        return;
+    }
+
     const valor = parseFloat(valorInput);
     if (isNaN(valor) || valor <= 0) {
         alert("Ingrese un valor numérico mayor a 0.");

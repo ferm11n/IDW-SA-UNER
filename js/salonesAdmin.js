@@ -92,8 +92,29 @@ function getSalon(event) {
     const estado = document.getElementById("salon-estado").value.trim();
     const imagen = document.getElementById("salon-imagen").value.trim();
 
+    //Definirmos limites
+    const MAX_TITULO = 21;
+    const MAX_DESCRIP = 35;
+    const MAX_DIREC = 35;
+
     if (!titulo || !descripcion || !direccion || !valorInput || !imagen) {
         alert("Por favor, complete todos los campos.");
+        return;
+    }
+
+    // Validaciones
+    if (titulo.length > MAX_TITULO) {
+        alert(`El titulo no puede tener mas de ${MAX_TITULO} caracteres.`);
+        return;
+    }
+
+    if (descripcion.length > MAX_DESCRIP) {
+        alert(`La descripcion no puede tener mas de ${MAX_DESCRIP} caracteres.`);
+        return;
+    }
+
+    if (direccion.length > MAX_DIREC) {
+        alert(`La direccion no puede tener mas de ${MAX_DIREC} caracteres.`);
         return;
     }
 
