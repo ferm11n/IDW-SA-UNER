@@ -16,10 +16,19 @@
     --rosa-hover: #c2185b;
 }
 
+html, body {
+    background-color: #f1f1f1 !important;
+}
+
+
 /* SERVICIOS */
 .servicios {
     padding: 4rem 2%;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(180deg, #f8d7e8 0%, #d040bf 100%);
+    border-radius: 40px;
+    margin: 3rem auto;
+    max-width: 1400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .servicios-titulo {
