@@ -2,7 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuarioActual = JSON.parse(sessionStorage.getItem("usuarioActual"));
     const token = sessionStorage.getItem("accessToken");
     const navGestion = document.getElementById("navGestion");
-    const isPaginaAdmin = window.location.pathname.includes("gestionAdmin.html");
+
+
+    // Páginas solo accesibles por administradores
+    const paginasAdmin = ["gestionAdmin.html", "panelAdmin.html", "usuariosAdmin.html"];
+    const rutaActual = window.location.pathname;
+    const esPaginaAdmin = paginasAdmin.some(pagina => rutaActual.includes(pagina));
+
 
     if (navGestion) {
         if (usuarioActual && usuarioActual.role === "admin") {
@@ -13,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Redireccionamos si el usuario no es el admin e intenta acceder a la pagina protegia
-    if (isPaginaAdmin && (!usuarioActual || usuarioActual.role !== "admin" || !token)) {
-        alert("Acceso denegado pipi. Afueraaaaa!!!")
-        window.location.href = "index.html"
+    if (esPaginaAdmin && (!usuarioActual || usuarioActual.role !== "admin" || !token)) {
+        alert("Acceso denegado pipi. Afueraaaaa!!!");
+        window.location.href = "index.html";
         return;
     }
 
