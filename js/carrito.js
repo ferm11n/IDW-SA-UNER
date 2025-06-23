@@ -1,6 +1,6 @@
 export function agregarSalonAlCarrito(salon) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
-    carrito.salon = salon; // Reemplaza cualquier salón anterior
+    carrito.salon = salon;
     localStorage.setItem("carrito", JSON.stringify(carrito));
     alert("Salón agregado al carrito");
 }
@@ -8,7 +8,7 @@ export function agregarSalonAlCarrito(salon) {
 export function agregarServicioAlCarrito(servicio) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
 
-    // Evitar duplicados (opcional)
+    // Evitar duplicados
     const yaExiste = carrito.servicios.some(s => s.titulo === servicio.titulo);
     if (yaExiste) {
         alert("Este servicio ya está en el carrito");
@@ -22,27 +22,59 @@ export function agregarServicioAlCarrito(servicio) {
 
 export function mostrarCarrito() {
     const contenedor = document.getElementById("contenidoCarrito");
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
+    const btnFinalizar = document.getElementById("btnFinalizarCompra");
+    const btnVaciar = document.getElementById("btnVaciarCompra");
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
+
+    // Con esto sincronizamos los datos de salones y servicios
+    const salones = JSON.parse(localStorage.getItem("salones")) || [];
+    const serviciosActuales = JSON.parse(localStorage.getItem("servicios")) || [];
+
+    // Actualizar salón
+    if (carrito.salon) {
+        const salonActualizado = salones.find(s => s.id === carrito.salon.id);
+        if (salonActualizado) {
+            carrito.salon = salonActualizado;
+        } else {
+            carrito.salon = null;
+        }
+    }
+
+    // Actualizar servicios
+    carrito.servicios = carrito.servicios
+        .map(s => serviciosActuales.find(actual => actual.id === s.id))
+        .filter(Boolean);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 
     contenedor.innerHTML = "";
 
-    if (!carrito.salon && carrito.servicios.length === 0) {
+    const haySalon = !!carrito.salon;
+    const hayServicios = carrito.servicios.length > 0;
+
+    // Mostramos u ocultamos los botones para finalizar compra o vaciarla
+    if (btnFinalizar) btnFinalizar.classList.toggle("d-none", !(haySalon || hayServicios));
+    if (btnVaciar) btnVaciar.classList.toggle("d-none", !(haySalon || hayServicios));
+
+    if (!haySalon && !hayServicios) {
         contenedor.innerHTML = '<p class="text-muted text-center">El carrito está vacío.</p>';
         return;
     }
 
-    if (carrito.salon) {
+    if (haySalon) {
         contenedor.innerHTML += `
-    <div class="card mb-4 p-3 bg-light rounded">
-        <div class="card-body">
-            <h5 class="card-title">Salón seleccionado</h5>
-            <p class="card-text"><strong>${carrito.salon.titulo}</strong><br><span class="text-rosa">$${carrito.salon.valor} / hora</span></p>
-            <button class="btn btn-danger btn-sm mt-2" onclick="eliminarSalon()">Eliminar</button>
-        </div>
-    </div>`;
+        <div class="card mb-4 p-3 bg-light rounded">
+            <div class="card-body">
+                <h5 class="card-title">Salón seleccionado</h5>
+                <p class="card-text"><strong>${carrito.salon.titulo}</strong><br>
+                <span class="text-rosa">$${carrito.salon.valor} / hora</span></p>
+                <button class="btn btn-danger btn-sm mt-2" onclick="eliminarSalon()">Eliminar</button>
+            </div>
+        </div>`;
     }
 
-    if (carrito.servicios.length > 0) {
+    if (hayServicios) {
         contenedor.innerHTML += `
         <div class="card mb-4 p-3 bg-light rounded">
             <div class="card-body">
@@ -61,19 +93,15 @@ export function mostrarCarrito() {
         </div>`;
     }
 
-    // Calcular total
-    const totalSalon = carrito.salon ? carrito.salon.valor : 0;
-    const totalServicios = carrito.servicios.reduce((acc, s) => acc + s.valor, 0);
-    const total = totalSalon + totalServicios;
-
+    const total = (carrito.salon?.valor || 0) + carrito.servicios.reduce((acc, s) => acc + s.valor, 0);
     contenedor.innerHTML += `
     <div class="text-end mb-4 fw-bold fs-4">
         Total: <span class="text-rosa-total">$${total}</span>
-    </div>
-`;
+    </div>`;
 }
 
-// Función para eliminar el salón del carrito
+
+// eliminar el salón del carrito
 window.eliminarSalon = function () {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
     carrito.salon = null;
@@ -89,7 +117,7 @@ window.eliminarServicio = function (index) {
     mostrarCarrito();
 };
 
-// Esta función debe ser llamada desde el HTML, no desde acá directamente
+
 export function finalizarCompra() {
     const usuario = JSON.parse(sessionStorage.getItem("usuarioActual"));
     if (!usuario) {

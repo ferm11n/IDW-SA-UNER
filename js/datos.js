@@ -7,7 +7,7 @@ export const SALONES_PRINCIPALES = [
         valor: 800,
         servicios: ["Sonido normal", "Juego de luces", "Comida Gourmet"],
         imagen: ["img/salonesInicialesUno.jpeg"],
-        descripcion: "Salon diseñado para eventos empresariales"
+        descripcion: "Diseñado para empresas"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const SALONES_PRINCIPALES = [
         valor: 500,
         servicios: ["Diversion para niños", "Catering normal", "Pelotero"],
         imagen: ["img/salonesInicialesDos.jpg"],
-        descripcion: "Un salon ambientado a la naturaleza"
+        descripcion: "Ambientado a la naturaleza"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ export const SALONES_PRINCIPALES = [
         valor: 750,
         servicios: ["Pelotero", "Sonido profesional", "Catering normal"],
         imagen: ["img/salonesInicialesTres.jpeg"],
-        descripcion: "Un salon diseñado para los niños"
+        descripcion: "Diseñado para los mas chicos"
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ export const SALONES_PRINCIPALES = [
         valor: 900,
         servicios: ["Sonido profesional", "Decoraciones", "Catering profesional"],
         imagen: ["img/salonesInicialesCuatro.jpg"],
-        descripcion: "Salón profesional"
+        descripcion: "Un salón profesional"
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ export const SALONES_PRINCIPALES = [
         valor: 510,
         servicios: ["Sonido profesional", "Juego de luces", "Decoraciones"],
         imagen: ["img/salonesInicialesCinco.jpeg"],
-        descripcion: "Un salon especialmente si tiene muchos invitados"
+        descripcion: "Un salon para muchos invitados"
     },
     {
         id: 6,
