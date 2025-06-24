@@ -50,6 +50,10 @@ h2 {
   color: rgb(255, 181, 193) !important;
 }
 /* Opcional: cambiar el icono del toggler para que se vea en fondo oscuro */
+.navbar-toggler {
+  border-color: black;
+  background-color: #273b54;
+}
 .navbar-toggler-icon {
   filter: invert(1);
 }

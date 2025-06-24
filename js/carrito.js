@@ -2,7 +2,7 @@ export function agregarSalonAlCarrito(salon) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
     carrito.salon = salon;
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    alert("Salón agregado al carrito");
+    alert("Salón agregado al presupuesto");
 }
 
 export function agregarServicioAlCarrito(servicio) {
@@ -11,13 +11,13 @@ export function agregarServicioAlCarrito(servicio) {
     // Evitar duplicados
     const yaExiste = carrito.servicios.some(s => s.titulo === servicio.titulo);
     if (yaExiste) {
-        alert("Este servicio ya está en el carrito");
+        alert("Este servicio ya está en el presupuesto");
         return;
     }
 
     carrito.servicios.push(servicio);
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    alert("Servicio agregado al carrito");
+    alert("Servicio agregado al presupuesto");
 }
 
 export function mostrarCarrito() {
@@ -58,7 +58,7 @@ export function mostrarCarrito() {
     if (btnVaciar) btnVaciar.classList.toggle("d-none", !(haySalon || hayServicios));
 
     if (!haySalon && !hayServicios) {
-        contenedor.innerHTML = '<p class="text-muted text-center">El carrito está vacío.</p>';
+        contenedor.innerHTML = '<p class="text-muted text-center">El presupuesto está vacío.</p>';
         return;
     }
 
@@ -132,10 +132,10 @@ export function finalizarCompra() {
 }
 
 export function vaciarCompra() {
-    if (confirm("¿Estas seguro de que queres vaciar el carrito?")) {
+    if (confirm("¿Estas seguro de que queres vaciar el presupuesto?")) {
         localStorage.removeItem("carrito");
         mostrarCarrito();
-        alert("Carrito vaciado correctamente.")
+        alert("Presupuesto vaciado correctamente.")
     }
 }
 
