@@ -1,3 +1,5 @@
+//Este archivo es para los filtros
+
 document.addEventListener('DOMContentLoaded', function() {
     const filtros = document.querySelectorAll('.filtro-btn');
     const cards = document.querySelectorAll('.servicio-card');

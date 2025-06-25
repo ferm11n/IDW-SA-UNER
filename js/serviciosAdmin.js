@@ -25,7 +25,7 @@ function saveServiciosToStorage() {
 //Cargar desde LocalStorage
 function loadServiciosFromStorage() {
   const storedServicios = localStorage.getItem("servicios");
-  const storedServicioId = localStorage.getItem("servicioId");
+  //const storedServicioId = localStorage.getItem("servicioId");
 
   if (storedServicios) {
     servicios = JSON.parse(storedServicios);
@@ -35,9 +35,8 @@ function loadServiciosFromStorage() {
     saveServiciosToStorage();
   }
 
-  if (storedServicioId) {
-    servicioId = parseInt(storedServicioId, 10);
-  }
+  const maxId = servicios.reduce((max, s) => s.id > max ? s.id : max, 0);
+  servicioId = Math.max(servicioId, maxId + 1);
 }
 
 //Renderizar tarjetas

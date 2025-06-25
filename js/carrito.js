@@ -139,7 +139,7 @@ export function vaciarCompra() {
     }
 }
 
-document,addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     mostrarCarrito();
 
     const btnFinalizar = document.getElementById("btnFinalizarCompra");
