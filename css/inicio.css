@@ -43,7 +43,7 @@
 
 /* Caja de cada razón */
 .caja-razon {
-  background-color: #fadfea; /* rosa más oscuro que combina con #f72e81 */
+  background-color: #fadfea;
   border-radius: 5px;
   transition: all 0.3s ease;
   height: 100%;
@@ -67,7 +67,7 @@
 
 /* Hover: cambia el color del título */
 .caja-razon:hover .razon-titulo {
-  color: #f72e81; /* tono más fuerte que combina con los otros rosados */
+  color: #f72e81;
 }
 
 /*----reseñas----*/
@@ -246,9 +246,9 @@
 }
 
 /* ==========================================================================
-   Animation Keyframes
+   Animacion Keyframes
    ========================================================================== */
-/* Fade-in and slide-up animation for elements */
+/* animacion para elementos */
 @keyframes fadeInUp {
     0% {
         opacity: 0;

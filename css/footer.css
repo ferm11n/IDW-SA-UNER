@@ -108,9 +108,9 @@
 }
 
 /* ==========================================================================
-   Animation Keyframes
+   Animaciones Keyframes
    ========================================================================== */
-/* Fade-in and slide-up animation for elements */
+/* animacion para elements */
 @keyframes fadeInUp {
     0% {
         opacity: 0;

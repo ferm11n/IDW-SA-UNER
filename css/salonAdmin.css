@@ -3,7 +3,7 @@
 
 body {
   background-color: #010218;
-  color: #ffffff; /* Asegura buen contraste */
+  color: #ffffff;
   min-height: 100vh;
   align-items: center;
 }
@@ -49,7 +49,7 @@ h2 {
 .navbar-custom .nav-link:hover {
   color: rgb(255, 181, 193) !important;
 }
-/* Opcional: cambiar el icono del toggler para que se vea en fondo oscuro */
+
 .navbar-toggler {
   border-color: black;
   background-color: #273b54;
@@ -135,7 +135,7 @@ h2 {
   pointer-events: none;
 }
 
-/* Asegura que el contenido del overlay quede por encima del oscurecimiento */
+
 .hall-overlay {
   position: absolute;
   z-index: 2;
