@@ -55,8 +55,8 @@
 
 
 .btn-rosa {
-    background-color: var(--rosa-medio); !important;
-    color: white; !important;
+    background-color: var(--rosa-medio) !important;
+    color: white !important;
     font-weight: 600;
     border: none;
     padding: 12px 30px;
