@@ -40,6 +40,10 @@ async function iniciarSesion(event) {
         sessionStorage.setItem("accessToken", fullUserDatos.token);
         sessionStorage.setItem("usuarioActual", JSON.stringify(fullUserDatos));
 
+        // Eliminar el carrito anónimo para evitar mezcla
+        localStorage.removeItem("carrito_anonimo");
+
+        // Mandar al inicio
         window.location.href = "index.html";
 
     } catch (error) {

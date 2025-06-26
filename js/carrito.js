@@ -1,12 +1,20 @@
+function obtenerClaveCarrito() {
+    const usuario = JSON.parse(sessionStorage.getItem("usuarioActual"));
+    return usuario?.username ? `carrito_${usuario.username}` : "carrito_anonimo";
+}
+
+
 export function agregarSalonAlCarrito(salon) {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
+    const clave = obtenerClaveCarrito();
+    const carrito = JSON.parse(localStorage.getItem(clave)) || { salon: null, servicios: [] };
     carrito.salon = salon;
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem(clave, JSON.stringify(carrito));
     alert("Salón agregado al presupuesto");
 }
 
 export function agregarServicioAlCarrito(servicio) {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
+    const clave = obtenerClaveCarrito();
+    const carrito = JSON.parse(localStorage.getItem(clave)) || { salon: null, servicios: [] };
 
     // Evitar duplicados
     const yaExiste = carrito.servicios.some(s => s.titulo === servicio.titulo);
@@ -16,44 +24,37 @@ export function agregarServicioAlCarrito(servicio) {
     }
 
     carrito.servicios.push(servicio);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem(clave, JSON.stringify(carrito));
     alert("Servicio agregado al presupuesto");
 }
 
 export function mostrarCarrito() {
+    const clave = obtenerClaveCarrito();
     const contenedor = document.getElementById("contenidoCarrito");
     const btnFinalizar = document.getElementById("btnFinalizarCompra");
     const btnVaciar = document.getElementById("btnVaciarCompra");
 
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
+    let carrito = JSON.parse(localStorage.getItem(clave)) || { salon: null, servicios: [] };
 
-    // Con esto sincronizamos los datos de salones y servicios
     const salones = JSON.parse(localStorage.getItem("salones")) || [];
     const serviciosActuales = JSON.parse(localStorage.getItem("servicios")) || [];
 
-    // Actualizar salón
     if (carrito.salon) {
         const salonActualizado = salones.find(s => s.id === carrito.salon.id);
-        if (salonActualizado) {
-            carrito.salon = salonActualizado;
-        } else {
-            carrito.salon = null;
-        }
+        carrito.salon = salonActualizado || null;
     }
 
-    // Actualizar servicios
     carrito.servicios = carrito.servicios
         .map(s => serviciosActuales.find(actual => actual.id === s.id))
         .filter(Boolean);
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem(clave, JSON.stringify(carrito));
 
     contenedor.innerHTML = "";
 
     const haySalon = !!carrito.salon;
     const hayServicios = carrito.servicios.length > 0;
 
-    // Mostramos u ocultamos los botones para finalizar compra o vaciarla
     if (btnFinalizar) btnFinalizar.classList.toggle("d-none", !(haySalon || hayServicios));
     if (btnVaciar) btnVaciar.classList.toggle("d-none", !(haySalon || hayServicios));
 
@@ -100,23 +101,21 @@ export function mostrarCarrito() {
     </div>`;
 }
 
-
-// eliminar el salón del carrito
 window.eliminarSalon = function () {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
+    const clave = obtenerClaveCarrito();
+    const carrito = JSON.parse(localStorage.getItem(clave)) || { salon: null, servicios: [] };
     carrito.salon = null;
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem(clave, JSON.stringify(carrito));
     mostrarCarrito();
 };
 
-// Función para eliminar un servicio del carrito según índice
 window.eliminarServicio = function (index) {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || { salon: null, servicios: [] };
+    const clave = obtenerClaveCarrito();
+    const carrito = JSON.parse(localStorage.getItem(clave)) || { salon: null, servicios: [] };
     carrito.servicios.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem(clave, JSON.stringify(carrito));
     mostrarCarrito();
 };
-
 
 export function finalizarCompra() {
     const usuario = JSON.parse(sessionStorage.getItem("usuarioActual"));
@@ -126,16 +125,39 @@ export function finalizarCompra() {
         return;
     }
 
-    alert("Gracias por su compra 🎉");
-    localStorage.removeItem("carrito");
+    const clave = `carrito_${usuario.username}`;
+    const carrito = JSON.parse(localStorage.getItem(clave)) || { salon: null, servicios: [] };
+
+    if (!carrito.salon && carrito.servicios.length === 0) {
+        alert("No hay elementos en el presupuesto para finalizar.");
+        return;
+    }
+
+    const presupuestos = JSON.parse(localStorage.getItem("presupuestos")) || [];
+
+    const nuevoPresupuesto = {
+        id: Date.now(),
+        nombreCompleto: `${usuario.lastName} ${usuario.firstName}`,
+        fecha: new Date().toLocaleDateString("es-AR"),
+        tematica: carrito.salon?.descripcion || "Sin temática",
+        valorTotal: (carrito.salon?.valor || 0) + carrito.servicios.reduce((acc, s) => acc + s.valor, 0),
+        servicios: carrito.servicios.map(s => ({ id: s.id, titulo: s.titulo, valor: s.valor }))
+    };
+
+    presupuestos.push(nuevoPresupuesto);
+    localStorage.setItem("presupuestos", JSON.stringify(presupuestos));
+    localStorage.removeItem(clave);
+
+    alert("Presupuesto registrado exitosamente 🎉");
     window.location.href = "index.html";
 }
 
 export function vaciarCompra() {
+    const clave = obtenerClaveCarrito();
     if (confirm("¿Estas seguro de que queres vaciar el presupuesto?")) {
-        localStorage.removeItem("carrito");
+        localStorage.removeItem(clave);
         mostrarCarrito();
-        alert("Presupuesto vaciado correctamente.")
+        alert("Presupuesto vaciado correctamente.");
     }
 }
 
@@ -151,6 +173,4 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnVaciar) {
         btnVaciar.addEventListener("click", vaciarCompra);
     }
-})
-
-
+});
