@@ -118,3 +118,38 @@
         align-self: flex-end;
     }
 }
+
+#modalfacturadiseño {
+  background-color: #fffafa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#modalfacturadiseño .linea {
+  border-bottom: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+#modalfacturadiseño p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+#modalfacturadiseño .resaltado {
+  font-weight: 600;
+  color: #212529;
+}
+
+.text-pink {
+  color: #d63384 !important; 
+}
+
+.btn-rosa {
+  background-color: #d63384;
+  color: white;
+  border: none;
+}
+
+.btn-rosa:hover {
+  background-color: #c12674;
+}

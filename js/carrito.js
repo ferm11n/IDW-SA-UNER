@@ -149,7 +149,24 @@ export function finalizarCompra() {
     localStorage.removeItem(clave);
 
     alert("Presupuesto registrado exitosamente 🎉");
-    window.location.href = "index.html";
+
+//Factura Modal
+    const modalfactura = document.getElementById("modalfacturadiseño");
+    modalfactura.innerHTML = `
+        <p><strong>Nombre:</strong> ${usuario.firstName}</p>
+        <p><strong>Apellido:</strong> ${usuario.lastName}</p>
+        <p><strong>Fecha:</strong> ${nuevoPresupuesto.fecha}</p>
+        <p><strong>Temática:</strong> ${nuevoPresupuesto.tematica}</p>
+        <p><strong>Costo total:</strong> $${nuevoPresupuesto.valorTotal}</p>
+    `;
+
+    const modalF = document.getElementById("modalcarrito");
+    const modal = new bootstrap.Modal(modalF);
+    modal.show();
+
+    modalF.addEventListener('hidden.bs.modal', () => {
+        window.location.href = "index.html";
+    }, { once: true });
 }
 
 export function vaciarCompra() {
